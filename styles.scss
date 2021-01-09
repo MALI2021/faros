@@ -1,0 +1,142 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-family: -apple-system-body, "Helvetica Neue", Helvetica Neue, "Helvetica",
+    Helvetica, Arial, sans-serif;
+  background: #898989; /* Old browsers */
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #898989 0%,
+    #3f3f3f 100%
+  ); /* FF3.6+ */
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, #898989),
+    color-stop(100%, #3f3f3f)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #898989 0%,
+    #3f3f3f 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    #898989 0%,
+    #3f3f3f 100%
+  ); /* Opera 12+ */
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    #898989 0%,
+    #3f3f3f 100%
+  ); /* IE10+ */
+  background: radial-gradient(
+    ellipse at center,
+    #898989 0%,
+    #3f3f3f 100%
+  ); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#898989', endColorstr='#3f3f3f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+* {
+  transform-style: preserve-3d;
+}
+
+#wrapper {
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: -16px;
+  perspective: 500px;
+  background: rgb(50, 50, 50);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#container {
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0%;
+  height: 100%;
+  overflow: auto;
+
+  &.closed {
+    overflow: hidden;
+  }
+}
+
+.page {
+  height: inherit;
+  width: 96%;
+  position: absolute;
+  left: 2%;
+  background: white;
+  transition: all 0.25s ease-in-out;
+  transform: rotateX(-30deg) translateX(0%);
+  transform-origin: 50% 0%;
+  box-shadow: 0px -10px 50px 0px rgba(0, 0, 0, 0.05);
+  z-index: 0;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 25px;
+
+  .no-visible {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+
+    &.visible {
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    pointer-events: none;
+  }
+
+  &.normal {
+    transition: all 0.35s ease-in-out;
+    transform: rotateX(0deg) translateX(0%) translateY(-30px);
+    width: 100%;
+    top: 0 !important;
+    left: 0;
+    box-shadow: none !important;
+  }
+}
+
+#p1.page {
+  top: 0px;
+}
+#p2.page {
+  top: 150px;
+}
+#p3.page {
+  top: 300px;
+}
+#p4.page {
+  top: 450px;
+}
+#p5.page {
+  top: 600px;
+}
+#p6.page {
+  top: 750px;
+}
