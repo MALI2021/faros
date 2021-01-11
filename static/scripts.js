@@ -1,6 +1,7 @@
 var triggers = document.getElementsByClassName("page");
 var container = document.getElementById("container");
 var closers = document.getElementsByClassName("closer");
+var visibles = document.getElementsByClassName("no-visible");
 
 window.onload = async function () {
   for (let i = 0; i < triggers.length; i++) {
@@ -24,9 +25,13 @@ async function closePage() {
   for (let i = 0; i < triggers.length; i++) {
     console.log(i);
     triggers[i].classList.remove("normal");
+    for (let i = 0; i < visibles.length; i++) {
+      visibles[i].classList.remove("visible");
+      // console.log(triggers[i]);
+    }
     container.classList.remove("closed");
     triggers[i].style.zIndex = "0";
-    await 250;
+    // await sleep(200);
     // console.log(triggers[i]);
   }
 }
