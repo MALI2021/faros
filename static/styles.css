@@ -72,11 +72,11 @@ body {
 }
 .page .no-visible {
   transition: all 0.3s ease-in-out;
-  opacity: 0;
+  display: none;
 }
 .page .no-visible.visible {
   transition: all 0.3s ease-in-out;
-  opacity: 1;
+  display: block;
 }
 .page h1 {
   font-size: 0;
@@ -298,7 +298,7 @@ body {
   line-height: 34px;
 }
 .tabs-item.disabled {
-  border-top: 2px solid #EBEBEB;
+  border-top: 2px solid #ebebeb;
   margin-bottom: 20px;
 }
 .tabs-item.disabled .tabs-item--text {
@@ -315,7 +315,7 @@ body {
 }
 .legend--item {
   align-items: center;
-  border-bottom: 1px solid #C7C7C7;
+  border-bottom: 1px solid #c7c7c7;
   display: flex;
   padding: 10px 0;
 }
@@ -343,8 +343,10 @@ body {
 }
 .box-1--item {
   align-items: center;
-  border-bottom: 1px solid #C7C7C7;
   display: flex;
+  text-align: center;
+  border-bottom: 1px solid #c7c7c7;
+  padding: 10px 0;
   font-size: 12px;
   height: 100%;
   justify-content: center;
@@ -353,7 +355,7 @@ body {
   text-align: center;
 }
 .box-1--item:last-child {
-  border-bottom: 3px solid #C7C7C7;
+  border-bottom: 3px solid #c7c7c7;
 }
 .box-1--item .faros-img {
   width: 100%;
