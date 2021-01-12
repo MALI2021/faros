@@ -63,6 +63,7 @@ body {
   left: 2%;
   background: white;
   transition: all 0.25s ease-in-out;
+  transform: rotateX(-30deg) translateX(0%);
   transform-origin: 50% 0%;
   box-shadow: 0px -10px 50px 0px rgba(0, 0, 0, 0.05);
   z-index: 0;
@@ -322,6 +323,10 @@ body {
   width: 100%;
   text-align: center;
   font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .legend--item .arrow {
   width: 30px;
@@ -337,14 +342,22 @@ body {
   flex-direction: column;
 }
 .box-1--item {
-  text-align: center;
+  align-items: center;
   border-bottom: 1px solid #C7C7C7;
-  padding: 10px 0;
+  display: flex;
   font-size: 12px;
   height: 100%;
+  justify-content: center;
+  padding: 10px 0;
+  position: relative;
+  text-align: center;
 }
 .box-1--item:last-child {
   border-bottom: 3px solid #C7C7C7;
+}
+.box-1--item .faros-img {
+  width: 100%;
+  height: 100%;
 }
 .box-1--graphic {
   height: 100%;
@@ -358,6 +371,17 @@ body {
   bottom: 0%;
   left: 0;
   right: 0;
+}
+
+.box-2 {
+  border: 3px solid;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .d-potencia {
@@ -375,6 +399,22 @@ body {
 }
 .d-altura .box-1 {
   height: 177px;
+}
+
+.d-periodo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  margin-bottom: 20px;
+}
+
+.graphic-tono {
+  width: 30px;
+  position: absolute;
+  top: 5px;
+}
+.graphic-tono.medio {
+  top: -50%;
 }
 
 .m-0 {
@@ -401,6 +441,10 @@ body {
   padding-right: 15px;
 }
 
+.pt-0 {
+  padding-top: 0;
+}
+
 .pt-20 {
   padding-top: 20px;
 }
@@ -425,8 +469,24 @@ body {
   text-decoration: underline;
 }
 
+.w-30 {
+  width: 30px;
+}
+
+.w-50 {
+  width: 50px;
+}
+
 .w-60 {
   width: 60px;
+}
+
+.w-80 {
+  width: 80px;
+}
+
+.w-100 {
+  width: 100px;
 }
 
 .d-grid {
