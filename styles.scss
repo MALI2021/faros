@@ -236,6 +236,10 @@ body {
   font-size: 15px;
   margin: 0;
   padding-bottom: 15px;
+
+  @media (min-width: 850px) {
+    font-size: 20px;
+  }
 }
 
 .list-nav {
@@ -286,6 +290,10 @@ body {
       display: flex;
       justify-content: space-between;
       padding-bottom: 15px;
+
+      @media (min-width: 480px) {
+        padding-bottom: 0;
+      }
     }
 
     .list-faros--item--info {
@@ -309,30 +317,54 @@ body {
 
     .triangulo {
       position: relative;
-      height: 20px;
+      height: 30px;
+      
+      @media (min-width: 660px) {
+        height: 40px;
+      }
 
       &::before {
         content: "";
         background-image: url("assets/img/tab-active.svg");
         background-size: 100%;
-        height: 20px;
+        height: 30px;
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         background-repeat: no-repeat;
+
+        @media (min-width: 660px) {
+          height: 40px;
+        }
+
+        @media (min-width: 850px) {
+          background-image: url("assets/img/tab-desktop.svg");
+        }
       }
     }
 
     &--text {
       display: block;
-      padding: 20px 0;
+      padding: 10px 0 20px 0;
+
+      @media (min-width: 660px) {
+        padding: 0 0 20px 0;
+      }
+
+      @media (min-width: 850px) {
+        text-align: center;
+      }
 
       span {
         text-align: center;
         display: block;
         font-size: 28px;
         line-height: 34px;
+
+        @media (min-width: 850px) {
+          display: initial;
+        }
       }
     }
 
@@ -388,6 +420,14 @@ body {
   height: 145px;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 480px) {
+    height: 345px;
+  }
+
+  @media (min-width: 850px) {
+    height: 245px;
+  }
 
   &--item {
     align-items: center;
@@ -450,6 +490,10 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0 5px;
   margin-bottom: 20px;
+
+  @media (min-width: 850px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .d-altura {
@@ -458,8 +502,20 @@ body {
   grid-gap: 0 5px;
   margin-bottom: 20px;
 
+  @media (min-width: 850px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .box-1 {
     height: 177px;
+
+    @media (min-width: 480px) {
+      height: 345px;
+    }
+
+    @media (min-width: 850px) {
+      height: 245px;
+    }
   }
 }
 
@@ -468,6 +524,10 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 5px;
   margin-bottom: 20px;
+
+  @media (min-width: 850px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .graphic-tono {
@@ -527,6 +587,15 @@ body {
       }
     }
   }
+}
+
+.c-btn {
+  border-radius: 40px;
+  padding: 5px 10px;
+  border: 2px solid;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
 }
 
 // GENERAL
@@ -625,4 +694,54 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.m-none {
+  display: none;
+}
+
+@media (min-width: 850px) {
+  .bb-dkt-3 {
+    border-bottom: 3px solid;
+  }
+
+  .doble-desktop {
+    display: flex;
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+  
+    &--fijo {
+      min-width: 260px; 
+    }
+
+    &--item {
+      width: 100%;
+      padding-left: 20px;
+    }
+  }
+
+  .m-dsk-0 {
+    margin: 0;
+  }
+
+  .pb-dsk-20 {
+    padding-bottom: 20px;
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  .m-none {
+    display: initial;
+  }
+}
+
+@media (min-width: 1200px) {
+  .center {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
