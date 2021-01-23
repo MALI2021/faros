@@ -42,6 +42,7 @@ async function closePage() {
   let element = event.target;
   let parent = element.parentNode;
   let siblin = parent.getElementsByClassName("no-visible")[0];
+  container.classList.remove("closed");
   element.classList.remove("visible");
   siblin.classList.remove("visible");
   parent.parentNode.classList.remove("normal");

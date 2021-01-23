@@ -150,7 +150,7 @@ body {
   width: 90%;
   position: absolute;
   left: 5%;
-  transition: all 0.25s ease-in-out;
+  // transition: all 0.25s ease-in-out;
   // transform: rotateX(-15deg) translateX(0%);
   // transform-origin: 50% 0%;
   perspective: 300px;
@@ -170,7 +170,7 @@ body {
   }
 
   &.normal {
-    transition: all 0.35s ease-in-out;
+    // transition: all 0.35s ease-in-out;
     // transform: rotateX(0deg) translateX(0%) translateY(-30px);
     width: 100%;
     top: 0px !important;

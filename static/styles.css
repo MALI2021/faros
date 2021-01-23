@@ -101,7 +101,6 @@ body {
   width: 90%;
   position: absolute;
   left: 5%;
-  transition: all 0.25s ease-in-out;
   perspective: 300px;
   perspective-origin: bottom;
   box-shadow: 0px -10px 50px 0px rgba(0, 0, 0, 0.05);
@@ -115,7 +114,6 @@ body {
   min-height: 180px;
 }
 .page.normal {
-  transition: all 0.35s ease-in-out;
   width: 100%;
   top: 0px !important;
   left: 0;
