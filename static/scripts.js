@@ -6,6 +6,8 @@ var visibles = document.getElementsByClassName("no-visible");
 var tabTrigger = document.getElementsByClassName("tabs-item--text");
 var triggerContainer = document.getElementById("trigger-container");
 var contentItems = document.getElementsByClassName("tab-content-item");
+var textoIntro = document.getElementById("texto-intro");
+var animatedBoxes = document.getElementsByClassName("box-1");
 
 window.onload = function () {
   for (let i = 0; i < triggers.length; i++) {
@@ -20,6 +22,11 @@ window.onload = function () {
 
   for (let i = 0; i < tabTrigger.length; i++) {
     tabTrigger[i].addEventListener("click", showTabs);
+  }
+
+  for (let i = 0; i < animatedBoxes.length; i++) {
+    animatedBoxes[i].addEventListener("click", changeBox);
+    // console.log(animatedBoxes[i]);
   }
 };
 
@@ -75,5 +82,26 @@ function showTabs() {
   let targ = element.getAttribute("rel");
   let targetted = document.querySelector(targ);
   triggerContainer.classList.add("closed");
+  textoIntro.classList.add("inactive");
   targetted.classList.add("showing");
+}
+
+async function changeBox() {
+  let element = event.target;
+  let parent = element.parentNode;
+  element.classList.remove("active");
+  if (element.classList.contains("cat1")) {
+    let sibling = parent.getElementsByClassName("cat2")[0];
+    sibling.classList.add("active");
+    if (sibling.classList.contains("percent")) {
+      let up = sibling.dataset.percentage;
+      let firstSon = sibling.getElementsByClassName("box-1--graphic")[0];
+      let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
+      await sleep(100);
+      secondSon.classList.add("height" + up + "");
+    }
+  } else {
+    let sibling = parent.getElementsByClassName("cat1")[0];
+    sibling.classList.add("active");
+  }
 }

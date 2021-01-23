@@ -540,6 +540,10 @@ span {
   display: block;
 }
 
+#texto-intro.inactive {
+  display: none;
+}
+
 .tabs {
   display: flex;
   flex-direction: column;
@@ -715,9 +719,38 @@ span {
   background: black;
   background: linear-gradient(180deg, black 0%, #242424 72%, rgba(138, 138, 138, 0.8440682058) 95%, rgba(255, 255, 255, 0) 100%);
   position: absolute;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-delay: 0.2s;
+  transition-timing-function: ease-in-out;
   bottom: 0%;
+  height: 0;
   left: 0;
   right: 0;
+}
+.box-1--graphic .graphic-black.height25 {
+  height: 25%;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+.box-1--graphic .graphic-black.height50 {
+  height: 50%;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+.box-1--graphic .graphic-black.height75 {
+  height: 75%;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+.box-1--graphic .graphic-black.height100 {
+  height: 100%;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 }
 
 .box-2 {
@@ -784,6 +817,9 @@ span {
   .d-altura {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+.d-altura .box-container-items {
+  height: 177px;
 }
 .d-altura .box-1 {
   height: 177px;
@@ -1116,6 +1152,16 @@ span {
     max-width: 1200px;
     margin: 0 auto;
   }
+}
+.box-container-items .box-1 {
+  display: none;
+}
+.box-container-items .box-1.active {
+  display: flex;
+}
+.box-container-items .box-1.active .box-1--item,
+.box-container-items .box-1.active .box-1--graphic {
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
