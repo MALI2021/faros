@@ -3,6 +3,9 @@ var skews = document.getElementsByClassName("page");
 var container = document.getElementById("wrapper");
 var closers = document.getElementsByClassName("closer");
 var visibles = document.getElementsByClassName("no-visible");
+var tabTrigger = document.getElementsByClassName("tabs-item--text");
+var triggerContainer = document.getElementById("trigger-container");
+var contentItems = document.getElementsByClassName("tab-content-item");
 
 window.onload = function () {
   for (let i = 0; i < triggers.length; i++) {
@@ -13,6 +16,10 @@ window.onload = function () {
   for (let i = 0; i < closers.length; i++) {
     closers[i].addEventListener("click", closePage);
     // console.log(triggers[i]);
+  }
+
+  for (let i = 0; i < tabTrigger.length; i++) {
+    tabTrigger[i].addEventListener("click", showTabs);
   }
 };
 
@@ -49,22 +56,6 @@ async function closePage() {
   parent.parentNode.style.zIndex = 0;
 }
 
-// async function changePosition_() {
-//   let element = event.target;
-//   element.style.zIndex = "1000";
-//   element.classList.add("normal");
-//   await sleep(800);
-//   let child = element.getElementsByClassName("no-visible")[0];
-//   let child2 = element.getElementsByClassName("closer")[0];
-//   child.classList.add("visible");
-//   child2.classList.add("visible");
-//   container.classList.add("closed");
-//   for (let i = 0; i < triggers.length; i++) {
-//     triggers[i].classList.add("normal");
-//     // console.log(triggers[i]);
-//   }
-// }
-
 async function changePosition() {
   let element = event.target;
   let modifier = element.getAttribute("rel");
@@ -77,4 +68,12 @@ async function changePosition() {
   child.classList.add("visible");
   child2.classList.add("visible");
   container.classList.add("closed");
+}
+
+function showTabs() {
+  let element = event.target;
+  let targ = element.getAttribute("rel");
+  let targetted = document.querySelector(targ);
+  triggerContainer.classList.add("closed");
+  targetted.classList.add("showing");
 }

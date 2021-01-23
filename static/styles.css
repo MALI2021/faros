@@ -528,9 +528,19 @@ span {
   width: 26px;
 }
 
+.tab-content-item {
+  display: none;
+}
+.tab-content-item.showing {
+  display: block;
+}
+
 .tabs {
   display: flex;
   flex-direction: column;
+}
+.tabs.closed {
+  display: none;
 }
 .tabs-item {
   border-top: 2px solid;
@@ -568,6 +578,9 @@ span {
 .tabs-item--text {
   display: block;
   padding: 10px 0 20px 0;
+}
+.tabs-item--text span {
+  pointer-events: none;
 }
 @media (min-width: 660px) {
   .tabs-item--text {
