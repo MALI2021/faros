@@ -368,6 +368,25 @@ body {
   pointer-events: none;
 }
 
+.arrow-back {
+  float: right;
+  height: 40px;
+  position: sticky;
+  right: 15px;
+  top: 120px;
+  width: 40px;
+  z-index: 9;
+  display: none;
+}
+.arrow-back.visible {
+  display: block;
+}
+.arrow-back img {
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
 .box-shadow {
   box-shadow: 0px -10px 11px 0px rgba(0, 0, 0, 0.19);
 }
