@@ -74,7 +74,7 @@ body {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-  font-family: 'gerstner_programmregular';
+  font-family: "gerstner_programmregular";
   background: #898989; /* Old browsers */
   background: -moz-radial-gradient(
     center,
@@ -116,28 +116,26 @@ body {
   ); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#898989', endColorstr='#3f3f3f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-* {
-  transform-style: preserve-3d;
-}
+// * {
+//   transform-style: preserve-3d;
+// }
 
 #wrapper {
   overflow: hidden;
-  position: absolute;
+  position: relative;
   top: 0px;
   bottom: 0px;
   left: 0px;
-  right: -16px;
-  perspective: 500px;
   background: rgb(50, 50, 50);
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #container {
   width: 100%;
   position: absolute;
-  top: 30px;
+  top: 0px;
   left: 0%;
   height: 100%;
   overflow: auto;
@@ -148,18 +146,45 @@ body {
 }
 
 .page {
-  height: inherit;
-  width: 96%;
+  height: 180px;
+  width: 90%;
   position: absolute;
-  left: 2%;
-  background: white;
+  left: 5%;
   transition: all 0.25s ease-in-out;
-  transform: rotateX(-15deg) translateX(0%);
-  transform-origin: 50% 0%;
+  // transform: rotateX(-15deg) translateX(0%);
+  // transform-origin: 50% 0%;
+  perspective: 300px;
+  perspective-origin: bottom;
   box-shadow: 0px -10px 50px 0px rgba(0, 0, 0, 0.05);
   z-index: 0;
-  overflow: auto;
-  box-sizing: border-box;
+  // overflow: auto;
+  // box-sizing: border-box;
+  top: 0;
+
+  .perspected {
+    position: relative;
+    transform: rotateX(-8deg);
+    background: white;
+    min-height: 180px;
+    // pointer-events: none;
+  }
+
+  &.normal {
+    transition: all 0.35s ease-in-out;
+    // transform: rotateX(0deg) translateX(0%) translateY(-30px);
+    width: 100%;
+    top: 0px !important;
+    left: 0;
+    box-shadow: none !important;
+    overflow: auto;
+    height: 100vh;
+
+    .perspected {
+      position: relative;
+      transform: rotateX(0deg);
+      background: white;
+    }
+  }
 
   .no-visible {
     transition: all 0.3s ease-in-out;
@@ -174,16 +199,12 @@ body {
   h1 {
     font-size: 0;
     margin-bottom: 0;
-    pointer-events: none;
-  }
+    // pointer-events: none;
 
-  &.normal {
-    transition: all 0.35s ease-in-out;
-    transform: rotateX(0deg) translateX(0%) translateY(-30px);
-    width: 100%;
-    top: 30px !important;
-    left: 0;
-    box-shadow: none !important;
+    img,
+    div.title {
+      pointer-events: none;
+    }
   }
 }
 
@@ -301,6 +322,7 @@ body {
   img {
     width: 40px;
     height: 40px;
+    pointer-events: none;
   }
 }
 
