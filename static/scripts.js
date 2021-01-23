@@ -27,6 +27,7 @@ async function closePage() {
     triggers[i].classList.remove("normal");
     for (let i = 0; i < visibles.length; i++) {
       visibles[i].classList.remove("visible");
+      closers[i].classList.remove("visible");
       // console.log(triggers[i]);
     }
     container.classList.remove("closed");
@@ -42,7 +43,9 @@ async function changePosition() {
   element.classList.add("normal");
   await sleep(800);
   let child = element.getElementsByClassName("no-visible")[0];
+  let child2 = element.getElementsByClassName("closer")[0];
   child.classList.add("visible");
+  child2.classList.add("visible");
   container.classList.add("closed");
   for (let i = 0; i < triggers.length; i++) {
     triggers[i].classList.add("normal");

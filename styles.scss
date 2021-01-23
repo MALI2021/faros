@@ -88,7 +88,7 @@ body {
   left: 2%;
   background: white;
   transition: all 0.25s ease-in-out;
-  transform: rotateX(-30deg) translateX(0%);
+  transform: rotateX(-15deg) translateX(0%);
   transform-origin: 50% 0%;
   box-shadow: 0px -10px 50px 0px rgba(0, 0, 0, 0.05);
   z-index: 0;
@@ -125,28 +125,28 @@ body {
   top: 0px;
 }
 #p2.page {
-  top: 90px;
+  top: 120px;
 }
 #p3.page {
-  top: 180px;
+  top: 230px;
 }
 #p4.page {
-  top: 270px;
+  top: 330px;
 }
 #p5.page {
-  top: 360px;
+  top: 430px;
 }
 #p6.page {
-  top: 450px;
+  top: 530px;
 }
 #p7.page {
-  top: 540px;
-}
-#p8.page {
   top: 630px;
 }
+#p8.page {
+  top: 730px;
+}
 #p9.page {
-  top: 720px;
+  top: 830px;
 }
 
 .header {
@@ -163,6 +163,12 @@ body {
     font-weight: 400;
     height: 50px;
     padding: 15px;
+
+    @media (min-width: 768px) {
+      font-size: 76px;
+      font-weight: 400;
+      height: 126px;
+    }
 
     span {
       color: #979696;
@@ -209,6 +215,11 @@ body {
   top: 120px;
   width: 40px;
   z-index: 9;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
 
   img {
     width: 40px;
@@ -318,7 +329,7 @@ body {
     .triangulo {
       position: relative;
       height: 30px;
-      
+
       @media (min-width: 660px) {
         height: 40px;
       }
@@ -550,16 +561,16 @@ body {
 
     &--header {
       padding: 10px 0;
-  
+
       .info {
         display: flex;
         align-items: center;
-  
+
         .arrow {
-          width: 15px; 
+          width: 15px;
         }
       }
-  
+
       p {
         font-size: 28px;
         margin: 0;
@@ -604,12 +615,12 @@ body {
   padding: 20px 0;
 
   &--item {
-    @media (min-width: 480px) { 
+    @media (min-width: 480px) {
       width: 300px;
       margin: 0 auto;
     }
 
-    @media (min-width: 850px) { 
+    @media (min-width: 850px) {
       width: 500px;
     }
   }
@@ -623,7 +634,6 @@ body {
 .pl-0 {
   padding-left: 0;
 }
-
 
 .pr-0 {
   padding-right: 0;
@@ -736,9 +746,9 @@ body {
     &.reverse {
       flex-direction: row-reverse;
     }
-  
+
     &--fijo {
-      min-width: 260px; 
+      min-width: 260px;
     }
 
     &--item {
