@@ -152,37 +152,111 @@ body {
 }
 
 #p2.page {
-  top: 160px;
+  top: 100px;
 }
 
 #p3.page {
-  top: 320px;
+  top: 200px;
 }
 
 #p4.page {
-  top: 480px;
+  top: 300px;
 }
 
 #p5.page {
-  top: 640px;
+  top: 400px;
 }
 
 #p6.page {
-  top: 800px;
+  top: 500px;
 }
 
 #p7.page {
-  top: 960px;
+  top: 600px;
 }
 
 #p8.page {
-  top: 1120px;
+  top: 700px;
 }
 
 #p9.page {
-  top: 1300px;
+  top: 800px;
 }
 
+@media (min-width: 768px) {
+  #p1.page {
+    top: 0px;
+  }
+
+  #p2.page {
+    top: 120px;
+  }
+
+  #p3.page {
+    top: 240px;
+  }
+
+  #p4.page {
+    top: 360px;
+  }
+
+  #p5.page {
+    top: 480px;
+  }
+
+  #p6.page {
+    top: 600px;
+  }
+
+  #p7.page {
+    top: 720px;
+  }
+
+  #p8.page {
+    top: 840px;
+  }
+
+  #p9.page {
+    top: 960px;
+  }
+}
+@media (min-width: 960px) {
+  #p1.page {
+    top: 0px;
+  }
+
+  #p2.page {
+    top: 160px;
+  }
+
+  #p3.page {
+    top: 320px;
+  }
+
+  #p4.page {
+    top: 480px;
+  }
+
+  #p5.page {
+    top: 640px;
+  }
+
+  #p6.page {
+    top: 800px;
+  }
+
+  #p7.page {
+    top: 960px;
+  }
+
+  #p8.page {
+    top: 1120px;
+  }
+
+  #p9.page {
+    top: 1300px;
+  }
+}
 .header--img {
   height: 16px;
   object-fit: cover;
@@ -198,7 +272,18 @@ body {
 @media (min-width: 768px) {
   .header .title {
     font-weight: 400;
-    height: 126px;
+    height: 60px;
+  }
+}
+@media (min-width: 768px) {
+  .header .title {
+    font-weight: 400;
+    height: 75px;
+  }
+}
+@media (min-width: 960px) {
+  .header .title {
+    height: 130px;
   }
 }
 .header .title span {
@@ -208,6 +293,11 @@ body {
 }
 @media (min-width: 768px) {
   .header .title span {
+    font-size: 56px;
+  }
+}
+@media (min-width: 960px) {
+  .header .title span {
     font-size: 76px;
   }
 }
@@ -215,6 +305,11 @@ body {
   font-size: 28px;
 }
 @media (min-width: 768px) {
+  .header .title p {
+    font-size: 56px;
+  }
+}
+@media (min-width: 960px) {
   .header .title p {
     font-size: 76px;
   }
