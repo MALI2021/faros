@@ -7,8 +7,7 @@ body {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-  font-family: -apple-system-body, "Helvetica Neue", Helvetica Neue, "Helvetica",
-    Helvetica, Arial, sans-serif;
+  font-family: 'Conv_Gerstner Programm Regular';
   background: #898989; /* Old browsers */
   background: -moz-radial-gradient(
     center,
@@ -159,13 +158,11 @@ body {
   .title {
     align-items: center;
     display: flex;
-    font-size: 28px;
     font-weight: 400;
     height: 50px;
     padding: 15px;
 
     @media (min-width: 768px) {
-      font-size: 76px;
       font-weight: 400;
       height: 126px;
     }
@@ -173,6 +170,19 @@ body {
     span {
       color: #979696;
       padding-right: 5px;
+      font-size: 28px;
+
+      @media (min-width: 768px) {
+        font-size: 76px;
+      }
+    }
+
+    p {
+      font-size: 28px;
+
+      @media (min-width: 768px) {
+        font-size: 76px;
+      }
     }
   }
 }
@@ -237,10 +247,46 @@ body {
   margin: 0;
   padding: 24px 15px;
   text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
 }
 
 .text-2 {
   font-size: 28px;
+
+  @media (min-width: 768px) {
+    font-size: 56px;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 76px;
+  }
+}
+
+p {
+  font-size: 15px;
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 38px;
+  }
+}
+
+span {
+  font-size: 15px;
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 38px;
+  }
 }
 
 .text-3 {
@@ -248,8 +294,12 @@ body {
   margin: 0;
   padding-bottom: 15px;
 
-  @media (min-width: 850px) {
-    font-size: 20px;
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 38px;
   }
 }
 
@@ -263,17 +313,34 @@ body {
     align-items: center;
     color: black;
     display: flex;
-    font-size: 28px;
     margin-bottom: 5px;
     text-decoration: none;
 
     span {
       color: #979696;
       padding-right: 5px;
+      font-size: 28px;
+
+      @media (min-width: 768px) {
+        font-size: 56px;
+      }
+    
+      @media (min-width: 960px) {
+        font-size: 76px;
+      }
     }
 
     p {
       margin: 0;
+      font-size: 28px;
+
+      @media (min-width: 768px) {
+        font-size: 56px;
+      }
+    
+      @media (min-width: 960px) {
+        font-size: 76px;
+      }
     }
   }
 }
@@ -286,6 +353,14 @@ body {
 
   li {
     font-size: 28px;
+
+    @media (min-width: 768px) {
+      font-size: 56px;
+    }
+  
+    @media (min-width: 960px) {
+      font-size: 76px;
+    }
   }
 }
 
@@ -373,8 +448,16 @@ body {
         font-size: 28px;
         line-height: 34px;
 
+        @media (min-width: 768px) {
+          font-size: 56px;
+        }
+
         @media (min-width: 850px) {
           display: initial;
+        }
+      
+        @media (min-width: 960px) {
+          font-size: 76px;
         }
       }
     }
@@ -410,11 +493,22 @@ body {
     .info {
       width: 100%;
       text-align: center;
-      font-size: 12px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      span {
+        font-size: 12px;
+
+        @media (min-width: 768px) {
+          font-size: 28px;
+        }
+      
+        @media (min-width: 960px) {
+          font-size: 24px;
+        }
+      }
     }
 
     .arrow {
@@ -494,6 +588,22 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 768px) {
+    height: 260px;
+  }
+
+  p {
+    font-size: 12px;
+
+    @media (min-width: 768px) {
+      font-size: 28px;
+    }
+  
+    @media (min-width: 960px) {
+      font-size: 24px;
+    }
+  }
 }
 
 .d-potencia {
@@ -504,6 +614,18 @@ body {
 
   @media (min-width: 850px) {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  span {
+    font-size: 12px;
+
+    @media (min-width: 768px) {
+      font-size: 28px;
+    }
+  
+    @media (min-width: 960px) {
+      font-size: 24px;
+    }
   }
 }
 
@@ -527,6 +649,18 @@ body {
     @media (min-width: 850px) {
       height: 245px;
     }
+
+    span {
+      font-size: 12px;
+
+      @media (min-width: 768px) {
+        font-size: 28px;
+      }
+    
+      @media (min-width: 960px) {
+        font-size: 24px;
+      }
+    }
   }
 }
 
@@ -538,6 +672,18 @@ body {
 
   @media (min-width: 850px) {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  span {
+    font-size: 12px;
+
+    @media (min-width: 768px) {
+      font-size: 28px;
+    }
+  
+    @media (min-width: 960px) {
+      font-size: 24px;
+    }
   }
 }
 
@@ -568,12 +714,28 @@ body {
 
         .arrow {
           width: 15px;
+
+          @media (min-width: 768px) {
+            width: 20px;
+          }
+        
+          @media (min-width: 960px) {
+            width: 25px;
+          }
         }
       }
 
       p {
         font-size: 28px;
         margin: 0;
+
+        @media (min-width: 768px) {
+          font-size: 56px;
+        }
+      
+        @media (min-width: 960px) {
+          font-size: 76px;
+        }
       }
     }
 
@@ -689,6 +851,15 @@ body {
 
 .text-decoration {
   text-decoration: underline;
+  font-size: 15px;
+  
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 38px;
+  }
 }
 
 .w-30 {
@@ -749,11 +920,35 @@ body {
 
     &--fijo {
       min-width: 260px;
+
+      p {
+        font-size: 15px;
+
+        @media (min-width: 768px) {
+          font-size: 21px;
+        }
+
+        span {
+          font-size: 15px;
+
+          @media (min-width: 768px) {
+            font-size: 21px;
+          } 
+        }
+      }
     }
 
     &--item {
       width: 100%;
       padding-left: 20px;
+
+      .text-3 {
+        font-size: 15px;
+
+        @media (min-width: 768px) {
+          font-size: 21px;
+        }
+      }
     }
   }
 
