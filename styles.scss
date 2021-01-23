@@ -359,6 +359,10 @@ body {
 .language {
   padding: 15px;
 
+  @media (min-width: 768px) {
+    max-width: 460px;
+  }
+
   .spanish,
   .english {
     align-items: center;
@@ -636,6 +640,7 @@ span {
 
         @media (min-width: 768px) {
           font-size: 56px;
+          line-height: 60px;
         }
 
         @media (min-width: 850px) {
@@ -644,6 +649,7 @@ span {
 
         @media (min-width: 960px) {
           font-size: 76px;
+          line-height: 80px;
         }
       }
     }

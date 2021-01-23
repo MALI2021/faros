@@ -318,6 +318,11 @@ body {
 .language {
   padding: 15px;
 }
+@media (min-width: 768px) {
+  .language {
+    max-width: 460px;
+  }
+}
 .language .spanish,
 .language .english {
   align-items: center;
@@ -601,6 +606,7 @@ span {
 @media (min-width: 768px) {
   .tabs-item--text span {
     font-size: 56px;
+    line-height: 60px;
   }
 }
 @media (min-width: 850px) {
@@ -611,6 +617,7 @@ span {
 @media (min-width: 960px) {
   .tabs-item--text span {
     font-size: 76px;
+    line-height: 80px;
   }
 }
 .tabs-item.disabled {
