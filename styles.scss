@@ -147,9 +147,9 @@ body {
 
 .page {
   height: 180px;
-  width: 90%;
+  width: 100%;
   position: absolute;
-  left: 5%;
+  left: 0%;
   // transition: all 0.25s ease-in-out;
   // transform: rotateX(-15deg) translateX(0%);
   // transform-origin: 50% 0%;
@@ -166,6 +166,8 @@ body {
     transform: rotateX(-8deg);
     background: white;
     min-height: 180px;
+    width: 90%;
+    left: 5%;
     // pointer-events: none;
   }
 
@@ -180,6 +182,8 @@ body {
     height: 100vh;
 
     .perspected {
+      width: 100%;
+      left: 0;
       position: relative;
       transform: rotateX(0deg);
       background: white;
