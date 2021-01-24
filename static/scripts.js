@@ -215,6 +215,7 @@ async function closePage() {
 }
 
 async function changePosition() {
+  container.scrollTo(0, 0);
   let element = event.target;
   let modifier = element.getAttribute("rel");
   let elementToChange = document.querySelector(modifier);
