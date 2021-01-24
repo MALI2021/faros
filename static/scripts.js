@@ -198,10 +198,28 @@ function hideTabs() {
 async function changeBox() {
   let element = event.target;
   let parent = element.parentNode;
-  element.classList.remove("active");
   if (element.classList.contains("cat1")) {
     let sibling = parent.getElementsByClassName("cat2")[0];
-    sibling.classList.add("active");
+    if (element.classList.contains("moving")) {
+      let sons = element.getElementsByClassName("box-1--item");
+      let param1 = element.dataset.param1;
+      let param2 = element.dataset.param2;
+      for (let i = 0; i < sons.length; i++) {
+        let eltomove = sons[i].getElementsByTagName("span")[0];
+        eltomove.classList.add("margin-top-move");
+      }
+      await sleep(500);
+      element.classList.remove("active");
+      sibling.classList.add("active");
+      let reciver1 = sibling.getElementsByClassName("graphic-tono")[0];
+      let reciver2 = sibling.getElementsByClassName("graphic-tono")[1];
+      await sleep(200);
+      reciver1.classList.add(param1);
+      reciver2.classList.add(param2);
+    } else {
+      element.classList.remove("active");
+      sibling.classList.add("active");
+    }
     if (sibling.classList.contains("percent")) {
       let up = sibling.dataset.percentage;
       let firstSon = sibling.getElementsByClassName("box-1--graphic")[0];
@@ -227,6 +245,7 @@ async function changeBox() {
   } else {
     let sibling = parent.getElementsByClassName("cat1")[0];
     sibling.classList.add("active");
+    element.classList.remove("active");
     if (element.classList.contains("percent")) {
       let up = element.dataset.percentage;
       let firstSon = element.getElementsByClassName("box-1--graphic")[0];
@@ -235,9 +254,24 @@ async function changeBox() {
       await sleep(100);
       secondSon.classList.remove(classToUse);
     }
-    if (sibling.classList.contains("titilating")) {
+    if (element.classList.contains("titilating")) {
       let son = sibling.getElementsByClassName("box-1--item")[0];
       son.classList.remove("show");
+    }
+
+    if (element.classList.contains("double")) {
+      let sons = sibling.getElementsByClassName("box-1--item");
+      let param1 = sibling.dataset.param1;
+      let param2 = sibling.dataset.param2;
+      for (let i = 0; i < sons.length; i++) {
+        let eltomove = sons[i].getElementsByTagName("span")[0];
+        eltomove.classList.remove("margin-top-move");
+      }
+      let reciver1 = element.getElementsByClassName("graphic-tono")[0];
+      let reciver2 = element.getElementsByClassName("graphic-tono")[1];
+      await sleep(200);
+      reciver1.classList.remove(param1);
+      reciver2.classList.remove(param2);
     }
   }
 }
