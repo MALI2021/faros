@@ -1010,9 +1010,12 @@ span {
   transform: translateX(-50%) translateY(0);
   transition: all 0.5s ease-in-out;
   transition-delay: 0.5s;
+  pointer-events: none;
 
   &.alto {
     transform: translateX(-50%) translateY(-14px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
 
     @media (min-width: 768px) {
       transform: translateX(-50%) translateY(-28px);
@@ -1025,6 +1028,8 @@ span {
 
   &.alto-medio {
     transform: translateX(-50%) translateY(-34px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
 
     @media (min-width: 768px) {
       transform: translateX(-50%) translateY(-66px);
@@ -1037,6 +1042,8 @@ span {
 
   &.semi-alto {
     transform: translateX(-50%) translateY(-49px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
 
     @media (min-width: 768px) {
       transform: translateX(-50%) translateY(-97px);
@@ -1049,6 +1056,8 @@ span {
 
   &.semi-alto-medio {
     transform: translateX(-50%) translateY(-68px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
 
     @media (min-width: 768px) {
       transform: translateX(-50%) translateY(-136px);
@@ -1061,6 +1070,8 @@ span {
 
   &.medio {
     transform: translateX(-50%) translateY(-84px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
 
     @media (min-width: 768px) {
       transform: translateX(-50%) translateY(-168px);
@@ -1073,6 +1084,8 @@ span {
 
   &.medio-medio {
     transform: translateX(-50%) translateY(-103px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
 
     @media (min-width: 768px) {
       transform: translateX(-50%) translateY(-204px);
@@ -1085,6 +1098,8 @@ span {
 
   &.semi-bajo {
     transform: translateX(-50%) translateY(-120px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
 
     @media (min-width: 768px) {
       transform: translateX(-50%) translateY(-237px);
@@ -1097,6 +1112,8 @@ span {
 
   &.semi-bajo-medio {
     transform: translateX(-50%) translateY(-140px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
 
     @media (min-width: 768px) {
       transform: translateX(-50%) translateY(-274px);
@@ -1107,8 +1124,10 @@ span {
     }
   }
 
-  &.alto {
+  &.bajo {
     transform: translateX(-50%) translateY(-156px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
 
     @media (min-width: 768px) {
       transform: translateX(-50%) translateY(-305px);

@@ -961,9 +961,12 @@ span {
   transform: translateX(-50%) translateY(0);
   transition: all 0.5s ease-in-out;
   transition-delay: 0.5s;
+  pointer-events: none;
 }
 .graphic-tono.alto {
   transform: translateX(-50%) translateY(-14px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 @media (min-width: 768px) {
   .graphic-tono.alto {
@@ -977,6 +980,8 @@ span {
 }
 .graphic-tono.alto-medio {
   transform: translateX(-50%) translateY(-34px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 @media (min-width: 768px) {
   .graphic-tono.alto-medio {
@@ -990,6 +995,8 @@ span {
 }
 .graphic-tono.semi-alto {
   transform: translateX(-50%) translateY(-49px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 @media (min-width: 768px) {
   .graphic-tono.semi-alto {
@@ -1003,6 +1010,8 @@ span {
 }
 .graphic-tono.semi-alto-medio {
   transform: translateX(-50%) translateY(-68px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 @media (min-width: 768px) {
   .graphic-tono.semi-alto-medio {
@@ -1016,6 +1025,8 @@ span {
 }
 .graphic-tono.medio {
   transform: translateX(-50%) translateY(-84px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 @media (min-width: 768px) {
   .graphic-tono.medio {
@@ -1029,6 +1040,8 @@ span {
 }
 .graphic-tono.medio-medio {
   transform: translateX(-50%) translateY(-103px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 @media (min-width: 768px) {
   .graphic-tono.medio-medio {
@@ -1042,6 +1055,8 @@ span {
 }
 .graphic-tono.semi-bajo {
   transform: translateX(-50%) translateY(-120px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 @media (min-width: 768px) {
   .graphic-tono.semi-bajo {
@@ -1055,6 +1070,8 @@ span {
 }
 .graphic-tono.semi-bajo-medio {
   transform: translateX(-50%) translateY(-140px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 @media (min-width: 768px) {
   .graphic-tono.semi-bajo-medio {
@@ -1066,16 +1083,18 @@ span {
     transform: translateX(-50%) translateY(-194px);
   }
 }
-.graphic-tono.alto {
+.graphic-tono.bajo {
   transform: translateX(-50%) translateY(-156px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 @media (min-width: 768px) {
-  .graphic-tono.alto {
+  .graphic-tono.bajo {
     transform: translateX(-50%) translateY(-305px);
   }
 }
 @media (min-width: 960px) {
-  .graphic-tono.alto {
+  .graphic-tono.bajo {
     transform: translateX(-50%) translateY(-216px);
   }
 }
