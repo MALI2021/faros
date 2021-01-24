@@ -415,10 +415,14 @@ body {
 
   .english {
     background-image: url("./assets/img/select-left.png");
+    background-position: right;
+    background-size: cover;
   }
 
   .spanish {
     background-image: url("./assets/img/select-rigth.png");
+    background-position: left;
+    background-size: cover;
   }
 }
 
