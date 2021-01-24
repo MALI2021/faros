@@ -847,9 +847,6 @@ span {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.d-altura .box-container-items {
-  height: 177px;
-}
 .d-altura .box-1 {
   height: 177px;
 }
@@ -1211,7 +1208,8 @@ span {
   opacity: 1;
 }
 
-#tab-container {
+#tab-container,
+#alturaboxes {
   margin-bottom: 175px;
 }
 

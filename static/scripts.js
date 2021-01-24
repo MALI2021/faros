@@ -175,7 +175,6 @@ function showTabs() {
   let targetted = document.querySelector(targ);
   let closer1 = document.getElementById("closerNav");
   let closer2 = document.getElementById("closerSect");
-  console.log("this are the closers", closer1, closer2);
   closer1.classList.remove("visible");
   closer2.classList.add("visible");
   triggerContainer.classList.add("closed");
