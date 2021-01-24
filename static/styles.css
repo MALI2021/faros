@@ -812,7 +812,7 @@ span {
   grid-gap: 0 5px;
   margin-bottom: 20px;
 }
-@media (min-width: 850px) {
+@media (min-width: 768px) {
   .d-potencia {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -837,7 +837,7 @@ span {
   grid-gap: 0 5px;
   margin-bottom: 20px;
 }
-@media (min-width: 850px) {
+@media (min-width: 768px) {
   .d-altura {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -878,7 +878,7 @@ span {
   grid-gap: 5px;
   margin-bottom: 20px;
 }
-@media (min-width: 850px) {
+@media (min-width: 768px) {
   .d-periodo {
     grid-template-columns: repeat(4, 1fr);
   }
