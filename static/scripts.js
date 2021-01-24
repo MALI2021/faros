@@ -12,6 +12,7 @@ var animatedBoxesTempo = document.getElementsByClassName("box-2");
 var langChanger = document.getElementById("english-changer");
 var langChanger2 = document.getElementById("spanish-changer");
 var lesserlinks = document.getElementsByClassName("linktopage");
+var flippers = document.getElementsByClassName("flip-container");
 
 var i18n = window.domI18n({
   languages: ["es", "en"],
@@ -172,6 +173,11 @@ window.onload = function () {
 
   for (let i = 0; i < animatedBoxes.length; i++) {
     animatedBoxes[i].addEventListener("click", changeBox);
+    // console.log(animatedBoxes[i]);
+  }
+
+  for (let i = 0; i < flippers.length; i++) {
+    flippers[i].addEventListener("click", flipbox);
     // console.log(animatedBoxes[i]);
   }
 
@@ -361,4 +367,9 @@ async function changeBox() {
       reciver2.classList.remove(param2);
     }
   }
+}
+
+function flipbox() {
+  let targetted = event.target;
+  targetted.classList.toggle("hover");
 }
