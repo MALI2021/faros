@@ -12,6 +12,7 @@ var animatedBoxesTempo = document.getElementsByClassName("box-2");
 var langChanger = document.getElementById("english-changer");
 var langChanger2 = document.getElementById("spanish-changer");
 var lesserlinks = document.getElementsByClassName("linktopage");
+var flippers = document.getElementsByClassName("flip-container");
 
 var i18n = window.domI18n({
   languages: ["es", "en"],
@@ -175,6 +176,11 @@ window.onload = function () {
     // console.log(animatedBoxes[i]);
   }
 
+  for (let i = 0; i < flippers.length; i++) {
+    flippers[i].addEventListener("click", flipbox);
+    // console.log(animatedBoxes[i]);
+  }
+
   document.getElementById("closerSect").addEventListener("click", hideTabs);
 };
 
@@ -209,6 +215,7 @@ async function closePage() {
 }
 
 async function changePosition() {
+  container.scrollTo(0, 0);
   let element = event.target;
   let modifier = element.getAttribute("rel");
   let elementToChange = document.querySelector(modifier);
@@ -361,4 +368,9 @@ async function changeBox() {
       reciver2.classList.remove(param2);
     }
   }
+}
+
+function flipbox() {
+  let targetted = event.target;
+  targetted.classList.toggle("hover");
 }
