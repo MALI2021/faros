@@ -789,7 +789,7 @@ span {
 }
 @media (min-width: 768px) {
   .box-2 {
-    height: 260px;
+    height: 210px;
   }
 }
 @media (min-width: 960px) {
