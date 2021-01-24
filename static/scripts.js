@@ -28,6 +28,8 @@ window.onload = function () {
     animatedBoxes[i].addEventListener("click", changeBox);
     // console.log(animatedBoxes[i]);
   }
+
+  document.getElementById("closerSect").addEventListener("click", hideTabs);
 };
 
 function sleep(ms) {
@@ -81,9 +83,22 @@ function showTabs() {
   let element = event.target;
   let targ = element.getAttribute("rel");
   let targetted = document.querySelector(targ);
+  let closer1 = document.getElementById("closerNav");
+  let closer2 = document.getElementById("closerSect");
+  console.log("this are the closers", closer1, closer2);
+  closer1.classList.remove("visible");
+  closer2.classList.add("visible");
   triggerContainer.classList.add("closed");
   textoIntro.classList.add("inactive");
   targetted.classList.add("showing");
+}
+
+function hideTabs() {
+  textoIntro.classList.remove("inactive");
+  triggerContainer.classList.remove("closed");
+  for (let i = 0; i < contentItems.length; i++) {
+    contentItems[i].classList.remove("showing");
+  }
 }
 
 async function changeBox() {
@@ -103,5 +118,13 @@ async function changeBox() {
   } else {
     let sibling = parent.getElementsByClassName("cat1")[0];
     sibling.classList.add("active");
+    if (element.classList.contains("percent")) {
+      let up = element.dataset.percentage;
+      let firstSon = element.getElementsByClassName("box-1--graphic")[0];
+      let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
+      let classToUse = "height" + up + "";
+      await sleep(100);
+      secondSon.classList.remove(classToUse);
+    }
   }
 }

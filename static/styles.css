@@ -1183,4 +1183,8 @@ span {
   pointer-events: none;
 }
 
+#tab-container {
+  margin-bottom: 175px;
+}
+
 /*# sourceMappingURL=styles.css.map */
