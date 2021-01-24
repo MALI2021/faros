@@ -841,6 +841,12 @@ span {
   justify-content: center;
   align-items: center;
 
+  &.upper {
+    border: none;
+    border-top: 3px solid;
+    border-bottom: 3px solid #c7c7c7;
+  }
+
   @media (min-width: 768px) {
     height: 260px;
   }
@@ -1234,14 +1240,9 @@ span {
 
 .box-container-items {
   .box-1 {
-    // opacity: 0;
-    // z-index: 1;
-    // position: absolute;
     display: none;
 
     &.active {
-      // opacity: 1;
-      // z-index: 10;
       display: flex;
 
       .box-1--item,
@@ -1250,8 +1251,43 @@ span {
       }
     }
   }
+
+  .box-2 {
+    display: none;
+
+    &.active {
+      display: flex;
+
+      .box-1--item,
+      .grid-box-text,
+      .box-1--graphic {
+        pointer-events: none;
+        border: none;
+      }
+
+      .box-1--item {
+        opacity: 0;
+
+        &.show {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 #tab-container {
   margin-bottom: 175px;
+}
+
+.overlayer {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  &.showing {
+    display: block;
+  }
 }

@@ -8,8 +8,73 @@ var triggerContainer = document.getElementById("trigger-container");
 var contentItems = document.getElementsByClassName("tab-content-item");
 var textoIntro = document.getElementById("texto-intro");
 var animatedBoxes = document.getElementsByClassName("box-1");
+var animatedBoxesTempo = document.getElementsByClassName("box-2");
+var langChanger = document.getElementById("english-changer");
+var langChanger2 = document.getElementById("spanish-changer");
+var i18n = window.domI18n({
+  languages: ["es", "en"],
+  selector: "[data-translatable]",
+  defaultLanguage: "es",
+});
+
+var periods = [
+  {
+    period: "15",
+    destellos: 3,
+    lines: ["L. 05 -- Ecl. 1.5", "L. 05 -- Ecl. 1.5", "L. 05 -- Ecl. 10.5"],
+    delay: "9000",
+    show: "500",
+    hide: "1500",
+    time: 3,
+    image: "./static/assets/img/triangulo-rojo.svg",
+  },
+  {
+    period: "1",
+    destellos: 1,
+    lines: ["L. 05 -- Ecl. 1.5", "L. 05 -- Ecl. 1.5", "L. 05 -- Ecl. 10.5"],
+    delay: "8000",
+    show: "500",
+    hide: "1500",
+    time: 1,
+    image: "./static/assets/img/triangulo-negro.svg",
+  },
+];
 
 window.onload = function () {
+  langChanger.addEventListener("click", toEnglishChange);
+  langChanger2.addEventListener("click", toSpanishChange);
+
+  periods.forEach((element) => {
+    let toAdd = `
+          <div class="box-container-items bb-dkt-3">
+          <div class="box-2 cat1 active">
+            <div class="grid-box-text">
+              <p class="pt-0">Periodo ${element.period} segundos</p>
+              <p>${element.destellos} destellos</p>`;
+
+    for (let i = 0; i < element.destellos; i++) {
+      toAdd = toAdd + `<p class="m-0">${element.lines[i]}</p>`;
+    }
+
+    toAdd =
+      toAdd +
+      `</div>
+          </div>
+          <div class="box-2 cat2 upper titilating" data-delay="${element.delay}" data-show="${element.show}" data-hide="${element.hide}" data-times="${element.time}">
+            <div class="box-1--item">
+              <img class="w-80" src="${element.image}" alt="" />
+            </div>
+          </div>
+        </div>
+    `;
+    let parent = document.querySelector("#periodsItems");
+    parent.insertAdjacentHTML("beforeend", toAdd);
+    let toclick = document.getElementsByClassName("box2");
+    for (let i = 0; i < toclick.length; i++) {
+      // toclick[i].addEventListener("click", clicker);
+    }
+  });
+
   for (let i = 0; i < triggers.length; i++) {
     triggers[i].addEventListener("click", changePosition);
     // console.log(triggers[i]);
@@ -24,6 +89,11 @@ window.onload = function () {
     tabTrigger[i].addEventListener("click", showTabs);
   }
 
+  for (let i = 0; i < animatedBoxesTempo.length; i++) {
+    animatedBoxesTempo[i].addEventListener("click", changeBox);
+    // console.log(animatedBoxes[i]);
+  }
+
   for (let i = 0; i < animatedBoxes.length; i++) {
     animatedBoxes[i].addEventListener("click", changeBox);
     // console.log(animatedBoxes[i]);
@@ -36,22 +106,16 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function closePage_() {
-  //   elementParent.classList.remove("normal");
-  //   await sleep(400);
-  for (let i = 0; i < triggers.length; i++) {
-    console.log(i);
-    triggers[i].classList.remove("normal");
-    for (let i = 0; i < visibles.length; i++) {
-      visibles[i].classList.remove("visible");
-      closers[i].classList.remove("visible");
-      // console.log(triggers[i]);
-    }
-    container.classList.remove("closed");
-    triggers[i].style.zIndex = "0";
-    // await sleep(200);
-    // console.log(triggers[i]);
-  }
+function toEnglishChange() {
+  langChanger.classList.remove("active");
+  langChanger2.classList.add("active");
+  i18n.changeLanguage("es");
+}
+
+function toSpanishChange() {
+  langChanger2.classList.remove("active");
+  langChanger.classList.add("active");
+  i18n.changeLanguage("en");
 }
 
 async function closePage() {
@@ -63,6 +127,9 @@ async function closePage() {
   siblin.classList.remove("visible");
   parent.parentNode.classList.remove("normal");
   parent.parentNode.style.zIndex = 0;
+  for (let i = 0; i < triggers.length; i++) {
+    triggers[i].classList.add("showing");
+  }
 }
 
 async function changePosition() {
@@ -77,6 +144,9 @@ async function changePosition() {
   child.classList.add("visible");
   child2.classList.add("visible");
   container.classList.add("closed");
+  for (let i = 0; i < triggers.length; i++) {
+    triggers[i].classList.remove("showing");
+  }
 }
 
 function showTabs() {
@@ -99,6 +169,11 @@ function hideTabs() {
   for (let i = 0; i < contentItems.length; i++) {
     contentItems[i].classList.remove("showing");
   }
+  let closer1 = document.getElementById("closerNav");
+  let closer2 = document.getElementById("closerSect");
+  console.log("this are the closers", closer1, closer2);
+  closer1.classList.add("visible");
+  closer2.classList.remove("visible");
 }
 
 async function changeBox() {
@@ -114,6 +189,21 @@ async function changeBox() {
       let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
       await sleep(100);
       secondSon.classList.add("height" + up + "");
+    } else if (sibling.classList.contains("titilating")) {
+      let delayed = sibling.dataset.delay;
+      let show = sibling.dataset.show;
+      let hide = sibling.dataset.hide;
+      let repeat = sibling.dataset.times;
+      let son = sibling.getElementsByClassName("box-1--item")[0];
+      for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < repeat; i++) {
+          son.classList.add("show");
+          await sleep(show);
+          son.classList.remove("show");
+          await sleep(hide);
+        }
+        await sleep(delayed);
+      }
     }
   } else {
     let sibling = parent.getElementsByClassName("cat1")[0];
@@ -125,6 +215,10 @@ async function changeBox() {
       let classToUse = "height" + up + "";
       await sleep(100);
       secondSon.classList.remove(classToUse);
+    }
+    if (sibling.classList.contains("titilating")) {
+      let son = sibling.getElementsByClassName("box-1--item")[0];
+      son.classList.remove("show");
     }
   }
 }
