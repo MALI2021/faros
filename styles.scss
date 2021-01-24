@@ -360,9 +360,13 @@ body {
   padding: 15px;
 
   @media (min-width: 768px) {
-    padding: 40px;
+    padding: 10px;
     max-width: 460px;
     margin: 0 auto;
+  }
+
+  @media (min-width: 960px) {
+    padding: 40px;
   }
 
   .spanish,
@@ -402,6 +406,14 @@ body {
         height: 54px;
       }
     }
+  }
+
+  .english {
+    background-image: url("./assets/img/select-left.png");
+  }
+
+  .spanish {
+    background-image: url("./assets/img/select-rigth.png");
   }
 }
 
@@ -659,8 +671,29 @@ span {
     }
 
     &--text {
-      display: block;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
       padding: 10px 0 20px 0;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      img {
+        transform: rotate(90deg);
+        width: 20px;
+
+        @media (min-width: 768px) {
+          width: 40px;
+        }
+
+        @media (min-width: 960px) {
+          transform: rotate(0);
+          width: 60px;
+        }
+      }
 
       span {
         pointer-events: none;
@@ -668,10 +701,6 @@ span {
 
       @media (min-width: 660px) {
         padding: 0 0 20px 0;
-      }
-
-      @media (min-width: 850px) {
-        text-align: center;
       }
 
       span {
