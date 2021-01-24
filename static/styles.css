@@ -1443,4 +1443,9 @@ span {
   position: relative;
 }
 
+.linktopage span,
+.linktopage p {
+  pointer-events: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

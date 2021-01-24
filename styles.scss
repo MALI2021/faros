@@ -1506,3 +1506,10 @@ span {
     position: relative;
   }
 }
+
+.linktopage {
+  span,
+  p {
+    pointer-events: none;
+  }
+}

@@ -11,6 +11,8 @@ var animatedBoxes = document.getElementsByClassName("box-1");
 var animatedBoxesTempo = document.getElementsByClassName("box-2");
 var langChanger = document.getElementById("english-changer");
 var langChanger2 = document.getElementById("spanish-changer");
+var lesserlinks = document.getElementsByClassName("linktopage");
+
 var i18n = window.domI18n({
   languages: ["es", "en"],
   selector: "[data-translatable]",
@@ -149,6 +151,11 @@ window.onload = function () {
     // console.log(triggers[i]);
   }
 
+  for (let i = 0; i < lesserlinks.length; i++) {
+    lesserlinks[i].addEventListener("click", openPage);
+    // console.log(triggers[i]);
+  }
+
   for (let i = 0; i < closers.length; i++) {
     closers[i].addEventListener("click", closePage);
     // console.log(triggers[i]);
@@ -208,6 +215,37 @@ async function changePosition() {
   elementToChange.style.zIndex = "1000";
   elementToChange.classList.add("normal");
   // await sleep(800);
+  let child = elementToChange.getElementsByClassName("no-visible")[0];
+  let child2 = elementToChange.getElementsByClassName("closer")[0];
+  child.classList.add("visible");
+  child2.classList.add("visible");
+  container.classList.add("closed");
+  for (let i = 0; i < triggers.length; i++) {
+    triggers[i].classList.remove("showing");
+  }
+}
+
+async function openPage() {
+  let element = event.target;
+  let modifier = element.getAttribute("rel");
+  let elementToChange = document.querySelector(modifier);
+  let visibles = document.getElementsByClassName("no-visible");
+  container.classList.remove("closed");
+  for (let i = 0; i < visibles.length; i++) {
+    console.log(visibles[0]);
+    visibles[i].classList.remove("visible");
+  }
+  for (let i = 0; i < closers.length; i++) {
+    console.log(closers[0]);
+    closers[i].classList.remove("visible");
+  }
+  for (let i = 0; i < skews.length; i++) {
+    skews[i].classList.remove("normal");
+    skews[i].style.zIndex = "0";
+  }
+  console.log("there is the modifier", modifier, elementToChange);
+  elementToChange.classList.add("normal");
+  elementToChange.style.zIndex = "1000";
   let child = elementToChange.getElementsByClassName("no-visible")[0];
   let child2 = elementToChange.getElementsByClassName("closer")[0];
   child.classList.add("visible");
