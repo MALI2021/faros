@@ -60,12 +60,37 @@ var periods = [
   },
 ];
 
+var potences = [
+  {
+    percentage: 25,
+    line1: "+ 100 001 cd",
+    clase1: "c-gray",
+    line2: "25 001 - 100 001 cd",
+    clase2: "c-gray",
+    line3: "2001 - 25 000 cd",
+    clase3: "c-gray",
+    line4: "835 cd",
+    clase4: "",
+  },
+  {
+    percentage: 75,
+    line1: "+ 100 001 cd",
+    clase1: "c-gray",
+    line2: "75 100 cd",
+    clase2: "",
+    line3: "2001 - 25 000 cd",
+    clase3: "c-gray",
+    line4: "0 - 2000 cd",
+    clase4: "c-gray",
+  },
+];
+
 window.onload = function () {
   langChanger.addEventListener("click", toEnglishChange);
   langChanger2.addEventListener("click", toSpanishChange);
 
   periods.forEach((element) => {
-    let toAdd = `
+    let toAdd = /*html*/ `
           <div class="box-container-items bb-dkt-3">
           <div class="box-2 cat1 active">
             <div class="grid-box-text">
@@ -89,10 +114,34 @@ window.onload = function () {
     `;
     let parent = document.querySelector("#periodsItems");
     parent.insertAdjacentHTML("beforeend", toAdd);
-    let toclick = document.getElementsByClassName("box2");
-    for (let i = 0; i < toclick.length; i++) {
-      // toclick[i].addEventListener("click", clicker);
-    }
+  });
+
+  potences.forEach((element) => {
+    let addPotence = /*html*/ `
+      <div class="box-container-items bb-dkt-3">
+        <div class="box-1 cat1 active">
+          <div class="box-1--item">
+            <span class="${element.clase1}">${element.line1}</span>
+          </div>
+          <div class="box-1--item">
+            <span class="${element.clase2}">${element.line2}</span>
+          </div>
+          <div class="box-1--item">
+            <span class="${element.clase3}">${element.line3}</span>
+          </div>
+          <div class="box-1--item">
+            <span class="${element.clase4}">${element.line4}</span>
+          </div>
+        </div>
+        <div class="box-1 cat2 percent" data-percentage="${element.percentage}">
+          <div class="box-1--graphic">
+            <div class="graphic-black"></div>
+          </div>
+        </div>
+      </div>
+    `;
+    let parent = document.querySelector("#potenceItems");
+    parent.insertAdjacentHTML("beforeend", addPotence);
   });
 
   for (let i = 0; i < triggers.length; i++) {
