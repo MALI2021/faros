@@ -792,17 +792,22 @@ span {
     height: 260px;
   }
 }
+@media (min-width: 960px) {
+  .box-2 {
+    height: 310px;
+  }
+}
 .box-2 p {
   font-size: 12px;
 }
 @media (min-width: 768px) {
   .box-2 p {
-    font-size: 28px;
+    font-size: 17px;
   }
 }
 @media (min-width: 960px) {
   .box-2 p {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 

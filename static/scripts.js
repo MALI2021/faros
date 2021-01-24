@@ -38,6 +38,26 @@ var periods = [
     time: 1,
     image: "./static/assets/img/triangulo-negro.svg",
   },
+  {
+    period: "15",
+    destellos: 3,
+    lines: ["L. 05 -- Ecl. 1.5", "L. 05 -- Ecl. 1.5", "L. 05 -- Ecl. 10.5"],
+    delay: "9000",
+    show: "500",
+    hide: "1500",
+    time: 3,
+    image: "./static/assets/img/triangulo-rojo.svg",
+  },
+  {
+    period: "1",
+    destellos: 1,
+    lines: ["L. 05 -- Ecl. 1.5", "L. 05 -- Ecl. 1.5", "L. 05 -- Ecl. 10.5"],
+    delay: "8000",
+    show: "500",
+    hide: "1500",
+    time: 1,
+    image: "./static/assets/img/triangulo-negro.svg",
+  },
 ];
 
 window.onload = function () {

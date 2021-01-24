@@ -851,15 +851,19 @@ span {
     height: 260px;
   }
 
+  @media (min-width: 960px) {
+    height: 310px;
+  }
+
   p {
     font-size: 12px;
 
     @media (min-width: 768px) {
-      font-size: 28px;
+      font-size: 17px;
     }
 
     @media (min-width: 960px) {
-      font-size: 24px;
+      font-size: 28px;
     }
   }
 }
