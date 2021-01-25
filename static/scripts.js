@@ -2556,9 +2556,41 @@ var ranges = [
   },
 ];
 
+var places = [
+  {
+    number: "01",
+    title: "PUNTA CAPONES",
+    subtitle: "Punta Capones, Tumbes",
+    year: "1975",
+    s: "03º24’43”",
+    w: "80º18’46”",
+    coords: "",
+  },
+];
+
 window.onload = function () {
   langChanger.addEventListener("click", toEnglishChange);
   langChanger2.addEventListener("click", toSpanishChange);
+
+  places.forEach((element) => {
+    let addPlace = /*html */ `
+        <div class="list-faros--item">
+          <div class="list-faros--item--title">
+            <div>
+              <p class="m-0"><span class="c-gray">${element.number}</span> ${element.title}</p>
+              <p class="m-0">${element.subtitle}</p>
+            </div>
+            <span>${element.year}</span>
+          </div>
+          <div class="list-faros--item--info">
+            <span class="c-gray">${element.s} S - ${element.w} W</span>
+            <img src="./static/assets/img/point.svg" data-coords="${element.coords}" alt="" />
+          </div>
+        </div>
+    `;
+    let parent = document.querySelector("#placesList");
+    parent.insertAdjacentHTML("beforeend", addPlace);
+  });
 
   periods.forEach((element) => {
     let toAdd = /*html*/ `
