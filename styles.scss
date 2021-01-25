@@ -414,13 +414,13 @@ body {
   }
 
   .english {
-    background-image: url("./assets/img/select-left.png");
+    // background-image: url("./assets/img/select-left.png");
     background-position: right;
     background-size: cover;
   }
 
   .spanish {
-    background-image: url("./assets/img/select-rigth.png");
+    // background-image: url("./assets/img/select-rigth.png");
     background-position: left;
     background-size: cover;
   }
@@ -1607,4 +1607,9 @@ p.black {
   span {
     color: initial !important;
   }
+}
+
+#rangeBoxes .box-container-items {
+  margin-bottom: 10px;
+  border-bottom: none;
 }

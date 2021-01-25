@@ -378,12 +378,10 @@ body {
   }
 }
 .language .english {
-  background-image: url("./assets/img/select-left.png");
   background-position: right;
   background-size: cover;
 }
 .language .spanish {
-  background-image: url("./assets/img/select-rigth.png");
   background-position: left;
   background-size: cover;
 }
@@ -1550,6 +1548,11 @@ span {
 
 p.black span {
   color: initial !important;
+}
+
+#rangeBoxes .box-container-items {
+  margin-bottom: 10px;
+  border-bottom: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
