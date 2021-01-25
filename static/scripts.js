@@ -14,6 +14,8 @@ var langChanger2 = document.getElementById("spanish-changer");
 var lesserlinks = document.getElementsByClassName("linktopage");
 var flippers = document.getElementsByClassName("flip-container");
 
+var db = firebase.firestore();
+
 var i18n = window.domI18n({
   languages: ["es", "en"],
   selector: "[data-translatable]",
@@ -2572,6 +2574,8 @@ window.onload = function () {
   langChanger.addEventListener("click", toEnglishChange);
   langChanger2.addEventListener("click", toSpanishChange);
 
+  docGet();
+
   places.forEach((element) => {
     let addPlace = /*html */ `
         <div class="list-faros--item">
@@ -2986,4 +2990,88 @@ function mapLaunch() {
   let coordinates = targetted.dataset.coords;
   let url = "https://www.google.com.sa/maps/search/" + coordinates + "?hl=en";
   window.open(url, "_blank");
+}
+
+function getData() {
+  var docRef = db.collection("interpretations").doc("taKpBE7oskWHq7uGTTYu");
+
+  docRef
+    .get()
+    .then(function (doc) {
+      if (doc.exists) {
+        // console.log("Document data:", doc.data());
+        let dataObtained = doc.data();
+        var dataGot = Object.entries(dataObtained);
+        // console.log(dataGot);
+        debugger;
+        for (let i = 0; i < dataObtained.length; i++) {
+          debugger;
+          console.log(dataObtained[i]);
+        }
+        dataGot.forEach((element) => {
+          let elementToAdd = /*html */ `
+              <div class="c-tab--items active">
+                <div class="c-tab--items--header">
+                  <p>${element.autor}</p>
+                  <div class="info">
+                    <img class="arrow" src="./static/assets/img/arrow.svg" alt="" />
+                    <span class="c-gray ml-5">${element.date}</span>
+                  </div>
+                </div>
+                <div class="c-tab--items--content">
+                  <div class="doble-desktop">
+                    <div class="doble-desktop--fijo">
+                      <div class="pt-20">
+                        <p class="m-0" data-translatable><span>Vocal interpretation</span><span>Interpretación
+                            vocal</span></p>
+                        <p class="m-0">${element.autor}</p>
+                      </div>
+                      <div class="pt-20">
+                        <p class="m-0" data-translatable><span>Binaural recording and mixing</span><span>Grabación y
+                            mezcla binaural</span></p>
+                        <p class="m-0">${element.mezcla}</p>
+                      </div>
+                      <div class="pt-20 pb-dsk-20">
+                        <p class="m-0" data-translatable><span>Direction</span><span>Dirección</span></p>
+                        <p class="m-0">${element.composicion}</p>
+                      </div>
+                      <div class="reproductor">${element.link}</div>
+                    </div>
+                    <div class="doble-desktop--item">
+                      <p class="text-3 pt-20" data-translatable>
+                        <span>${element.p1eng}</span>
+                        <span>${element.p1esp}</span>
+                      </p>
+                      <p class="text-3 pt-20" data-translatable>
+                        <span>${element.p2eng}</span>
+                        <span>${element.p2esp}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          `;
+          console.log(elementToAdd);
+          let parent = document.querySelector("#accordion1");
+          parent.insertAdjacentHTML("beforeend", elementToAdd);
+        });
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    })
+    .catch(function (error) {
+      console.log("Error getting document:", error);
+    });
+}
+
+function docGet() {
+  db.collection("interpretations")
+    .get()
+    .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc);
+      });
+    });
 }
