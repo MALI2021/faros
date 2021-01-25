@@ -2811,6 +2811,9 @@ async function closePage() {
 
 async function changePosition() {
   container.scrollTo(0, 0);
+  for (let i = 0; i < skews.length; i++) {
+    skews[i].scrollTo(0, 0);
+  }
   let element = event.target;
   let modifier = element.getAttribute("rel");
   let elementToChange = document.querySelector(modifier);
@@ -2829,6 +2832,9 @@ async function changePosition() {
 
 async function openPage() {
   container.scrollTo(0, 0);
+  for (let i = 0; i < skews.length; i++) {
+    skews[i].scrollTo(0, 0);
+  }
   let element = event.target;
   let modifier = element.getAttribute("rel");
   let elementToChange = document.querySelector(modifier);
