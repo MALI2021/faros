@@ -88,6 +88,36 @@ var potences = [
   },
 ];
 
+var alturas = [
+  {
+    line1: "+ 241 msnm",
+    clase1: "c-gray",
+    line2: "121 - 240 msnm",
+    clase2: "c-gray",
+    line3: "61 - 120 msnm",
+    clase3: "c-gray",
+    line4: "31 - 60 msnm",
+    clase4: "c-gray",
+    line5: "20 msnm",
+    clase5: "",
+    clase1b: "c-gray",
+    clase2b: "c-gray",
+    clase3b: "c-gray",
+    clase4b: "c-gray",
+    clase5b: "",
+  },
+];
+
+var ranges = [
+  {
+    param1: "semi-alto-medio",
+    param2: "alto-medio",
+    millas1: 13,
+    millas2: 9,
+    imagen: "./static/assets/img/triangulo-rojo.svg",
+  },
+];
+
 window.onload = function () {
   langChanger.addEventListener("click", toEnglishChange);
   langChanger2.addEventListener("click", toSpanishChange);
@@ -146,6 +176,95 @@ window.onload = function () {
     let parent = document.querySelector("#potenceItems");
     parent.insertAdjacentHTML("beforeend", addPotence);
   });
+
+  alturas.forEach((element) => {
+    let addAltura = /* html */ `
+    <div class="box-container-items bb-dkt-3">
+      <div class="box-1 cat1 active">
+        <div class="box-1--item">
+          <span class="${element.clase1}">${element.line1}</span>
+        </div>
+        <div class="box-1--item">
+          <span class="${element.clase2}">${element.line2}</span>
+        </div>
+        <div class="box-1--item">
+          <span class="${element.clase3}">${element.line3}</span>
+        </div>
+        <div class="box-1--item">
+          <span class="${element.clase4}">${element.line4}</span>
+        </div>
+        <div class="box-1--item">
+          <span class="${element.clase5}">${element.line5}</span>
+        </div>
+      </div>
+      <div class="box-1 cat2">
+        <div class="box-1--item">
+          <span class="${element.clase1b}">Muy lento</span>
+        </div>
+        <div class="box-1--item">
+          <span class="${element.clase2b}">Lento</span>
+        </div>
+        <div class="box-1--item">
+          <span class="${element.clase3b}">Moderado</span>
+        </div>
+        <div class="box-1--item">
+          <span class="${element.clase4b}">Rápido</span>
+        </div>
+        <div class="box-1--item">
+          <span class="${element.clase5b}">Muy rápido</span>
+        </div>
+      </div> 
+    </div> 
+    `;
+    let parent = document.querySelector("#alturaboxes");
+    parent.insertAdjacentHTML("beforeend", addAltura);
+  });
+
+  ranges.forEach((element) => {
+    let addRange = /* html */ `
+    <div class="box-container-items bb-dkt-3">
+      <div class="box-1 cat1 moving active" data-param1="${element.param1}" data-param2="${element.param2}">
+        <div class="box-1--item" style="overflow: hidden;">
+          <span class="upper">Alcance nominal<br /> ${element.millas1} millas</span>
+        </div>
+        <div class="box-1--item" style="overflow: hidden;">
+          <span class="downer">Alcance geográfico<br /> ${element.millas2} millas</span>
+        </div>
+      </div>
+      <div class="box-1 cat2 double">
+        <div class="box-1--item"></div>
+        <div class="box-1--item"></div>
+        <div class="box-1--item"></div>
+        <div class="box-1--item"></div>
+        <div class="box-1--item"></div>
+        <img class="graphic-tono" src="${element.imagen}" alt="" />
+        <img class="graphic-tono" src="${element.imagen}" alt="" />
+      </div>
+    </div>
+    `;
+    let parent = document.querySelector("#rangeBoxes");
+    parent.insertAdjacentHTML("beforeend", addRange);
+  });
+
+  for (let i = 0; i < 56; i++) {
+    let valor = i + 1;
+    let addpic = /* html */ `
+      <div class="box-container-items bb-dkt-3 no-border">
+        <div class="flip-container">
+          <div class="flipper">
+            <div class="front">
+              <img class="faros-img" src="./static/assets/img/farosb/${valor}.jpg" alt="" />
+            </div>
+            <div class="back">
+              <img class="faros-img" src="./static/assets/img/farosb/${valor}b.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    let parent = document.querySelector("#imagesBox");
+    parent.insertAdjacentHTML("beforeend", addpic);
+  }
 
   for (let i = 0; i < triggers.length; i++) {
     triggers[i].addEventListener("click", changePosition);
