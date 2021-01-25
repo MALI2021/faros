@@ -1451,6 +1451,10 @@ span {
 .linktopage p {
   pointer-events: none;
 }
+.linktopage span span,
+.linktopage p span {
+  color: initial;
+}
 
 /* entire container, keeps perspective */
 .flip-container {
@@ -1542,6 +1546,10 @@ span {
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg);
+}
+
+p.black span {
+  color: initial !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

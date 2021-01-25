@@ -1515,6 +1515,10 @@ span {
   span,
   p {
     pointer-events: none;
+
+    span {
+      color: initial;
+    }
   }
 }
 
@@ -1597,4 +1601,10 @@ span {
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg);
+}
+
+p.black {
+  span {
+    color: initial !important;
+  }
 }

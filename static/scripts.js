@@ -233,6 +233,7 @@ async function changePosition() {
 }
 
 async function openPage() {
+  container.scrollTo(0, 0);
   let element = event.target;
   let modifier = element.getAttribute("rel");
   let elementToChange = document.querySelector(modifier);
