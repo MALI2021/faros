@@ -3487,24 +3487,15 @@ function mapLaunch() {
   window.open(url, "_blank");
 }
 
-function getData() {
-  var docRef = db.collection("interpretations").doc("taKpBE7oskWHq7uGTTYu");
-
-  docRef
+function docGet() {
+  db.collection("interpretations")
     .get()
-    .then(function (doc) {
-      if (doc.exists) {
-        // console.log("Document data:", doc.data());
-        let dataObtained = doc.data();
-        var dataGot = Object.entries(dataObtained);
-        // console.log(dataGot);
-        debugger;
-        for (let i = 0; i < dataObtained.length; i++) {
-          debugger;
-          console.log(dataObtained[i]);
-        }
-        dataGot.forEach((element) => {
-          let elementToAdd = /*html */ `
+    .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        element = doc.data();
+        let elementToAdd = /*html */ `
               <div class="c-tab--items active">
                 <div class="c-tab--items--header">
                   <p>${element.autor}</p>
@@ -3546,27 +3537,10 @@ function getData() {
                 </div>
               </div>
           `;
-          console.log(elementToAdd);
-          let parent = document.querySelector("#accordion1");
-          parent.insertAdjacentHTML("beforeend", elementToAdd);
-        });
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-      }
-    })
-    .catch(function (error) {
-      console.log("Error getting document:", error);
-    });
-}
-
-function docGet() {
-  db.collection("interpretations")
-    .get()
-    .then(function (querySnapshot) {
-      querySnapshot.forEach(function (doc) {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc);
+        console.log(elementToAdd);
+        let parent = document.querySelector("#accordion1");
+        parent.insertAdjacentHTML("beforeend", elementToAdd);
+        this.toSpanishChange();
       });
     });
 }
