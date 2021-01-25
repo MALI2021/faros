@@ -1474,9 +1474,9 @@ span {
 .front,
 .back {
   width: 100%;
-  height: 210px;
+  height: 246px;
 }
-@media (min-width: 768) {
+@media (min-width: 768px) {
   .flip-container,
 .front,
 .back {
@@ -1489,7 +1489,7 @@ span {
 .front,
 .back {
     width: 100%;
-    height: 320px;
+    height: 420px;
   }
 }
 .flip-container img,
@@ -1514,7 +1514,7 @@ span {
 .front img,
 .back img {
     width: 100%;
-    height: 320px;
+    height: 420px;
   }
 }
 
