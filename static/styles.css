@@ -522,6 +522,11 @@ span {
     font-size: 56px;
   }
 }
+@media (max-width: 768px) {
+  .list-nav a span {
+    padding-bottom: 60px;
+  }
+}
 @media (min-width: 960px) {
   .list-nav a span {
     font-size: 76px;

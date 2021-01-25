@@ -556,6 +556,10 @@ span {
         font-size: 56px;
       }
 
+      @media (max-width: 768px) {
+        padding-bottom: 60px;
+      }
+
       @media (min-width: 960px) {
         font-size: 76px;
       }
