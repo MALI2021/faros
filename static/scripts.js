@@ -2796,6 +2796,8 @@ function toSpanishChange() {
 }
 
 async function closePage() {
+  container.classList.remove("closed");
+  console.log("this is the container", container);
   let element = event.target;
   let parent = element.parentNode;
   let siblin = parent.getElementsByClassName("no-visible")[0];
@@ -2831,6 +2833,8 @@ async function changePosition() {
 }
 
 async function openPage() {
+  container.classList.remove("closed");
+  console.log("this is the container", container);
   container.scrollTo(0, 0);
   for (let i = 0; i < skews.length; i++) {
     skews[i].scrollTo(0, 0);
