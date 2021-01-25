@@ -2564,7 +2564,7 @@ var places = [
     year: "1975",
     s: "03º24’43”",
     w: "80º18’46”",
-    coords: "",
+    coords: "40.71427,-74.00597",
   },
 ];
 
@@ -2584,13 +2584,19 @@ window.onload = function () {
           </div>
           <div class="list-faros--item--info">
             <span class="c-gray">${element.s} S - ${element.w} W</span>
-            <img src="./static/assets/img/point.svg" data-coords="${element.coords}" alt="" />
+            <img src="./static/assets/img/point.svg" class="coords-launcher" data-coords="${element.coords}" alt="" />
           </div>
         </div>
     `;
     let parent = document.querySelector("#placesList");
     parent.insertAdjacentHTML("beforeend", addPlace);
   });
+
+  var maptrigger = document.getElementsByClassName("coords-launcher");
+
+  for (let i = 0; i < maptrigger.length; i++) {
+    maptrigger[i].addEventListener("click", mapLaunch);
+  }
 
   periods.forEach((element) => {
     let toAdd = /*html*/ `
@@ -2963,4 +2969,11 @@ async function changeBox() {
 function flipbox() {
   let targetted = event.target;
   targetted.classList.toggle("hover");
+}
+
+function mapLaunch() {
+  let targetted = event.target;
+  let coordinates = targetted.dataset.coords;
+  let url = "https://www.google.com.sa/maps/search/" + coordinates + "?hl=en";
+  window.open(url, "_blank");
 }
