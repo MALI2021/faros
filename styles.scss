@@ -1308,6 +1308,16 @@ span {
   margin-left: 5px;
 }
 
+@media (min-width: 960px) {
+  .pb-md-60 {
+    padding-bottom: 60px;
+  }
+
+  .mb-md-60 {
+    margin-bottom: 60px;
+  }
+}
+
 .c-gray {
   color: #949494;
 }
