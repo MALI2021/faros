@@ -537,8 +537,12 @@ span {
 .list-nav {
   list-style: none;
   margin-bottom: 0;
-  margin-top: 30px;
+  margin-top: 42px;
   padding: 0;
+
+  &-title-text span {
+    font-size: 28px;
+  }
 
   a {
     align-items: center;
@@ -550,7 +554,9 @@ span {
     span {
       color: #979696;
       padding-right: 5px;
-      font-size: 28px;
+      font-size: 27px;
+      text-align: center;
+      width: 20px;
 
       @media (min-width: 768px) {
         font-size: 56px;
@@ -563,7 +569,7 @@ span {
 
     p {
       margin: 0;
-      font-size: 28px;
+      font-size: 27px;
 
       @media (min-width: 768px) {
         font-size: 56px;
@@ -1620,7 +1626,11 @@ p.black {
 }
 
 @media (max-width: 320px) {
-  .header .title span {
-    font-size: 24px;
+  .header .title span,
+  .header .title p {
+    font-size: 25px;
+    line-height: 1.5em;
+    text-align: left;
+    width: 15px;
   }
 }
