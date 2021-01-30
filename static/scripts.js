@@ -13,6 +13,7 @@ var langChanger = document.getElementById("english-changer");
 var langChanger2 = document.getElementById("spanish-changer");
 var lesserlinks = document.getElementsByClassName("linktopage");
 var flippers = document.getElementsByClassName("flip-container");
+var accordions = document.getElementsByClassName('c-tab--items');
 
 var db = firebase.firestore();
 
@@ -3331,8 +3332,19 @@ window.onload = function () {
     // console.log(animatedBoxes[i]);
   }
 
+  for (let i = 0; i < accordions.length; i++) {
+    accordions[i].addEventListener('click', accord);
+  }
+
   document.getElementById("closerSect").addEventListener("click", hideTabs);
 };
+
+function accord() {
+  for(let i = 0; i < accordions.length; i ++) {
+    accordions[i].classList.remove('active');
+  }
+  event.target.classList.toggle('active');
+}
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -3552,7 +3564,7 @@ function docGet() {
         console.log(doc.id, " => ", doc.data());
         element = doc.data();
         let elementToAdd = /*html */ `
-              <div class="c-tab--items active">
+              <div class="c-tab--items">
                 <div class="c-tab--items--header">
                   <p>${element.autor}</p>
                   <div class="info">
@@ -3593,10 +3605,18 @@ function docGet() {
                 </div>
               </div>
           `;
-        console.log(elementToAdd);
         let parent = document.querySelector("#accordion1");
         parent.insertAdjacentHTML("beforeend", elementToAdd);
         this.toSpanishChange();
+
+        var accordions = document.getElementsByClassName('c-tab--items');
+
+        for (let i = 0; i < accordions.length; i++) {
+          accordions[i].addEventListener('click', accord);
+          console.log(accordions[i]);
+        }
       });
     });
+
+    
 }

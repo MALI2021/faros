@@ -95,6 +95,10 @@ body {
   perspective-origin: bottom;
   z-index: 0;
   top: 0; }
+  @media (min-width: 1400px) {
+    .page {
+      width: calc(100% - 170px);
+      margin-left: 85px; } }
   .page .perspected {
     position: relative;
     transform: rotateX(-8deg);
@@ -110,6 +114,9 @@ body {
     box-shadow: none !important;
     overflow: auto;
     height: 100vh; }
+    @media (min-width: 1400px) {
+      .page.normal {
+        width: calc(100% - 170px); } }
     .page.normal .perspected {
       width: 100%;
       left: 0;
@@ -850,7 +857,8 @@ span {
     border-top: 3px solid;
     cursor: pointer; }
     .c-tab--items--header {
-      padding: 10px 0; }
+      padding: 10px 0;
+      pointer-events: none; }
       .c-tab--items--header .info {
         display: flex;
         align-items: center; }
@@ -1236,5 +1244,10 @@ p.black span {
       max-width: 860px;
       margin-left: auto;
       display: inline-block; } }
+
+.reproductor {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 40px; }
 
 /*# sourceMappingURL=styles.css.map */

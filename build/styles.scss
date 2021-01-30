@@ -164,6 +164,11 @@ body {
   // box-sizing: border-box;
   top: 0;
 
+  @media (min-width: 1400px) {
+    width: calc(100% - 170px);
+    margin-left: 85px;
+  }
+
   .perspected {
     position: relative;
     transform: rotateX(-8deg);
@@ -184,6 +189,10 @@ body {
     box-shadow: none !important;
     overflow: auto;
     height: 100vh;
+
+    @media (min-width: 1400px) {
+      width: calc(100% - 170px);
+    }
 
     .perspected {
       width: 100%;
@@ -1188,6 +1197,7 @@ span {
 
     &--header {
       padding: 10px 0;
+      pointer-events: none;
 
       .info {
         display: flex;
@@ -1736,4 +1746,10 @@ p.black {
       }
     }
   }
+}
+
+.reproductor {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
