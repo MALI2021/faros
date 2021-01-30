@@ -1326,13 +1326,29 @@ span {
   margin-left: 5px;
 }
 
+.lh {
+  &--20 {
+    line-height: 20px;
+  }
+}
+
 @media (min-width: 768px) {
   .pb-md-45 {
     padding-bottom: 45px;
   }
 
+  .pt-md-45 {
+    padding-top: 45px;
+  }
+
   .mb-md-45 {
     margin-bottom: 45px;
+  }
+
+  .lh-md {
+    &--36 {
+      line-height: 36px;
+    }
   }
 }
 
@@ -1341,8 +1357,18 @@ span {
     padding-bottom: 60px;
   }
 
+  .pt-lg-60 {
+    padding-top: 60px;
+  }
+
   .mb-lg-60 {
     margin-bottom: 60px;
+  }
+
+  .lh-lg {
+    &--46 {
+      line-height: 46px;
+    }
   }
 }
 
