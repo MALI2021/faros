@@ -1326,12 +1326,22 @@ span {
   margin-left: 5px;
 }
 
+@media (min-width: 768px) {
+  .pb-md-45 {
+    padding-bottom: 45px;
+  }
+
+  .mb-md-45 {
+    margin-bottom: 45px;
+  }
+}
+
 @media (min-width: 960px) {
-  .pb-md-60 {
+  .pb-lg-60 {
     padding-bottom: 60px;
   }
 
-  .mb-md-60 {
+  .mb-lg-60 {
     margin-bottom: 60px;
   }
 }
