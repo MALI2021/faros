@@ -1158,8 +1158,4 @@ p.black span {
   margin-bottom: 10px;
   border-bottom: none; }
 
-@media (max-width: 320px) {
-  .header .title span {
-    font-size: 24px; } }
-
 /*# sourceMappingURL=styles.css.map */
