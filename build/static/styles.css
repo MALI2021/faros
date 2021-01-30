@@ -910,8 +910,14 @@ span {
 .pt-20 {
   padding-top: 20px; }
 
+.pt-15 {
+  padding-top: 15px; }
+
 .pt-30 {
   padding-top: 30px; }
+
+.mt-40 {
+  margin-top: 40px; }
 
 .pt-50 {
   padding-top: 50px; }
@@ -927,6 +933,9 @@ span {
 
 .mt-20 {
   margin-top: 20px; }
+
+.mb-30 {
+  margin-bottom: 30px; }
 
 .ml-5 {
   margin-left: 5px; }
