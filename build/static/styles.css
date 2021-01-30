@@ -1231,5 +1231,10 @@ p.black span {
     width: 15px; } }
 .advice .text-1 span {
   font-size: 20px; }
+  @media (min-height: 960px) {
+    .advice .text-1 span {
+      max-width: 860px;
+      margin-left: auto;
+      display: inline-block; } }
 
 /*# sourceMappingURL=styles.css.map */
