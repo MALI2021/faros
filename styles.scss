@@ -337,6 +337,7 @@ body {
       color: #979696;
       padding-right: 5px;
       font-size: 28px;
+      font-family: "Conv_Relative Mono 10 Pitch";
 
       @media (min-width: 768px) {
         font-size: 56px;
@@ -542,6 +543,14 @@ span {
 
   &-title-text span {
     font-size: 28px;
+
+    @media (min-width: 768px) {
+      font-size: 56px;
+    }
+
+    @media (min-width: 960px) {
+      font-size: 76px;
+    }
   }
 
   a {
@@ -560,10 +569,12 @@ span {
 
       @media (min-width: 768px) {
         font-size: 56px;
+        width: 40px;
       }
 
       @media (min-width: 960px) {
         font-size: 76px;
+        width: 50px;
       }
     }
 
@@ -583,6 +594,11 @@ span {
 
   @media (max-width: 768px) {
     padding-bottom: 60px;
+    margin-top: 82px;
+  }
+
+  @media (min-width: 960px) {
+    margin-top: 180px;
   }
 }
 
@@ -1314,12 +1330,27 @@ span {
   margin-bottom: 100px;
 }
 
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-pres {
+  @media (min-width: 768px) {
+    margin-bottom: 45px;
+  }
+}
+
 .mt-20 {
   margin-top: 20px;
 }
 
 .mb-30 {
   margin-bottom: 30px;
+}
+
+.mt-70 {
+  margin-top: 70px;
+  display: inline-block;
 }
 
 .ml-5 {
@@ -1644,5 +1675,13 @@ p.black {
     line-height: 1.5em;
     text-align: left;
     width: 15px;
+  }
+}
+
+.advice {
+  .text-1 {
+    span {
+      font-size: 20px;
+    }
   }
 }

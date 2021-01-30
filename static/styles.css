@@ -235,7 +235,8 @@ body {
   .header .title span {
     color: #979696;
     padding-right: 5px;
-    font-size: 28px; }
+    font-size: 28px;
+    font-family: "Conv_Relative Mono 10 Pitch"; }
     @media (min-width: 768px) {
       .header .title span {
         font-size: 56px; } }
@@ -392,6 +393,12 @@ span {
   padding: 0; }
   .list-nav-title-text span {
     font-size: 28px; }
+    @media (min-width: 768px) {
+      .list-nav-title-text span {
+        font-size: 56px; } }
+    @media (min-width: 960px) {
+      .list-nav-title-text span {
+        font-size: 76px; } }
   .list-nav a {
     align-items: center;
     color: black;
@@ -406,10 +413,12 @@ span {
       width: 20px; }
       @media (min-width: 768px) {
         .list-nav a span {
-          font-size: 56px; } }
+          font-size: 56px;
+          width: 40px; } }
       @media (min-width: 960px) {
         .list-nav a span {
-          font-size: 76px; } }
+          font-size: 76px;
+          width: 50px; } }
     .list-nav a p {
       margin: 0;
       font-size: 27px; }
@@ -421,7 +430,11 @@ span {
           font-size: 76px; } }
   @media (max-width: 768px) {
     .list-nav {
-      padding-bottom: 60px; } }
+      padding-bottom: 60px;
+      margin-top: 82px; } }
+  @media (min-width: 960px) {
+    .list-nav {
+      margin-top: 180px; } }
 
 .list-name {
   list-style: none;
@@ -931,11 +944,22 @@ span {
 .mb-100 {
   margin-bottom: 100px; }
 
+.mb-40 {
+  margin-bottom: 40px; }
+
+@media (min-width: 768px) {
+  .mb-pres {
+    margin-bottom: 45px; } }
+
 .mt-20 {
   margin-top: 20px; }
 
 .mb-30 {
   margin-bottom: 30px; }
+
+.mt-70 {
+  margin-top: 70px;
+  display: inline-block; }
 
 .ml-5 {
   margin-left: 5px; }
@@ -1178,5 +1202,7 @@ p.black span {
     line-height: 1.5em;
     text-align: left;
     width: 15px; } }
+.advice .text-1 span {
+  font-size: 20px; }
 
 /*# sourceMappingURL=styles.css.map */
