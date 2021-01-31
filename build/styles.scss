@@ -1839,6 +1839,12 @@ p.black {
   @media (min-width: 768px) {
     margin-top: 63px;
   }
+
+  &.list-podcast {
+    @media (min-width: 768px) {
+      margin-top: 0px;
+    }
+  }
 }
 
 .guest-title {

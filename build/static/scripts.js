@@ -3574,7 +3574,7 @@ function docGet() {
                 </div>
                 <div class="c-tab--items--content">
                   <div class="doble-desktop">
-                    <div class="doble-desktop--fijo">
+                    <div class="doble-desktop--fijo list-podcast">
                       <div class="pt-20">
                         <p class="m-0" data-translatable><span><b>Vocal interpretation</b></span><span><b>Interpretación
                             vocal</b></span></p>

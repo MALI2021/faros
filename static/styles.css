@@ -1303,6 +1303,9 @@ p.black span {
 @media (min-width: 768px) {
   .doble-desktop--fijo {
     margin-top: 63px; } }
+@media (min-width: 768px) {
+  .doble-desktop--fijo.list-podcast {
+    margin-top: 0px; } }
 
 @media (min-width: 768px) {
   .guest-title {
