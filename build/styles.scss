@@ -1200,6 +1200,16 @@ span {
         @media (min-width: 960px) {
           font-size: 76px;
         }
+
+        span {
+          @media (min-width: 768px) {
+            font-size: 56px;
+          }
+
+          @media (min-width: 960px) {
+            font-size: 76px;
+          }
+        }
       }
     }
 
