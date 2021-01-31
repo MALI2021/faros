@@ -941,6 +941,9 @@ span {
 @media (min-width: 768px) {
   .mb-pres {
     margin-bottom: 45px; } }
+@media (min-width: 960px) {
+  .mb-pres {
+    margin-bottom: 60px; } }
 
 .mt-20 {
   margin-top: 20px; }
