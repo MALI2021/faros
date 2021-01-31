@@ -861,7 +861,9 @@ span {
       pointer-events: none; }
       .c-tab--items--header .info {
         display: flex;
-        align-items: center; }
+        align-items: center;
+        font-family: "Conv_Relative Mono 10 Pitch";
+        letter-spacing: 2px; }
         .c-tab--items--header .info .arrow {
           width: 15px; }
           @media (min-width: 768px) {
@@ -1074,7 +1076,9 @@ span {
         font-size: 15px; } }
       @media (min-width: 850px) and (min-width: 768px) {
         .doble-desktop--item .text-3 {
-          font-size: 21px; } }
+          font-size: 21px !important; }
+          .doble-desktop--item .text-3 span {
+            font-size: 21px !important; } }
 
 @media (min-width: 850px) {
   .m-dsk-0 {
@@ -1249,5 +1253,31 @@ p.black span {
   position: relative;
   margin-top: 40px;
   margin-bottom: 40px; }
+
+.autor-text {
+  text-transform: uppercase; }
+
+@media (max-width: 475px) {
+  .m-dsk-0 {
+    margin-top: 4px;
+    margin-bottom: 2px; }
+    .m-dsk-0.text-decoration {
+      margin-bottom: 10px; } }
+.m-dsk-0 span {
+  font-family: "Conv_Relative Mono 11 Pitch";
+  letter-spacing: 0px;
+  margin-right: 6px; }
+.m-dsk-0:last-child {
+  margin-bottom: 15px; }
+.m-dsk-0:first-child {
+  margin-bottom: 15px; }
+
+@media (min-width: 768px) {
+  .doble-desktop--item .text-3 span {
+    font-size: 21px; } }
+
+@media (max-width: 475px) {
+  .m-dsk-0.pb-dsk-20 {
+    margin-bottom: 15px; } }
 
 /*# sourceMappingURL=styles.css.map */
