@@ -1837,3 +1837,14 @@ p.black {
     margin-top: 63px;
   }
 }
+
+.guest-title {
+  @media (min-width: 768px) {
+    margin-top: 70px;
+    display: inline-block;
+  }
+
+  @media (min-width: 960px) {
+    margin-top: 150px;
+  }
+}

@@ -1301,4 +1301,12 @@ p.black span {
   .doble-desktop--fijo {
     margin-top: 63px; } }
 
+@media (min-width: 768px) {
+  .guest-title {
+    margin-top: 70px;
+    display: inline-block; } }
+@media (min-width: 960px) {
+  .guest-title {
+    margin-top: 150px; } }
+
 /*# sourceMappingURL=styles.css.map */
