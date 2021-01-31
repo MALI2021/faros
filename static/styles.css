@@ -1321,4 +1321,8 @@ p.black span {
   .guest-title {
     margin-top: 150px; } }
 
+@media (min-width: 768px) {
+  .list-item-soundcloud {
+    margin-top: 18px; } }
+
 /*# sourceMappingURL=styles.css.map */

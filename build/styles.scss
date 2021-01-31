@@ -1867,3 +1867,9 @@ p.black {
     margin-top: 150px;
   }
 }
+
+.list-item-soundcloud {
+  @media (min-width: 768px) {
+    margin-top: 18px;
+  }
+}
