@@ -3566,7 +3566,7 @@ function docGet() {
         let elementToAdd = /*html */ `
               <div class="c-tab--items">
                 <div class="c-tab--items--header">
-                  <p>${element.autor}</p>
+                  <p class="autor-text">${element.autor}</p>
                   <div class="info">
                     <img class="arrow" src="./static/assets/img/arrow.svg" alt="" />
                     <span class="c-gray ml-5">${element.date}</span>
@@ -3576,17 +3576,17 @@ function docGet() {
                   <div class="doble-desktop">
                     <div class="doble-desktop--fijo">
                       <div class="pt-20">
-                        <p class="m-0" data-translatable><span>Vocal interpretation</span><span>Interpretación
-                            vocal</span></p>
+                        <p class="m-0" data-translatable><span><b>Vocal interpretation</b></span><span><b>Interpretación
+                            vocal</b></span></p>
                         <p class="m-0">${element.autor}</p>
                       </div>
                       <div class="pt-20">
-                        <p class="m-0" data-translatable><span>Binaural recording and mixing</span><span>Grabación y
-                            mezcla binaural</span></p>
+                        <p class="m-0" data-translatable><span><b>Binaural recording and mixing</b></span><span><b>Grabación y
+                            mezcla binaural</b></span></p>
                         <p class="m-0">${element.mezcla}</p>
                       </div>
                       <div class="pt-20 pb-dsk-20">
-                        <p class="m-0" data-translatable><span>Direction</span><span>Dirección</span></p>
+                        <p class="m-0" data-translatable><span><b>Direction</b></span><span><b>Dirección</b></span></p>
                         <p class="m-0">${element.composicion}</p>
                       </div>
                       <div class="reproductor">${element.link}</div>

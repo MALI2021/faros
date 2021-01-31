@@ -1172,6 +1172,8 @@ span {
       .info {
         display: flex;
         align-items: center;
+        font-family: "Conv_Relative Mono 10 Pitch";
+        letter-spacing: 2px;
 
         .arrow {
           width: 15px;
@@ -1484,7 +1486,11 @@ span {
         font-size: 15px;
 
         @media (min-width: 768px) {
-          font-size: 21px;
+          font-size: 21px !important;
+
+          span {
+            font-size: 21px !important;
+          }
         }
       }
     }
@@ -1724,6 +1730,7 @@ p.black {
   margin-bottom: 40px;
 }
 
+<<<<<<< HEAD
 .font-pitch {
   font-family: "Conv_Relative Mono 10 Pitch";
 }
@@ -1784,3 +1791,45 @@ p.black {
     }
   }
 }
+=======
+.autor-text {
+  text-transform: uppercase;
+}
+
+.m-dsk-0 {
+  @media (max-width: 475px) {
+    margin-top: 4px;
+    margin-bottom: 2px;
+
+    &.text-decoration {
+      margin-bottom: 10px;
+    }
+  }
+
+  span {
+    font-family: "Conv_Relative Mono 11 Pitch";
+    letter-spacing: 0px;
+    margin-right: 6px;
+  }
+
+  &:last-child {
+    margin-bottom: 15px;
+  }
+
+  &:first-child {
+    margin-bottom: 15px;
+  }
+}
+
+.doble-desktop--item .text-3 span {
+  @media (min-width: 768px) {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 475px) {
+  .m-dsk-0.pb-dsk-20 {
+    margin-bottom: 15px;
+  }
+}
+>>>>>>> 565c189d2011fa3e40df5a58ece0632ba4ef81ee
