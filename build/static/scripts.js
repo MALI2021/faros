@@ -3133,13 +3133,13 @@ window.onload = function () {
         <div class="list-faros--item">
           <div class="list-faros--item--title">
             <div>
-              <p class="m-0"><span class="c-gray">${element.number}</span> ${element.title}</p>
+              <p class="m-0"><span class="c-gray font-pitch">${element.number}</span> ${element.title}</p>
               <p class="m-0">${element.subtitle}</p>
             </div>
-            <span>${element.year}</span>
+            <span class="font-pitch">${element.year}</span>
           </div>
           <div class="list-faros--item--info">
-            <span class="c-gray">${element.s} S - ${element.w} W</span>
+            <span class="c-gray font-pitch">${element.s} S - ${element.w} W</span>
             <img src="./static/assets/img/point.svg" class="coords-launcher" data-coords="${element.coords}" alt="" />
           </div>
         </div>

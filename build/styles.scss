@@ -537,6 +537,7 @@ span {
 
   @media (min-width: 768px) {
     font-size: 28px;
+    margin-bottom: 37px;
   }
 
   @media (min-width: 960px) {
@@ -626,36 +627,6 @@ span {
 
     @media (min-width: 960px) {
       font-size: 76px;
-    }
-  }
-}
-
-.list-faros {
-  margin-bottom: 100px;
-  border-bottom: 3px solid;
-
-  &--item {
-    padding: 15px 0;
-    border-top: 3px solid;
-
-    .list-faros--item--title {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 15px;
-
-      @media (min-width: 480px) {
-        padding-bottom: 0;
-      }
-    }
-
-    .list-faros--item--info {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-
-      img {
-        width: 26px;
-      }
     }
   }
 }
@@ -1760,6 +1731,66 @@ p.black {
   margin-bottom: 40px;
 }
 
+.font-pitch {
+  font-family: "Conv_Relative Mono 10 Pitch";
+}
+
+.list-faros {
+  margin-bottom: 100px;
+  border-bottom: 3px solid;
+
+  &--item {
+    padding: 13px 0;
+    border-top: 3px solid;
+
+    .list-faros--item--title {
+      display: flex;
+      justify-content: space-between;
+
+      p {
+        @media (min-width: 768px) {
+          font-size: 21px;
+        }
+      }
+
+      span {
+        @media (min-width: 768px) {
+          font-size: 21px !important;
+        }
+      }
+    }
+
+    .list-faros--item--info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      img {
+        width: 26px;
+
+        @media (min-width: 768px) {
+          width: 30px;
+        }
+
+        @media (min-width: 960px) {
+          width: 34px;
+        }
+      }
+
+      span {
+        @media (min-width: 768px) {
+          font-size: 21px !important;
+        }
+      }
+
+      p {
+        @media (min-width: 768px) {
+          font-size: 21px;
+        }
+      }
+    }
+  }
+}
 .autor-text {
   text-transform: uppercase;
 }
@@ -1798,5 +1829,11 @@ p.black {
 @media (max-width: 475px) {
   .m-dsk-0.pb-dsk-20 {
     margin-bottom: 15px;
+  }
+}
+
+.doble-desktop--fijo {
+  @media (min-width: 768px) {
+    margin-top: 63px;
   }
 }

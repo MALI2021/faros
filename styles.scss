@@ -537,6 +537,7 @@ span {
 
   @media (min-width: 768px) {
     font-size: 28px;
+    margin-bottom: 37px;
   }
 
   @media (min-width: 960px) {
@@ -1730,7 +1731,6 @@ p.black {
   margin-bottom: 40px;
 }
 
-<<<<<<< HEAD
 .font-pitch {
   font-family: "Conv_Relative Mono 10 Pitch";
 }
@@ -1791,7 +1791,6 @@ p.black {
     }
   }
 }
-=======
 .autor-text {
   text-transform: uppercase;
 }
@@ -1832,4 +1831,9 @@ p.black {
     margin-bottom: 15px;
   }
 }
->>>>>>> 565c189d2011fa3e40df5a58ece0632ba4ef81ee
+
+.doble-desktop--fijo {
+  @media (min-width: 768px) {
+    margin-top: 63px;
+  }
+}
