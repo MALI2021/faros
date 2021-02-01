@@ -104,8 +104,8 @@ body {
     transform: rotateX(-8deg);
     background: white;
     min-height: 180px;
-    width: 90%;
-    left: 5%;
+    width: 96%;
+    left: 2%;
     box-shadow: 0px -6px 10px -6px rgba(0, 0, 0, 0.5); }
   .page.normal {
     width: 100%;
@@ -227,29 +227,35 @@ body {
   display: flex;
   font-weight: 400;
   height: 50px;
-  padding: 15px; }
+  padding: 13px; }
   @media (min-width: 768px) {
     .header .title {
       font-weight: 400;
-      height: 60px; } }
+      height: 60px;
+      padding: 15px 25px; } }
   @media (min-width: 768px) {
     .header .title {
       font-weight: 400;
-      height: 75px; } }
+      height: 75px;
+      padding: 15px 30px; } }
   @media (min-width: 960px) {
     .header .title {
       height: 130px; } }
-  .header .title span {
+  .header .title span.number {
     color: #979696;
     padding-right: 5px;
     font-size: 28px;
     font-family: "Conv_Relative Mono 10 Pitch"; }
     @media (min-width: 768px) {
-      .header .title span {
-        font-size: 56px; } }
+      .header .title span.number {
+        font-size: 56px;
+        width: auto;
+        margin-right: 9px; } }
     @media (min-width: 960px) {
-      .header .title span {
-        font-size: 76px; } }
+      .header .title span.number {
+        font-size: 76px;
+        width: auto;
+        margin-right: 15px; } }
   .header .title p {
     font-size: 28px; }
     @media (min-width: 768px) {
@@ -1224,13 +1230,24 @@ p.black span {
   margin-bottom: 10px;
   border-bottom: none; }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .header .title span,
   .header .title p {
-    font-size: 25px;
+    font-size: 28px;
     line-height: 1.5em;
     text-align: left;
-    width: 15px; } }
+    width: 15px;
+    font-family: "gerstner_programmregular"; } }
+@media (min-width: 768px) {
+  .header .title span,
+  .header .title p {
+    font-size: 56px;
+    font-family: "gerstner_programmregular"; } }
+@media (min-width: 960px) {
+  .header .title span,
+  .header .title p {
+    font-size: 76px;
+    font-family: "gerstner_programmregular"; } }
 .advice .text-1 span {
   font-size: 20px; }
   @media (min-height: 960px) {
@@ -1324,5 +1341,9 @@ p.black span {
 @media (min-width: 768px) {
   .list-item-soundcloud {
     margin-top: 18px; } }
+
+@media (max-width: 320px) {
+  .special-title span {
+    font-size: 25px; } }
 
 /*# sourceMappingURL=styles.css.map */
