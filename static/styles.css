@@ -1375,6 +1375,7 @@ p.black span {
     display: block; } }
 
 .guest-title {
+  display: block;
   margin-bottom: 30px; }
   @media (min-width: 768px) {
     .guest-title {

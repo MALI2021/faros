@@ -1937,6 +1937,7 @@ p.black {
 }
 
 .guest-title {
+  display: block;
   margin-bottom: 30px;
 
   @media (min-width: 768px) {
