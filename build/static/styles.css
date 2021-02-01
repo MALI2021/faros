@@ -1293,7 +1293,11 @@ p.black span {
   border-bottom: 3px solid;
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  margin-bottom: 120px; }
+  @media (min-width: 768px) {
+    .list-faros {
+      margin-bottom: 175px; } }
   .list-faros--item {
     padding: 15px 0;
     border-top: 3px solid; }
@@ -1311,10 +1315,12 @@ p.black span {
       justify-content: space-between;
       align-items: flex-end; }
       .list-faros--item .list-faros--item--info img {
-        width: 26px; }
+        width: 22px;
+        height: 30px; }
         @media (min-width: 768px) {
           .list-faros--item .list-faros--item--info img {
-            width: 30px; } }
+            width: 24px;
+            height: 35px; } }
         @media (min-width: 960px) {
           .list-faros--item .list-faros--item--info img {
             width: 34px; } }
