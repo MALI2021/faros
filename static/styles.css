@@ -1383,7 +1383,7 @@ p.black span {
       display: inline-block; } }
   @media (min-width: 960px) {
     .guest-title {
-      margin-bottom: 55px; } }
+      margin-bottom: 50px; } }
 
 @media (min-width: 768px) {
   .list-item-soundcloud {
