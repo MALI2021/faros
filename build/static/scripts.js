@@ -3130,7 +3130,7 @@ window.onload = function () {
 
   places.forEach((element) => {
     let addPlace = /*html */ `
-        <div class="list-faros--item">
+        <li class="list-faros--item">
           <div class="list-faros--item--title">
             <div>
               <p class="m-0"><span class="c-gray font-pitch">${element.number}</span> ${element.title}</p>
@@ -3142,7 +3142,7 @@ window.onload = function () {
             <span class="c-gray font-pitch">${element.s} S - ${element.w} W</span>
             <img src="./static/assets/img/point.svg" class="coords-launcher" data-coords="${element.coords}" alt="" />
           </div>
-        </div>
+        </li>
     `;
     let parent = document.querySelector("#placesList");
     parent.insertAdjacentHTML("beforeend", addPlace);
@@ -3575,28 +3575,31 @@ function docGet() {
                 <div class="c-tab--items--content">
                   <div class="doble-desktop">
                     <div class="doble-desktop--fijo list-podcast">
-                      <div class="pt-20">
-                        <p class="m-0" data-translatable><span><b>Vocal interpretation</b></span><span><b>Interpretación
-                            vocal</b></span></p>
-                        <p class="m-0">${element.autor}</p>
-                      </div>
-                      <div class="pt-20">
-                        <p class="m-0" data-translatable><span><b>Binaural recording and mixing</b></span><span><b>Grabación y
-                            mezcla binaural</b></span></p>
-                        <p class="m-0">${element.mezcla}</p>
-                      </div>
-                      <div class="pt-20 pb-dsk-20">
-                        <p class="m-0" data-translatable><span><b>Direction</b></span><span><b>Dirección</b></span></p>
-                        <p class="m-0">${element.composicion}</p>
-                      </div>
-                      <div class="reproductor">${element.link}</div>
+                      <ul class="podcast-items">
+                        <li class="podcast-item">
+                          <p class="m-0" data-translatable><span><b>Vocal interpretation</b></span><span><b>Interpretación
+                              vocal</b></span></p>
+                          <p class="m-0">${element.autor}</p>
+                        </li>
+                        <li class="podcast-item">
+                          <p class="m-0" data-translatable><span><b>Binaural recording and mixing</b></span><span><b>Grabación y
+                              mezcla binaural</b></span></p>
+                          <p class="m-0">${element.mezcla}</p>
+                        </li>
+                        <li class="podcast-item">
+                          <p class="m-0" data-translatable><span><b>Direction</b></span><span><b>Dirección</b></span></p>
+                          <p class="m-0">${element.composicion}</p>
+                        </li>
+                      </ul>
+                      <div class="reproductor text-3 desktop">${element.link}</div>
                     </div>
-                    <div class="doble-desktop--item">
-                      <p class="text-3 pt-20" data-translatable>
+                    <div class="doble-desktop--item paragraphs">
+                      <p class="text-3" data-translatable>
                         <span>${element.p1eng}</span>
                         <span>${element.p1esp}</span>
                       </p>
-                      <p class="text-3 pt-20" data-translatable>
+                      <div class="reproductor text-3 mobile">${element.link}</div>
+                      <p class="text-3" data-translatable>
                         <span>${element.p2eng}</span>
                         <span>${element.p2esp}</span>
                       </p>

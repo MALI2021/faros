@@ -485,14 +485,14 @@ body {
 }
 
 .box-shadow {
-  box-shadow: 0px -10px 11px 0px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px -10px 11px 0px rgba(0, 0, 0, 0.1);
 }
 
 .text-1 {
   color: #949494;
   font-size: 14px;
   margin: 0;
-  padding: 24px 15px;
+  padding: 22px 10px 22px;
   text-align: center;
 
   @media (min-width: 768px) {
@@ -583,6 +583,10 @@ span {
       text-align: center;
       width: 20px;
 
+      &.number {
+        font-family: "Conv_Relative Mono 10 Pitch";
+      }
+
       @media (min-width: 768px) {
         font-size: 56px;
         width: 40px;
@@ -608,21 +612,30 @@ span {
     }
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 320px) {
+    padding-bottom: 60px;
+    margin-top: 45px;
+  }
+
+  @media (min-width: 768px) {
     padding-bottom: 60px;
     margin-top: 82px;
   }
 
   @media (min-width: 960px) {
-    margin-top: 180px;
+    margin-top: 110px;
   }
 }
 
 .list-name {
   list-style: none;
-  margin-bottom: 0;
+  margin-bottom: 35px;
   margin-top: 10px;
   padding: 0;
+
+  @media (min-width: 768px) {
+    margin-bottom: 80px;
+  }
 
   li {
     font-size: 28px;
@@ -1334,6 +1347,9 @@ span {
 }
 
 .mb-pres {
+  padding-bottom: 0 !important;
+  margin-bottom: 25px;
+
   @media (min-width: 768px) {
     margin-bottom: 45px;
   }
@@ -1479,7 +1495,7 @@ span {
     }
 
     &--fijo {
-      min-width: 260px;
+      min-width: 290px;
 
       p {
         font-size: 15px;
@@ -1507,10 +1523,17 @@ span {
 
         @media (min-width: 768px) {
           font-size: 21px !important;
+          padding-bottom: 0 !important;
+          margin-bottom: 30px !important;
 
           span {
             font-size: 21px !important;
           }
+        }
+
+        @media (min-width: 960px) {
+          padding-bottom: 0 !important;
+          margin-bottom: 30px !important;
         }
       }
     }
@@ -1752,10 +1775,18 @@ p.black {
     span {
       font-size: 20px;
 
-      @media (min-height: 960px) {
+      @media (min-width: 960px) {
         max-width: 860px;
         margin-left: auto;
         display: inline-block;
+      }
+
+      @media (min-width: 320px) {
+        font-size: 14px;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 20px;
       }
     }
   }
@@ -1774,9 +1805,12 @@ p.black {
 .list-faros {
   margin-bottom: 100px;
   border-bottom: 3px solid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
   &--item {
-    padding: 13px 0;
+    padding: 15px 0;
     border-top: 3px solid;
 
     .list-faros--item--title {
@@ -1841,18 +1875,19 @@ p.black {
     }
   }
 
+  @media (min-width: 768px) {
+    font-size: 21px;
+  }
+
   span {
     font-family: "Conv_Relative Mono 11 Pitch";
     letter-spacing: 0px;
-    margin-right: 6px;
-  }
+    margin-right: 15px;
 
-  &:last-child {
-    margin-bottom: 15px;
-  }
-
-  &:first-child {
-    margin-bottom: 15px;
+    @media (min-width: 768px) {
+      margin-right: 24px;
+      font-size: 21px;
+    }
   }
 }
 
@@ -1876,24 +1911,40 @@ p.black {
   &.list-podcast {
     @media (min-width: 768px) {
       margin-top: 0px;
+      .text-3.desktop {
+        display: none;
+      }
+    }
+    @media (min-width: 320px) {
+      .text-3.desktop {
+        display: none;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .text-3.desktop {
+        display: block;
+      }
     }
   }
 }
 
 .guest-title {
+  margin-bottom: 30px;
+
   @media (min-width: 768px) {
-    margin-top: 70px;
+    margin-bottom: 50px;
     display: inline-block;
   }
 
   @media (min-width: 960px) {
-    margin-top: 150px;
+    margin-bottom: 55px;
   }
 }
 
 .list-item-soundcloud {
   @media (min-width: 768px) {
-    margin-top: 18px;
+    margin-top: 0px;
   }
 }
 
@@ -1902,5 +1953,161 @@ p.black {
     span {
       font-size: 25px;
     }
+  }
+}
+
+.nav-list-box-border {
+  padding-right: 13px !important;
+  padding-left: 13px !important;
+
+  @media (min-width: 768px) {
+    padding-right: 21px !important;
+    padding-left: 21px !important;
+  }
+}
+
+.inter-textos {
+  @media (min-width: 320px) {
+    padding-top: 30px;
+  }
+  @media (min-width: 768px) {
+    padding-top: 40px;
+  }
+  @media (min-width: 960px) {
+    padding-top: 55px;
+  }
+}
+
+.interp-section-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 25px;
+  margin-bottom: 35px;
+
+  @media (min-width: 768px) {
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: 960px) {
+    margin-top: 35px;
+    margin-bottom: 45px;
+  }
+}
+
+.doble-desktop--item {
+  @media (min-width: 320px) {
+    margin-bottom: 50px;
+
+    .text-3 {
+      padding-bottom: 0 !important;
+      margin-bottom: 25px !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 60px;
+
+    .text-3 {
+      padding-bottom: 0 !important;
+      margin-bottom: 30px !important;
+    }
+  }
+
+  &.paragraphs {
+    @media (min-width: 320px) {
+      .text-3 {
+        margin-bottom: 55px !important;
+
+        &.desktop {
+          display: none;
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      .text-3 {
+        margin-bottom: 60px !important;
+
+        .desktop {
+          display: none;
+        }
+      }
+    }
+    @media (min-width: 960px) {
+      .text-3 {
+        margin-bottom: 35px !important;
+
+        &.desktop {
+          display: block;
+        }
+
+        &.mobile {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.c-tab--items--header {
+  @media (min-width: 320px) {
+    margin-bottom: 10px;
+  }
+}
+
+.podcast-item {
+  @media (min-width: 320px) {
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 35px;
+
+    p,
+    span {
+      font-size: 21px !important;
+    }
+  }
+}
+
+.podcast-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.present-paddings {
+  @media (min-width: 320px) {
+    padding-top: 30px;
+  }
+  @media (min-width: 768px) {
+    padding-top: 40px;
+  }
+  @media (min-width: 960px) {
+    padding-top: 55px;
+  }
+}
+
+.date-sign {
+  @media (min-width: 320px) {
+    margin-bottom: 70px;
+  }
+  @media (min-width: 768px) {
+    margin-bottom: 140px;
+  }
+  @media (min-width: 960px) {
+    margin-bottom: 190px;
+  }
+}
+
+.faros-text {
+  margin-bottom: 170px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 77px;
+  }
+  @media (min-width: 960px) {
+    margin-bottom: 101px;
   }
 }
