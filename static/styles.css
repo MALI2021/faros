@@ -1561,4 +1561,39 @@ p.black span {
       .agradecimientos .names-to-use li {
         font-size: 21px; } }
 
+.credit-list {
+  margin-top: 80px;
+  margin-bottom: 120px; }
+  @media (min-width: 768px) {
+    .credit-list {
+      margin-bottom: 170px; } }
+  @media (min-width: 960px) {
+    .credit-list {
+      margin-top: 110px; } }
+  .credit-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 25px; }
+    .credit-list ul li {
+      font-size: 15px; }
+    @media (min-width: 768px) {
+      .credit-list ul {
+        margin-bottom: 45px; }
+        .credit-list ul li {
+          font-size: 28px; } }
+
+.agradecimientos-text {
+  font-size: 13px;
+  margin-bottom: 25px; }
+  .agradecimientos-text span {
+    font-size: 13px; }
+  @media (min-width: 768px) {
+    .agradecimientos-text {
+      font-size: 28px;
+      margin-bottom: 70px; } }
+  @media (min-width: 960px) {
+    .agradecimientos-text {
+      margin-bottom: 100px; } }
+
 /*# sourceMappingURL=styles.css.map */

@@ -2201,3 +2201,53 @@ p.black {
     }
   }
 }
+
+.credit-list {
+  margin-top: 80px;
+  margin-bottom: 120px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 170px;
+  }
+
+  @media (min-width: 960px) {
+    margin-top: 110px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 25px;
+
+    li {
+      font-size: 15px;
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: 45px;
+
+      li {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.agradecimientos-text {
+  font-size: 13px;
+  margin-bottom: 25px;
+
+  span {
+    font-size: 13px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 70px;
+  }
+
+  @media (min-width: 960px) {
+    margin-bottom: 100px;
+  }
+}
