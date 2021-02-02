@@ -3577,17 +3577,17 @@ function docGet() {
                     <div class="doble-desktop--fijo list-podcast">
                       <ul class="podcast-items">
                         <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><b>Vocal interpretation</b></span><span><b>Interpretación
-                              vocal</b></span></p>
+                          <p class="m-0" data-translatable><span><u>Vocal interpretation</u></span><span><u>Interpretación
+                              vocal</u></span></p>
                           <p class="m-0">${element.autor}</p>
                         </li>
                         <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><b>Binaural recording and mixing</b></span><span><b>Grabación y
-                              mezcla binaural</b></span></p>
+                          <p class="m-0" data-translatable><span><u>Binaural recording and mixing</u></span><span><u>Grabación y
+                              mezcla binaural</u></span></p>
                           <p class="m-0">${element.mezcla}</p>
                         </li>
                         <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><b>Direction</b></span><span><b>Dirección</b></span></p>
+                          <p class="m-0" data-translatable><span><u>Direction</u></span><span><u>Dirección</u></span></p>
                           <p class="m-0">${element.composicion}</p>
                         </li>
                       </ul>
