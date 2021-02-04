@@ -107,6 +107,8 @@ body {
     width: 96%;
     left: 2%;
     box-shadow: 0px -6px 10px -6px rgba(0, 0, 0, 0.5); }
+    .page .perspected .no-visible {
+      transform: translateY(-40px); }
   .page.normal {
     width: 100%;
     top: 0px !important;
@@ -585,14 +587,21 @@ span {
         background-image: url("assets/img/tab.svg"); }
 
 .legend {
-  max-width: 450px;
+  max-width: 460px;
   margin: 0 auto;
   background-color: #e5e5e5; }
   .legend--item {
     align-items: center;
     border-bottom: 1px solid #c7c7c7;
     display: flex;
-    padding: 10px 0; }
+    padding: 10px 0;
+    line-height: 21px; }
+    @media (min-width: 768px) {
+      .legend--item {
+        line-height: 28px; } }
+    @media (min-width: 960px) {
+      .legend--item {
+        line-height: 41px; } }
     .legend--item:last-child {
       border-bottom: none; }
     .legend--item .info {
@@ -603,15 +612,21 @@ span {
       justify-content: center;
       align-items: center; }
       .legend--item .info span {
-        font-size: 12px; }
+        font-size: 14px; }
         @media (min-width: 768px) {
           .legend--item .info span {
-            font-size: 19px; } }
+            font-size: 17px; } }
         @media (min-width: 960px) {
           .legend--item .info span {
-            font-size: 24px; } }
+            font-size: 21px; } }
     .legend--item .arrow {
       width: 30px; }
+  @media (min-width: 768px) {
+    .legend {
+      width: 360px; } }
+  @media (min-width: 960px) {
+    .legend {
+      width: 455px; } }
 
 .box-1 {
   border-top: 3px solid;
@@ -744,21 +759,24 @@ span {
     .d-altura .box-container-items.no-border {
       margin-bottom: 10px; } }
   .d-altura .box-1 {
-    height: 177px; }
-    @media (min-width: 480px) {
+    height: 210px;
+    margin: 0;
+    box-sizing: border-box;
+    padding-bottom: 0; }
+    @media (min-width: 768px) {
       .d-altura .box-1 {
-        height: 345px; } }
-    @media (min-width: 850px) {
+        height: 250px; } }
+    @media (min-width: 960px) {
       .d-altura .box-1 {
-        height: 245px; } }
+        height: 320px; } }
     .d-altura .box-1 span {
       font-size: 14px; }
       @media (min-width: 768px) {
         .d-altura .box-1 span {
-          font-size: 28px; } }
+          font-size: 17px; } }
       @media (min-width: 960px) {
         .d-altura .box-1 span {
-          font-size: 24px; } }
+          font-size: 21px; } }
 
 .d-periodo {
   display: grid;
@@ -1691,5 +1709,8 @@ p.black span {
   @media (min-width: 768px) {
     .color-box {
       padding: 0 20px; } }
+
+.title p.black {
+  margin: 0; }
 
 /*# sourceMappingURL=styles.css.map */
