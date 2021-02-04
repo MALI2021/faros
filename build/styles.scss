@@ -897,6 +897,7 @@ span {
     position: relative;
     text-align: center;
 
+    &.last-border,
     &:last-child {
       border-bottom: 3px solid #c7c7c7;
     }
@@ -1836,7 +1837,9 @@ p.black {
   }
 }
 
-#rangeBoxes .box-container-items {
+#rangeBoxes .box-container-items,
+#alturaboxes .box-container-items,
+#potenceItems .box-container-items {
   margin-bottom: 10px;
   border-bottom: none;
 }

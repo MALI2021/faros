@@ -3268,7 +3268,7 @@ window.onload = function () {
         <div class="box-1--item"></div>
         <div class="box-1--item"></div>
         <div class="box-1--item"></div>
-        <div class="box-1--item"></div>
+        <div class="box-1--item last-border"></div>
         <img class="graphic-tono" src="${element.imagen}" alt="" />
         <img class="graphic-tono" src="${element.imagen}" alt="" />
       </div>

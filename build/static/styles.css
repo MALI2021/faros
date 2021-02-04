@@ -654,7 +654,7 @@ span {
     padding: 10px 0;
     position: relative;
     text-align: center; }
-    .box-1--item:last-child {
+    .box-1--item.last-border, .box-1--item:last-child {
       border-bottom: 3px solid #c7c7c7; }
     .box-1--item .faros-img {
       width: 100%;
@@ -1315,7 +1315,9 @@ span {
 p.black span {
   color: initial !important; }
 
-#rangeBoxes .box-container-items {
+#rangeBoxes .box-container-items,
+#alturaboxes .box-container-items,
+#potenceItems .box-container-items {
   margin-bottom: 10px;
   border-bottom: none; }
 
