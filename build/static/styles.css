@@ -270,11 +270,12 @@ body {
   @media (min-width: 768px) {
     .language {
       padding: 10px;
-      max-width: 460px;
+      max-width: 358px;
       margin: 0 auto; } }
   @media (min-width: 960px) {
     .language {
-      padding: 40px; } }
+      padding: 40px;
+      max-width: 453px; } }
   .language .spanish,
   .language .english {
     align-items: center;
@@ -286,7 +287,11 @@ body {
     @media (min-width: 768px) {
       .language .spanish,
       .language .english {
-        height: 74px; } }
+        height: 56px; } }
+    @media (min-width: 960px) {
+      .language .spanish,
+      .language .english {
+        height: 68px; } }
     .language .spanish.active,
     .language .english.active {
       display: flex; }
@@ -298,6 +303,10 @@ body {
       @media (min-width: 768px) {
         .language .spanish span,
         .language .english span {
+          font-size: 37px; } }
+      @media (min-width: 960px) {
+        .language .spanish span,
+        .language .english span {
           font-size: 47px; } }
     .language .spanish img,
     .language .english img {
@@ -307,8 +316,13 @@ body {
       @media (min-width: 768px) {
         .language .spanish img,
         .language .english img {
-          width: 54px;
-          height: 54px; } }
+          width: 48px;
+          height: 48px; } }
+      @media (min-width: 960px) {
+        .language .spanish img,
+        .language .english img {
+          width: 58px;
+          height: 58px; } }
   .language .english {
     background-position: right;
     background-size: cover; }
@@ -317,36 +331,44 @@ body {
     background-size: cover; }
 
 .closer {
-  float: right;
   height: 40px;
   position: sticky;
   right: 15px;
   top: 120px;
   width: 40px;
   z-index: 9;
-  display: none; }
+  display: none;
+  transform: translate(-45px, 20px);
+  margin-left: 100%; }
   .closer.visible {
     display: block; }
   .closer img {
     width: 40px;
     height: 40px;
     pointer-events: none; }
+  @media (min-width: 768px) {
+    .closer {
+      transform: translate(-50px, 50px); } }
 
 .arrow-back {
-  float: right;
   height: 40px;
   position: sticky;
   right: 15px;
   top: 120px;
   width: 40px;
   z-index: 9;
-  display: none; }
+  display: none;
+  transform: translate(-45px, 20px);
+  margin-left: 100%; }
   .arrow-back.visible {
     display: block; }
   .arrow-back img {
     width: 40px;
     height: 40px;
     pointer-events: none; }
+  @media (min-width: 768px) {
+    .arrow-back {
+      transform: translate(-50px, 50px); } }
 
 .box-shadow {
   box-shadow: 0px -10px 11px 0px rgba(0, 0, 0, 0.1); }
@@ -520,15 +542,18 @@ span {
           flex-direction: row;
           justify-content: center; } }
       .tabs-item--text img {
+        height: 20px;
         transform: rotate(90deg);
-        width: 20px; }
+        margin: 6px; }
         @media (min-width: 768px) {
           .tabs-item--text img {
-            width: 40px; } }
+            height: 40px;
+            transform: rotate(0);
+            margin: 0 20px; } }
         @media (min-width: 960px) {
           .tabs-item--text img {
-            transform: rotate(0);
-            width: 60px; } }
+            height: 60px;
+            margin: 0 20px; } }
       .tabs-item--text span {
         pointer-events: none; }
       @media (min-width: 660px) {
@@ -704,7 +729,7 @@ span {
 .d-altura {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0 5px;
+  grid-gap: 0 10px;
   margin-bottom: 20px; }
   @media (min-width: 768px) {
     .d-altura {
@@ -712,6 +737,12 @@ span {
   .d-altura .box-container-items.no-border {
     border-bottom: none;
     margin-bottom: 5px; }
+  @media (min-width: 768px) {
+    .d-altura .box-container-items.no-border {
+      margin-bottom: 10px; } }
+  @media (min-width: 960px) {
+    .d-altura .box-container-items.no-border {
+      margin-bottom: 10px; } }
   .d-altura .box-1 {
     height: 177px; }
     @media (min-width: 480px) {
@@ -721,7 +752,7 @@ span {
       .d-altura .box-1 {
         height: 245px; } }
     .d-altura .box-1 span {
-      font-size: 12px; }
+      font-size: 14px; }
       @media (min-width: 768px) {
         .d-altura .box-1 span {
           font-size: 28px; } }
@@ -874,6 +905,8 @@ span {
       .c-tab--items--header p {
         font-size: 28px;
         margin: 0; }
+        .c-tab--items--header p span {
+          font-size: 28px; }
         @media (min-width: 768px) {
           .c-tab--items--header p {
             font-size: 56px; } }
@@ -1186,7 +1219,7 @@ span {
 .front,
 .back {
   width: 100%;
-  height: 246px; }
+  height: 210px; }
   @media (min-width: 768px) {
     .flip-container,
     .front,
@@ -1198,7 +1231,9 @@ span {
     .front,
     .back {
       width: 100%;
-      height: 420px; } }
+      min-height: 20px;
+      overflow: hidden;
+      height: initial; } }
   .flip-container img,
   .front img,
   .back img {
@@ -1217,8 +1252,10 @@ span {
       .flip-container img,
       .front img,
       .back img {
+        position: relative;
         width: 100%;
-        height: 420px; } }
+        height: auto;
+        object-fit: initial; } }
 
 /* flip speed goes here */
 .flipper {
@@ -1234,6 +1271,13 @@ span {
   position: absolute;
   top: 0;
   left: 0; }
+  @media (min-width: 960px) {
+    .front,
+    .back {
+      position: relative;
+      width: 100%;
+      min-height: 20px;
+      overflow: hidden; } }
 
 /* front pane, placed above back */
 .front {
@@ -1244,6 +1288,11 @@ span {
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg); }
+  @media (min-width: 960px) {
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0; } }
 
 p.black span {
   color: initial !important; }
@@ -1613,5 +1662,34 @@ p.black span {
   @media (min-width: 960px) {
     .agradecimientos-text {
       margin-bottom: 100px; } }
+
+.nav-tabs .text-3 {
+  padding-bottom: 0;
+  margin-bottom: 30px; }
+.nav-tabs .legend {
+  margin-bottom: 30px; }
+.nav-tabs .language {
+  padding: 0;
+  margin-bottom: 60px; }
+@media (min-width: 768px) {
+  .nav-tabs .text-3 {
+    margin-bottom: 60px; }
+  .nav-tabs .legend {
+    margin-bottom: 45px; }
+  .nav-tabs .language {
+    margin-bottom: 135px; } }
+@media (min-width: 960px) {
+  .nav-tabs .text-3 {
+    margin-bottom: 75px; }
+  .nav-tabs .legend {
+    margin-bottom: 55px; }
+  .nav-tabs .language {
+    margin-bottom: 240px; } }
+
+.color-box {
+  padding: 0 10px; }
+  @media (min-width: 768px) {
+    .color-box {
+      padding: 0 20px; } }
 
 /*# sourceMappingURL=styles.css.map */

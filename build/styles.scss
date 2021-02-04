@@ -382,12 +382,13 @@ body {
 
   @media (min-width: 768px) {
     padding: 10px;
-    max-width: 460px;
+    max-width: 358px;
     margin: 0 auto;
   }
 
   @media (min-width: 960px) {
     padding: 40px;
+    max-width: 453px;
   }
 
   .spanish,
@@ -400,7 +401,11 @@ body {
     display: none;
 
     @media (min-width: 768px) {
-      height: 74px;
+      height: 56px;
+    }
+
+    @media (min-width: 960px) {
+      height: 68px;
     }
 
     &.active {
@@ -413,6 +418,10 @@ body {
       padding: 0 15px;
 
       @media (min-width: 768px) {
+        font-size: 37px;
+      }
+
+      @media (min-width: 960px) {
         font-size: 47px;
       }
     }
@@ -423,8 +432,13 @@ body {
       padding: 0 5px;
 
       @media (min-width: 768px) {
-        width: 54px;
-        height: 54px;
+        width: 48px;
+        height: 48px;
+      }
+
+      @media (min-width: 960px) {
+        width: 58px;
+        height: 58px;
       }
     }
   }
@@ -443,7 +457,6 @@ body {
 }
 
 .closer {
-  float: right;
   height: 40px;
   position: sticky;
   right: 15px;
@@ -451,6 +464,8 @@ body {
   width: 40px;
   z-index: 9;
   display: none;
+  transform: translate(-45px, 20px);
+  margin-left: 100%;
 
   &.visible {
     display: block;
@@ -460,11 +475,14 @@ body {
     width: 40px;
     height: 40px;
     pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    transform: translate(-50px, 50px);
   }
 }
 
 .arrow-back {
-  float: right;
   height: 40px;
   position: sticky;
   right: 15px;
@@ -472,6 +490,8 @@ body {
   width: 40px;
   z-index: 9;
   display: none;
+  transform: translate(-45px, 20px);
+  margin-left: 100%;
 
   &.visible {
     display: block;
@@ -481,6 +501,10 @@ body {
     width: 40px;
     height: 40px;
     pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    transform: translate(-50px, 50px);
   }
 }
 
@@ -716,16 +740,19 @@ span {
       }
 
       img {
+        height: 20px;
         transform: rotate(90deg);
-        width: 20px;
+        margin: 6px;
 
         @media (min-width: 768px) {
-          width: 40px;
+          height: 40px;
+          transform: rotate(0);
+          margin: 0 20px;
         }
 
         @media (min-width: 960px) {
-          transform: rotate(0);
-          width: 60px;
+          height: 60px;
+          margin: 0 20px;
         }
       }
 
@@ -977,18 +1004,38 @@ span {
 .d-altura {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0 5px;
+  grid-gap: 0 10px;
   margin-bottom: 20px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
   }
 
+  // &#imagesBox {
+  //   @media (min-width: 960px) {
+  //     width: 920px;
+  //     margin-left: auto;
+  //     margin-right: auto;
+  //   }
+  // }
+
   .box-container-items {
     // height: 177px;
     &.no-border {
       border-bottom: none;
       margin-bottom: 5px;
+    }
+
+    @media (min-width: 768px) {
+      &.no-border {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (min-width: 960px) {
+      &.no-border {
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -1004,7 +1051,7 @@ span {
     }
 
     span {
-      font-size: 12px;
+      font-size: 14px;
 
       @media (min-width: 768px) {
         font-size: 28px;
@@ -1215,6 +1262,10 @@ span {
       p {
         font-size: 28px;
         margin: 0;
+
+        span {
+          font-size: 28px;
+        }
 
         @media (min-width: 768px) {
           font-size: 56px;
@@ -1674,7 +1725,7 @@ span {
 .front,
 .back {
   width: 100%;
-  height: 246px;
+  height: 210px;
 
   @media (min-width: 768px) {
     width: 100%;
@@ -1683,7 +1734,10 @@ span {
 
   @media (min-width: 960px) {
     width: 100%;
-    height: 420px;
+    // height: 320px;
+    min-height: 20px;
+    overflow: hidden;
+    height: initial;
   }
 
   img {
@@ -1698,8 +1752,10 @@ span {
     }
 
     @media (min-width: 960px) {
+      position: relative;
       width: 100%;
-      height: 420px;
+      height: auto;
+      object-fit: initial;
     }
 
     pointer-events: none;
@@ -1723,6 +1779,13 @@ span {
   position: absolute;
   top: 0;
   left: 0;
+
+  @media (min-width: 960px) {
+    position: relative;
+    width: 100%;
+    min-height: 20px;
+    overflow: hidden;
+  }
 }
 
 /* front pane, placed above back */
@@ -1735,6 +1798,12 @@ span {
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg);
+
+  @media (min-width: 960px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 p.black {
@@ -2284,5 +2353,57 @@ p.black {
 
   @media (min-width: 960px) {
     margin-bottom: 100px;
+  }
+}
+
+.nav-tabs {
+  .text-3 {
+    padding-bottom: 0;
+    margin-bottom: 30px;
+  }
+
+  .legend {
+    margin-bottom: 30px;
+  }
+
+  .language {
+    padding: 0;
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 768px) {
+    .text-3 {
+      margin-bottom: 60px;
+    }
+
+    .legend {
+      margin-bottom: 45px;
+    }
+
+    .language {
+      margin-bottom: 135px;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .text-3 {
+      margin-bottom: 75px;
+    }
+
+    .legend {
+      margin-bottom: 55px;
+    }
+
+    .language {
+      margin-bottom: 240px;
+    }
+  }
+}
+
+.color-box {
+  padding: 0 10px;
+
+  @media (min-width: 768px) {
+    padding: 0 20px;
   }
 }
