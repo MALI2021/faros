@@ -3,14 +3,15 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#EC7203;}
-	.st1{fill:#FFFFFF;}
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#EC7203;}
 	.st2{fill:#1D1D1B;}
 </style>
+<rect x="2" y="2" class="st0" width="7.3" height="15.9"/>
 <g>
-	<rect id="XMLID_7903_" x="1.3" y="1.3" class="st0" width="17.4" height="17.4"/>
+	<rect id="XMLID_7903_" x="1.3" y="1.3" class="st1" width="17.4" height="17.4"/>
 	<g>
-		<rect id="XMLID_4_" x="1.3" y="1.3" class="st1" width="8.7" height="17.4"/>
+		<rect id="XMLID_4_" x="1.3" y="1.3" class="st0" width="8.7" height="17.4"/>
 		<path id="XMLID_2_" class="st2" d="M9.2,2.2v15.7h-7V2.2H9.2 M10,1.3H1.3v17.4H10V1.3L10,1.3z"/>
 	</g>
 </g>

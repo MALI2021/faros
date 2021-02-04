@@ -5,10 +5,11 @@
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
 </style>
+<polygon class="st0" points="9.8,3.7 9.6,17.1 18.1,17.1 "/>
 <g>
 	<g>
 		<polygon id="XMLID_3_" class="st0" points="18.7,17.5 10,2.5 1.3,17.5 		"/>
-		<path id="XMLID_1_" d="M10,3.9l7.5,12.9H2.5L10,3.9 M10,2.5L1.3,17.5h17.4L10,2.5L10,2.5z"/>
+		<path id="XMLID_1_" d="M10,3.9l7.5,12.9h-15L10,3.9 M10,2.5l-8.7,15h17.4L10,2.5L10,2.5z"/>
 	</g>
 	<polygon id="XMLID_7888_" points="10.1,2.5 10.1,17.5 1.3,17.5 	"/>
 </g>
