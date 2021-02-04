@@ -1238,6 +1238,7 @@ span {
 
     &--content {
       display: none;
+      pointer-events: none;
     }
 
     &.active {

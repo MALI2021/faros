@@ -887,7 +887,8 @@ span {
           .c-tab--items--header p span {
             font-size: 76px; } }
     .c-tab--items--content {
-      display: none; }
+      display: none;
+      pointer-events: none; }
     .c-tab--items.active .c-tab--items--header .info .arrow {
       transform: rotate(90deg); }
     .c-tab--items.active .c-tab--items--content {

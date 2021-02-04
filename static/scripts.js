@@ -3339,10 +3339,11 @@ window.onload = function () {
   document.getElementById("closerSect").addEventListener("click", hideTabs);
 };
 
-function accord() {
-  for(let i = 0; i < accordions.length; i ++) {
-    accordions[i].classList.remove('active');
-  }
+function accord(event) {
+  console.log(event.target);
+  // for(let i = 0; i < accordions.length; i ++) {
+  //   accordions[i].classList.remove('active');
+  // }
   event.target.classList.toggle('active');
 }
 
