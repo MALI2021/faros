@@ -701,10 +701,17 @@ span {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 210px;
   text-align: center;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  box-sizing: border-box; }
+  @media (min-width: 768px) {
+    .box-2 {
+      height: 250px; } }
+  @media (min-width: 960px) {
+    .box-2 {
+      height: 320px; } }
   .box-2.upper {
     border: none;
     border-top: 3px solid;
@@ -716,13 +723,13 @@ span {
     .box-2 {
       height: 310px; } }
   .box-2 p {
-    font-size: 12px; }
+    font-size: 14px; }
     @media (min-width: 768px) {
       .box-2 p {
         font-size: 17px; } }
     @media (min-width: 960px) {
       .box-2 p {
-        font-size: 28px; } }
+        font-size: 19px; } }
 
 .d-potencia {
   display: grid;
@@ -1316,6 +1323,7 @@ p.black span {
   color: initial !important; }
 
 #rangeBoxes .box-container-items,
+#periodsItems .box-container-items,
 #alturaboxes .box-container-items,
 #potenceItems .box-container-items {
   margin-bottom: 10px;

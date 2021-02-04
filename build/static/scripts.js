@@ -3159,7 +3159,7 @@ window.onload = function () {
           <div class="box-container-items bb-dkt-3">
           <div class="box-2 cat1 active">
             <div class="grid-box-text">
-              <p class="pt-0">Periodo ${element.period} segundos</p>
+              <p class="pt-0">Periodo<br /> ${element.period} segundos</p>
               <p>${element.destellos} destellos</p>`;
 
     for (let i = 0; i < element.destellos; i++) {

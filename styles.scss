@@ -968,10 +968,19 @@ span {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 210px;
   text-align: center;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    height: 250px;
+  }
+
+  @media (min-width: 960px) {
+    height: 320px;
+  }
 
   &.upper {
     border: none;
@@ -988,14 +997,14 @@ span {
   }
 
   p {
-    font-size: 12px;
+    font-size: 14px;
 
     @media (min-width: 768px) {
       font-size: 17px;
     }
 
     @media (min-width: 960px) {
-      font-size: 28px;
+      font-size: 19px;
     }
   }
 }
@@ -1838,6 +1847,7 @@ p.black {
 }
 
 #rangeBoxes .box-container-items,
+#periodsItems .box-container-items,
 #alturaboxes .box-container-items,
 #potenceItems .box-container-items {
   margin-bottom: 10px;
