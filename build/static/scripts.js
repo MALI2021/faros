@@ -3184,7 +3184,7 @@ window.onload = function () {
   potences.forEach((element) => {
     let addPotence = /*html*/ `
       <div class="box-container-items bb-dkt-3">
-        <div class="box-1 cat1 active">
+        <div class="box-1 short-ones cat1 active">
           <div class="box-1--item">
             <span class="${element.clase1}">${element.line1}</span>
           </div>
@@ -3198,7 +3198,7 @@ window.onload = function () {
             <span class="${element.clase4}">${element.line4}</span>
           </div>
         </div>
-        <div class="box-1 cat2 percent" data-percentage="${element.percentage}">
+        <div class="box-1 short-ones cat2 percent" data-percentage="${element.percentage}">
           <div class="box-1--graphic">
             <div class="graphic-black"></div>
           </div>

@@ -980,11 +980,11 @@ span {
   box-sizing: border-box;
 
   @media (min-width: 768px) {
-    height: 250px;
+    height: 250px !important;
   }
 
   @media (min-width: 960px) {
-    height: 320px;
+    height: 320px !important;
   }
 
   &.upper {
@@ -1009,7 +1009,7 @@ span {
     }
 
     @media (min-width: 960px) {
-      font-size: 19px;
+      font-size: 21px;
     }
   }
 }
@@ -1081,12 +1081,24 @@ span {
     box-sizing: border-box;
     padding-bottom: 0;
 
+    &.short-ones {
+      height: 169px;
+    }
+
     @media (min-width: 768px) {
       height: 250px;
+
+      &.short-ones {
+        height: 199px;
+      }
     }
 
     @media (min-width: 960px) {
       height: 320px;
+
+      &.short-ones {
+        height: 257px;
+      }
     }
 
     span {
@@ -1694,6 +1706,12 @@ span {
       .box-1--graphic {
         pointer-events: none;
         border: none;
+      }
+
+      .grid-box-text {
+        p:first-child {
+          margin-top: 0;
+        }
       }
 
       .box-1--item {
