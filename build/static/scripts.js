@@ -3172,7 +3172,7 @@ window.onload = function () {
           </div>
           <div class="box-2 cat2 upper titilating" data-delay="${element.delay}" data-show="${element.show}" data-hide="${element.hide}" data-times="${element.time}">
             <div class="box-1--item">
-              <img class="w-80" src="${element.image}" alt="" />
+              <img class="grf-period" src="${element.image}" alt="" />
             </div>
           </div>
         </div>
@@ -3485,6 +3485,13 @@ async function changeBox() {
       reciver1.classList.add(param1);
       reciver2.classList.add(param2);
     } else {
+      console.log('easy way');
+      let items = element.getElementsByClassName('box-1--item');
+      for(let i = 0; i < items.length ;i++) {
+        let child = items[i].getElementsByTagName('span')[0];
+        child.classList.add('hide');
+      }
+      await sleep(500);
       element.classList.remove("active");
       sibling.classList.add("active");
     }
@@ -3512,8 +3519,7 @@ async function changeBox() {
     }
   } else {
     let sibling = parent.getElementsByClassName("cat1")[0];
-    sibling.classList.add("active");
-    element.classList.remove("active");
+    
     if (element.classList.contains("percent")) {
       let up = element.dataset.percentage;
       let firstSon = element.getElementsByClassName("box-1--graphic")[0];
@@ -3541,6 +3547,15 @@ async function changeBox() {
       reciver1.classList.remove(param1);
       reciver2.classList.remove(param2);
     }
+
+    let items = sibling.getElementsByClassName('box-1--item');
+      for(let i = 0; i < items.length ;i++) {
+        let child = items[i].getElementsByTagName('span')[0];
+        child.classList.remove('hide');
+      }
+      await sleep(500);
+      sibling.classList.add("active");
+      element.classList.remove("active");
   }
 }
 

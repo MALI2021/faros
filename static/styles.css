@@ -625,6 +625,14 @@ span {
             font-size: 21px; } }
     .legend--item .arrow {
       width: 30px; }
+    .legend--item.short-one {
+      line-height: 10px; }
+      @media (min-width: 768px) {
+        .legend--item.short-one {
+          line-height: 24px; } }
+      @media (min-width: 960px) {
+        .legend--item.short-one {
+          line-height: 40px; } }
   @media (min-width: 768px) {
     .legend {
       width: 360px; } }
@@ -822,95 +830,95 @@ span {
   transition-delay: 0.5s;
   pointer-events: none; }
   .graphic-tono.alto {
-    transform: translateX(-50%) translateY(-14px);
+    transform: translateX(-50%) translateY(-9px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.alto {
-        transform: translateX(-50%) translateY(-28px); } }
+        transform: translateX(-50%) translateY(-12px); } }
     @media (min-width: 960px) {
       .graphic-tono.alto {
-        transform: translateX(-50%) translateY(-20px); } }
+        transform: translateX(-50%) translateY(-18px); } }
   .graphic-tono.alto-medio {
-    transform: translateX(-50%) translateY(-34px);
+    transform: translateX(-50%) translateY(-32px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.alto-medio {
-        transform: translateX(-50%) translateY(-66px); } }
+        transform: translateX(-50%) translateY(-39px); } }
     @media (min-width: 960px) {
       .graphic-tono.alto-medio {
-        transform: translateX(-50%) translateY(-46px); } }
+        transform: translateX(-50%) translateY(-54px); } }
   .graphic-tono.semi-alto {
     transform: translateX(-50%) translateY(-49px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.semi-alto {
-        transform: translateX(-50%) translateY(-97px); } }
+        transform: translateX(-50%) translateY(-61px); } }
     @media (min-width: 960px) {
       .graphic-tono.semi-alto {
-        transform: translateX(-50%) translateY(-68px); } }
+        transform: translateX(-50%) translateY(-82px); } }
   .graphic-tono.semi-alto-medio {
-    transform: translateX(-50%) translateY(-68px);
+    transform: translateX(-50%) translateY(-73px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.semi-alto-medio {
-        transform: translateX(-50%) translateY(-136px); } }
+        transform: translateX(-50%) translateY(-88px); } }
     @media (min-width: 960px) {
       .graphic-tono.semi-alto-medio {
-        transform: translateX(-50%) translateY(-96px); } }
+        transform: translateX(-50%) translateY(-117px); } }
   .graphic-tono.medio {
-    transform: translateX(-50%) translateY(-84px);
+    transform: translateX(-50%) translateY(-89px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.medio {
-        transform: translateX(-50%) translateY(-168px); } }
+        transform: translateX(-50%) translateY(-110px); } }
     @media (min-width: 960px) {
       .graphic-tono.medio {
-        transform: translateX(-50%) translateY(-116px); } }
+        transform: translateX(-50%) translateY(-143px); } }
   .graphic-tono.medio-medio {
-    transform: translateX(-50%) translateY(-103px);
+    transform: translateX(-50%) translateY(-113px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.medio-medio {
-        transform: translateX(-50%) translateY(-204px); } }
+        transform: translateX(-50%) translateY(-137px); } }
     @media (min-width: 960px) {
       .graphic-tono.medio-medio {
-        transform: translateX(-50%) translateY(-145px); } }
+        transform: translateX(-50%) translateY(-179px); } }
   .graphic-tono.semi-bajo {
-    transform: translateX(-50%) translateY(-120px);
+    transform: translateX(-50%) translateY(-130px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.semi-bajo {
-        transform: translateX(-50%) translateY(-237px); } }
+        transform: translateX(-50%) translateY(-160px); } }
     @media (min-width: 960px) {
       .graphic-tono.semi-bajo {
-        transform: translateX(-50%) translateY(-165px); } }
+        transform: translateX(-50%) translateY(-208px); } }
   .graphic-tono.semi-bajo-medio {
-    transform: translateX(-50%) translateY(-140px);
+    transform: translateX(-50%) translateY(-154px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.semi-bajo-medio {
-        transform: translateX(-50%) translateY(-274px); } }
+        transform: translateX(-50%) translateY(-186px); } }
     @media (min-width: 960px) {
       .graphic-tono.semi-bajo-medio {
-        transform: translateX(-50%) translateY(-194px); } }
+        transform: translateX(-50%) translateY(-242px); } }
   .graphic-tono.bajo {
-    transform: translateX(-50%) translateY(-156px);
+    transform: translateX(-50%) translateY(-172px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.bajo {
-        transform: translateX(-50%) translateY(-305px); } }
+        transform: translateX(-50%) translateY(-207px); } }
     @media (min-width: 960px) {
       .graphic-tono.bajo {
-        transform: translateX(-50%) translateY(-216px); } }
+        transform: translateX(-50%) translateY(-272px); } }
 
 .c-tab {
   border-bottom: 3px solid;
@@ -1743,5 +1751,28 @@ p.black span {
 
 .title p.black {
   margin: 0; }
+
+.grf-period {
+  width: auto;
+  height: 63px; }
+  @media (min-width: 768px) {
+    .grf-period {
+      height: 75px; } }
+  @media (min-width: 768px) {
+    .grf-period {
+      height: 96px; } }
+
+#alturaboxes .box-1--item {
+  overflow: hidden; }
+  #alturaboxes .box-1--item span {
+    transform: translateY(0);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out; }
+    #alturaboxes .box-1--item span.hide {
+      transform: translateY(40px);
+      transition-property: transform;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out; }
 
 /*# sourceMappingURL=styles.css.map */
