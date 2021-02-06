@@ -531,7 +531,10 @@ span {
         @media (min-width: 660px) {
           .tabs-item .triangulo::before {
             height: 40px; } }
-        @media (min-width: 850px) {
+        @media (min-width: 768px) {
+          .tabs-item .triangulo::before {
+            background-image: url("assets/img/tab-tablet.svg"); } }
+        @media (min-width: 960px) {
           .tabs-item .triangulo::before {
             background-image: url("assets/img/tab-desktop.svg"); } }
     .tabs-item--text {

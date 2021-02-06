@@ -3204,9 +3204,7 @@ window.onload = function () {
       
       for(let i = 0; i < element.percentage / 25;i++) {
         let identifier = i + 1;
-        console.log('this is the identifier',identifier);
         let classToAddHere = 25 * identifier;
-        console.log('this is the class we are adding', classToAddHere);
         addPotence = 
         addPotence + 
         `
