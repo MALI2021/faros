@@ -726,7 +726,11 @@ span {
           height: 40px;
         }
 
-        @media (min-width: 850px) {
+        @media (min-width: 768px) {
+          background-image: url("assets/img/tab-tablet.svg");
+        }
+
+        @media (min-width: 960px) {
           background-image: url("assets/img/tab-desktop.svg");
         }
       }
