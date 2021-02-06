@@ -3210,6 +3210,28 @@ window.onload = function () {
   });
 
   alturas.forEach((element) => {
+    // clase1b: "c-gray",
+    // clase2b: "c-gray",
+    // clase3b: "c-gray",
+    // clase4b: "c-gray",
+    // clase5b: "",
+    let elemental = '';
+    if(element.clase1b == ''){
+      elemental = 'xlento';
+    }
+    if(element.clase2b == ''){
+      elemental = 'lento';
+    }
+    if(element.clase3b == ''){
+      elemental = 'moderado';
+    }
+    if(element.clase4b == ''){
+      elemental = 'rapido';
+    }
+    if(element.clase5b == ''){
+      elemental = 'xrapido';
+    }
+
     let addAltura = /* html */ `
     <div class="box-container-items bb-dkt-3">
       <div class="box-1 cat1 active">
@@ -3231,19 +3253,19 @@ window.onload = function () {
       </div>
       <div class="box-1 cat2">
         <div class="box-1--item">
-          <span class="${element.clase1b}">Muy lento</span>
+          <span class="${element.clase1b} ${elemental}">Muy lento</span>
         </div>
         <div class="box-1--item">
-          <span class="${element.clase2b}">Lento</span>
+          <span class="${element.clase2b} ${elemental}">Lento</span>
         </div>
         <div class="box-1--item">
-          <span class="${element.clase3b}">Moderado</span>
+          <span class="${element.clase3b} ${elemental}">Moderado</span>
         </div>
         <div class="box-1--item">
-          <span class="${element.clase4b}">Rápido</span>
+          <span class="${element.clase4b} ${elemental}">Rápido</span>
         </div>
         <div class="box-1--item">
-          <span class="${element.clase5b}">Muy rápido</span>
+          <span class="${element.clase5b} ${elemental}">Muy rápido</span>
         </div>
       </div> 
     </div> 
@@ -3494,6 +3516,12 @@ async function changeBox() {
       await sleep(500);
       element.classList.remove("active");
       sibling.classList.add("active");
+      await sleep(50);
+      let items2 = sibling.getElementsByClassName('box-1--item');
+      for(let i = 0; i < items2.length ;i++) {
+        let child = items2[i].getElementsByTagName('span')[0];
+        child.classList.add('show');
+      }
     }
     if (sibling.classList.contains("percent")) {
       let up = sibling.dataset.percentage;
@@ -3552,6 +3580,11 @@ async function changeBox() {
       for(let i = 0; i < items.length ;i++) {
         let child = items[i].getElementsByTagName('span')[0];
         child.classList.remove('hide');
+      }
+    let items2 = element.getElementsByClassName('box-1--item');
+      for(let i = 0; i < items2.length ;i++) {
+        let child = items2[i].getElementsByTagName('span')[0];
+        child.classList.remove('show');
       }
       await sleep(500);
       sibling.classList.add("active");
