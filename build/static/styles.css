@@ -676,37 +676,15 @@ span {
     border-bottom: 3px solid;
     position: relative; }
     .box-1--graphic .graphic-black {
-      background: black;
-      background: linear-gradient(180deg, black 0%, #242424 72%, rgba(138, 138, 138, 0.8440682058) 95%, rgba(255, 255, 255, 0) 100%);
       position: absolute;
       transition-property: all;
       transition-duration: 0.5s;
       transition-delay: 0.2s;
       transition-timing-function: ease-in-out;
       bottom: 0%;
-      height: 0;
+      height: 100%;
       left: 0;
       right: 0; }
-      .box-1--graphic .graphic-black.height25 {
-        height: 25%;
-        transition-property: all;
-        transition-duration: 0.5s;
-        transition-timing-function: ease-in-out; }
-      .box-1--graphic .graphic-black.height50 {
-        height: 50%;
-        transition-property: all;
-        transition-duration: 0.5s;
-        transition-timing-function: ease-in-out; }
-      .box-1--graphic .graphic-black.height75 {
-        height: 75%;
-        transition-property: all;
-        transition-duration: 0.5s;
-        transition-timing-function: ease-in-out; }
-      .box-1--graphic .graphic-black.height100 {
-        height: 100%;
-        transition-property: all;
-        transition-duration: 0.5s;
-        transition-timing-function: ease-in-out; }
 
 .box-2 {
   border: 3px solid;
@@ -1803,5 +1781,51 @@ p.black span {
     #alturaboxes .cat2 .box-1--item span.show.xlento {
       transition-delay: 1.1s;
       transition-duration: 1.1s; }
+
+.fat-lines {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 17px;
+  background: #000;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s; }
+  .fat-lines.line-25, .fat-lines.line-50, .fat-lines.line-75, .fat-lines.line-100 {
+    transform: translateY(0); }
+  @media (min-width: 768px) {
+    .fat-lines {
+      height: 21px; } }
+  @media (min-width: 960px) {
+    .fat-lines {
+      height: 27px; } }
+  .neon .fat-lines.line-25 {
+    transform: translateY(-10px); }
+  .neon .fat-lines.line-50 {
+    transform: translateY(-52px); }
+  .neon .fat-lines.line-75 {
+    transform: translateY(-93px); }
+  .neon .fat-lines.line-100 {
+    transform: translateY(-135px); }
+  @media (min-width: 768px) {
+    .neon .fat-lines.line-25 {
+      transform: translateY(-12px); }
+    .neon .fat-lines.line-50 {
+      transform: translateY(-60px); }
+    .neon .fat-lines.line-75 {
+      transform: translateY(-111px); }
+    .neon .fat-lines.line-100 {
+      transform: translateY(-159px); } }
+  @media (min-width: 960px) {
+    .neon .fat-lines.line-25 {
+      transform: translateY(-17px); }
+    .neon .fat-lines.line-50 {
+      transform: translateY(-78px); }
+    .neon .fat-lines.line-75 {
+      transform: translateY(-144px); }
+    .neon .fat-lines.line-100 {
+      transform: translateY(-206px); } }
 
 /*# sourceMappingURL=styles.css.map */

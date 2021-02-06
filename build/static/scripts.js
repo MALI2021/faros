@@ -3200,7 +3200,24 @@ window.onload = function () {
         </div>
         <div class="box-1 short-ones cat2 percent" data-percentage="${element.percentage}">
           <div class="box-1--graphic">
-            <div class="graphic-black"></div>
+            <div class="graphic-black">`;
+      
+      for(let i = 0; i < element.percentage / 25;i++) {
+        let identifier = i + 1;
+        console.log('this is the identifier',identifier);
+        let classToAddHere = 25 * identifier;
+        console.log('this is the class we are adding', classToAddHere);
+        addPotence = 
+        addPotence + 
+        `
+          <p class="fat-lines line-${classToAddHere}"></p>
+        `
+      }      
+
+      addPotence =
+        addPotence +
+              /** html */ `
+            </div>
           </div>
         </div>
       </div>
@@ -3529,6 +3546,7 @@ async function changeBox() {
       let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
       await sleep(100);
       secondSon.classList.add("height" + up + "");
+      secondSon.classList.add("neon");
     } else if (sibling.classList.contains("titilating")) {
       let delayed = sibling.dataset.delay;
       let show = sibling.dataset.show;
@@ -3555,6 +3573,7 @@ async function changeBox() {
       let classToUse = "height" + up + "";
       await sleep(100);
       secondSon.classList.remove(classToUse);
+      secondSon.classList.remove(neon);
     }
     if (element.classList.contains("titilating")) {
       let son = sibling.getElementsByClassName("box-1--item")[0];
