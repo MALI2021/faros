@@ -1275,7 +1275,6 @@ span {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     pointer-events: none; }
     @media (min-width: 768) {
       .flip-container img,
