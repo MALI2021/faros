@@ -14,6 +14,8 @@ var langChanger2 = document.getElementById("spanish-changer");
 var lesserlinks = document.getElementsByClassName("linktopage");
 var flippers = document.getElementsByClassName("flip-container");
 var accordions = document.getElementsByClassName('c-tab--items');
+var closers2 = document.getElementsByClassName("arrow-back");
+
 
 var db = firebase.firestore();
 
@@ -3439,6 +3441,12 @@ async function changePosition() {
 
 async function openPage() {
   container.classList.remove("closed");
+  document.querySelector('#closerSect').classList.remove('visible');
+  textoIntro.classList.remove("inactive");
+  triggerContainer.classList.remove("closed");
+  for (let i = 0; i < contentItems.length; i++) {
+    contentItems[i].classList.remove("showing");
+  }
   console.log("this is the container", container);
   container.scrollTo(0, 0);
   for (let i = 0; i < skews.length; i++) {

@@ -702,6 +702,7 @@ span {
 
   &-item {
     border-top: 2px solid;
+    cursor: pointer;
 
     .triangulo {
       position: relative;
@@ -931,7 +932,7 @@ span {
 
   &--graphic {
     height: 100%;
-    border-bottom: 3px solid;
+    border-bottom: 3px solid #c7c7c7;
     position: relative;
 
     .graphic-black {
@@ -2510,7 +2511,7 @@ p.black {
   @media (min-width: 768px) {
     height: 75px;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 960px) {
     height: 96px;
   }
 }
@@ -2644,5 +2645,13 @@ p.black {
         transform: translateY(-206px);
       }
     }
+  }
+}
+
+#potence-reverser,
+#range-changer,
+#altura-changer {
+  div {
+    pointer-events: none;
   }
 }
