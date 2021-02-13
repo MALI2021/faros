@@ -145,19 +145,19 @@ body {
 #p2.page {
   top: 100px; }
 
-#p3.page {
+#p6.page {
   top: 200px; }
 
-#p4.page {
+#p7.page {
   top: 300px; }
 
 #p5.page {
   top: 400px; }
 
-#p6.page {
+#p3.page {
   top: 500px; }
 
-#p7.page {
+#p4.page {
   top: 600px; }
 
 #p8.page {
@@ -173,19 +173,19 @@ body {
   #p2.page {
     top: 130px; }
 
-  #p3.page {
+  #p6.page {
     top: 260px; }
 
-  #p4.page {
+  #p7.page {
     top: 390px; }
 
   #p5.page {
     top: 520px; }
 
-  #p6.page {
+  #p3.page {
     top: 650px; }
 
-  #p7.page {
+  #p4.page {
     top: 780px; }
 
   #p8.page {
@@ -200,19 +200,19 @@ body {
   #p2.page {
     top: 170px; }
 
-  #p3.page {
+  #p6.page {
     top: 340px; }
 
-  #p4.page {
+  #p7.page {
     top: 510px; }
 
   #p5.page {
     top: 680px; }
 
-  #p6.page {
+  #p3.page {
     top: 850px; }
 
-  #p7.page {
+  #p4.page {
     top: 1020px; }
 
   #p8.page {
@@ -1485,9 +1485,11 @@ p.black span {
   .list-item-soundcloud {
     margin-top: 0px; } }
 
-@media (max-width: 320px) {
-  .special-title span {
-    font-size: 25px; } }
+.special-title {
+  width: 100% !important; }
+  @media (max-width: 320px) {
+    .special-title span {
+      font-size: 25px; } }
 
 .nav-list-box-border {
   padding-right: 13px !important;
