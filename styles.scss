@@ -1408,13 +1408,39 @@ span {
   padding: 20px 0;
 
   &--item {
-    @media (min-width: 480px) {
-      width: 300px;
-      margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .img1 {
+      width: 167px;
     }
 
-    @media (min-width: 850px) {
-      width: 500px;
+    .img2 {
+      width: 43px;
+      margin-left: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .img1 {
+        width: 338px;
+      }
+  
+      .img2 {
+        width: 88px;
+        margin-left: 40px;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .img1 {
+        width: 338px;
+      }
+  
+      .img2 {
+        width: 88px;
+        margin-left: 40px;
+      }
     }
   }
 }
@@ -2731,5 +2757,13 @@ p.black {
       }
     }
     
+  }
+}
+
+.agradecimientos-text2 {
+  padding-bottom: 122px;
+
+  @media (min-width: 960px) {
+    padding-bottom: 175px;
   }
 }
