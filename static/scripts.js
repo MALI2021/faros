@@ -13,13 +13,15 @@ var langChanger = document.getElementById("english-changer");
 var langChanger2 = document.getElementById("spanish-changer");
 var lesserlinks = document.getElementsByClassName("linktopage");
 var flippers = document.getElementsByClassName("flip-container");
-var accordions = document.getElementsByClassName('c-tab--items');
+var accordions = document.getElementsByClassName("c-tab--items");
 var closers2 = document.getElementsByClassName("arrow-back");
 var potenceChanger = document.getElementById("potence-reverser");
 var alturaChanger = document.getElementById("altura-changer");
 var rangeChanger = document.getElementById("range-changer");
 var flipChanger = document.getElementById("flip-changer");
 var periodChanger = document.getElementById("period-changer");
+// var mailingInput = document.getElementById("record-mail");
+var mailingLaunch = document.querySelectorAll(".launch");
 var activePotence = true;
 var activeAltura = true;
 var activeRange = true;
@@ -29,8 +31,6 @@ var potenceItemsBoxes;
 var alturaItemsBoxes;
 var rangeItemsBoxes;
 var periodItemsBoxes;
-
-
 
 var db = firebase.firestore();
 
@@ -3147,6 +3147,7 @@ window.onload = function () {
   rangeChanger.addEventListener("click", reverseRange);
   flipChanger.addEventListener("click", reverseFlip);
   periodChanger.addEventListener("click", reversePeriod);
+  console.log(mailingLaunch);
 
   docGet();
 
@@ -3174,6 +3175,10 @@ window.onload = function () {
 
   for (let i = 0; i < maptrigger.length; i++) {
     maptrigger[i].addEventListener("click", mapLaunch);
+  }
+
+  for (let i = 0; i < mailingLaunch.length; i++) {
+    mailingLaunch[i].addEventListener("click", writeMails);
   }
 
   periods.forEach((element) => {
@@ -3223,20 +3228,20 @@ window.onload = function () {
         <div class="box-1 box-potence short-ones cat2 percent" data-percentage="${element.percentage}">
           <div class="box-1--graphic">
             <div class="graphic-black">`;
-      
-      for(let i = 0; i < element.percentage / 25;i++) {
-        let identifier = i + 1;
-        let classToAddHere = 25 * identifier;
-        addPotence = 
-        addPotence + 
-        `
-          <p class="fat-lines line-${classToAddHere}"></p>
-        `
-      }      
 
+    for (let i = 0; i < element.percentage / 25; i++) {
+      let identifier = i + 1;
+      let classToAddHere = 25 * identifier;
       addPotence =
         addPotence +
-              /** html */ `
+        `
+          <p class="fat-lines line-${classToAddHere}"></p>
+        `;
+    }
+
+    addPotence =
+      addPotence +
+      /** html */ `
             </div>
           </div>
         </div>
@@ -3244,10 +3249,8 @@ window.onload = function () {
     `;
     let parent = document.querySelector("#potenceItems");
     parent.insertAdjacentHTML("beforeend", addPotence);
-    potenceItemsBoxes = document.getElementsByClassName('box-potence');
+    potenceItemsBoxes = document.getElementsByClassName("box-potence");
   });
-
-  
 
   alturas.forEach((element) => {
     // clase1b: "c-gray",
@@ -3255,21 +3258,21 @@ window.onload = function () {
     // clase3b: "c-gray",
     // clase4b: "c-gray",
     // clase5b: "",
-    let elemental = '';
-    if(element.clase1b == ''){
-      elemental = 'xlento';
+    let elemental = "";
+    if (element.clase1b == "") {
+      elemental = "xlento";
     }
-    if(element.clase2b == ''){
-      elemental = 'lento';
+    if (element.clase2b == "") {
+      elemental = "lento";
     }
-    if(element.clase3b == ''){
-      elemental = 'moderado';
+    if (element.clase3b == "") {
+      elemental = "moderado";
     }
-    if(element.clase4b == ''){
-      elemental = 'rapido';
+    if (element.clase4b == "") {
+      elemental = "rapido";
     }
-    if(element.clase5b == ''){
-      elemental = 'xrapido';
+    if (element.clase5b == "") {
+      elemental = "xrapido";
     }
 
     let addAltura = /* html */ `
@@ -3312,7 +3315,7 @@ window.onload = function () {
     `;
     let parent = document.querySelector("#alturaboxes");
     parent.insertAdjacentHTML("beforeend", addAltura);
-    alturaItemsBoxes = document.getElementsByClassName('altura-box');
+    alturaItemsBoxes = document.getElementsByClassName("altura-box");
   });
 
   ranges.forEach((element) => {
@@ -3339,7 +3342,7 @@ window.onload = function () {
     `;
     let parent = document.querySelector("#rangeBoxes");
     parent.insertAdjacentHTML("beforeend", addRange);
-    rangeItemsBoxes = document.getElementsByClassName('box-range');
+    rangeItemsBoxes = document.getElementsByClassName("box-range");
   });
 
   for (let i = 0; i < 56; i++) {
@@ -3412,18 +3415,47 @@ window.onload = function () {
   }
 
   for (let i = 0; i < accordions.length; i++) {
-    accordions[i].addEventListener('click', accord);
+    accordions[i].addEventListener("click", accord);
   }
 
   document.getElementById("closerSect").addEventListener("click", hideTabs);
 };
+
+function writeMails() {
+  let parent = event.target.parentNode;
+  console.log("writing");
+  let dates = new Date();
+  let emailuse = parent.querySelectorAll(".record-mail")[0].value;
+  let name = emailuse;
+  let idate = dates.getTime();
+  if (
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      emailuse
+    )
+  ) {
+    db.collection("mails")
+      .doc(name)
+      .set({
+        id: parseInt(idate),
+        mail: emailuse,
+      })
+      .then(function () {
+        alert("mail registrado satisfactoriamente");
+      })
+      .catch(function (error) {
+        console.error("Error writing doc", error);
+      });
+  } else {
+    alert("escribe un mail correcto");
+  }
+}
 
 function accord(event) {
   console.log(event.target);
   // for(let i = 0; i < accordions.length; i ++) {
   //   accordions[i].classList.remove('active');
   // }
-  event.target.classList.toggle('active');
+  event.target.classList.toggle("active");
 }
 
 function sleep(ms) {
@@ -3481,7 +3513,7 @@ async function changePosition() {
 
 async function openPage() {
   container.classList.remove("closed");
-  document.querySelector('#closerSect').classList.remove('visible');
+  document.querySelector("#closerSect").classList.remove("visible");
   textoIntro.classList.remove("inactive");
   triggerContainer.classList.remove("closed");
   for (let i = 0; i < contentItems.length; i++) {
@@ -3617,171 +3649,167 @@ function docGet() {
         parent.insertAdjacentHTML("beforeend", elementToAdd);
         this.toSpanishChange();
 
-        var accordions = document.getElementsByClassName('c-tab--items');
+        var accordions = document.getElementsByClassName("c-tab--items");
 
         for (let i = 0; i < accordions.length; i++) {
-          accordions[i].addEventListener('click', accord);
+          accordions[i].addEventListener("click", accord);
           console.log(accordions[i]);
         }
       });
     });
-
-    
 }
 
-
 async function reversePotence() {
-  let parent = document.querySelector('#potenceItems');
-  let items = parent.getElementsByClassName('box-container-items');
-  if(activePotence) {
-    let spanished = potenceChanger.querySelectorAll('.spanish')[0];
-    let englished = potenceChanger.querySelectorAll('.english')[0];
-    spanished.classList.remove('active');
-    englished.classList.add('active');
+  let parent = document.querySelector("#potenceItems");
+  let items = parent.getElementsByClassName("box-container-items");
+  if (activePotence) {
+    let spanished = potenceChanger.querySelectorAll(".spanish")[0];
+    let englished = potenceChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
     activePotence = false;
-    console.log('welcome');
-    for(let i = 0; i < items.length; i++) {
-      let cat1son = items[i].getElementsByClassName('cat1')[0];
-      let cat2son = items[i].getElementsByClassName('cat2')[0];
-      let neonson = cat2son.querySelectorAll('.graphic-black')[0];
-      cat1son.classList.remove('active');
-      cat2son.classList.add('active');
+    console.log("welcome");
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let neonson = cat2son.querySelectorAll(".graphic-black")[0];
+      cat1son.classList.remove("active");
+      cat2son.classList.add("active");
       await sleep(100);
-      neonson.classList.add('neon');
+      neonson.classList.add("neon");
     }
   } else {
-    console.log('goodbye');
-    let spanished = potenceChanger.querySelectorAll('.spanish')[0];
-    let englished = potenceChanger.querySelectorAll('.english')[0];
-    spanished.classList.add('active');
-    englished.classList.remove('active');
+    console.log("goodbye");
+    let spanished = potenceChanger.querySelectorAll(".spanish")[0];
+    let englished = potenceChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
     activePotence = true;
-    for(let i = 0; i < items.length; i++) {
-      let cat1son = items[i].getElementsByClassName('cat1')[0];
-      let cat2son = items[i].getElementsByClassName('cat2')[0];
-      let neonson = cat2son.querySelectorAll('.graphic-black')[0];
-      cat1son.classList.add('active');
-      cat2son.classList.remove('active');
-      neonson.classList.remove('neon');
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let neonson = cat2son.querySelectorAll(".graphic-black")[0];
+      cat1son.classList.add("active");
+      cat2son.classList.remove("active");
+      neonson.classList.remove("neon");
     }
   }
 }
 
 function reverseAltura() {
-  let parent = document.querySelector('#alturaboxes');
-  let items = parent.getElementsByClassName('box-container-items');
-  if(activeAltura) {
-    let spanished = alturaChanger.querySelectorAll('.spanish')[0];
-    let englished = alturaChanger.querySelectorAll('.english')[0];
-    spanished.classList.remove('active');
-    englished.classList.add('active');
+  let parent = document.querySelector("#alturaboxes");
+  let items = parent.getElementsByClassName("box-container-items");
+  if (activeAltura) {
+    let spanished = alturaChanger.querySelectorAll(".spanish")[0];
+    let englished = alturaChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
     activeAltura = false;
-    console.log('welcome');
-    for(let i = 0; i < items.length; i++) {
-      let cat1son = items[i].getElementsByClassName('cat1')[0];
-      let cat2son = items[i].getElementsByClassName('cat2')[0];
-      let hideson = cat1son.querySelectorAll('.box-1--item');
-      let showson = cat2son.querySelectorAll('.box-1--item');
-      cat1son.classList.remove('active');
-      cat2son.classList.add('active');
-      for(let i = 0; i < hideson.length; i++) {
-        let sonof = hideson[i].getElementsByTagName('span')[0];
-        sonof.classList.add('hide');
+    console.log("welcome");
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let hideson = cat1son.querySelectorAll(".box-1--item");
+      let showson = cat2son.querySelectorAll(".box-1--item");
+      cat1son.classList.remove("active");
+      cat2son.classList.add("active");
+      for (let i = 0; i < hideson.length; i++) {
+        let sonof = hideson[i].getElementsByTagName("span")[0];
+        sonof.classList.add("hide");
       }
-      for(let i = 0; i < showson.length; i++) {
-        let sonof = showson[i].getElementsByTagName('span')[0];
-        sonof.classList.add('show');
+      for (let i = 0; i < showson.length; i++) {
+        let sonof = showson[i].getElementsByTagName("span")[0];
+        sonof.classList.add("show");
       }
     }
   } else {
-    console.log('goodbye');
-    let spanished = alturaChanger.querySelectorAll('.spanish')[0];
-    let englished = alturaChanger.querySelectorAll('.english')[0];
-    spanished.classList.add('active');
-    englished.classList.remove('active');
+    console.log("goodbye");
+    let spanished = alturaChanger.querySelectorAll(".spanish")[0];
+    let englished = alturaChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
     activeAltura = true;
-    for(let i = 0; i < items.length; i++) {
-      let cat1son = items[i].getElementsByClassName('cat1')[0];
-      let cat2son = items[i].getElementsByClassName('cat2')[0];
-      let hideson = cat1son.querySelectorAll('.box-1--item');
-      let showson = cat2son.querySelectorAll('.box-1--item');
-      cat1son.classList.add('active');
-      cat2son.classList.remove('active');
-      for(let i = 0; i < hideson.length; i++) {
-        let sonof = hideson[i].getElementsByTagName('span')[0];
-        sonof.classList.remove('hide');
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let hideson = cat1son.querySelectorAll(".box-1--item");
+      let showson = cat2son.querySelectorAll(".box-1--item");
+      cat1son.classList.add("active");
+      cat2son.classList.remove("active");
+      for (let i = 0; i < hideson.length; i++) {
+        let sonof = hideson[i].getElementsByTagName("span")[0];
+        sonof.classList.remove("hide");
       }
-      for(let i = 0; i < showson.length; i++) {
-        let sonof = showson[i].getElementsByTagName('span')[0];
-        sonof.classList.remove('show');
+      for (let i = 0; i < showson.length; i++) {
+        let sonof = showson[i].getElementsByTagName("span")[0];
+        sonof.classList.remove("show");
       }
     }
   }
 }
 
 function reverseRange() {
-  let parent = document.querySelector('#rangeBoxes');
-  let items = parent.getElementsByClassName('box-container-items');
-  if(activeRange) {
-    let spanished = rangeChanger.querySelectorAll('.spanish')[0];
-    let englished = rangeChanger.querySelectorAll('.english')[0];
-    spanished.classList.remove('active');
-    englished.classList.add('active');
+  let parent = document.querySelector("#rangeBoxes");
+  let items = parent.getElementsByClassName("box-container-items");
+  if (activeRange) {
+    let spanished = rangeChanger.querySelectorAll(".spanish")[0];
+    let englished = rangeChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
     activeRange = false;
-    console.log('welcome');
-    for(let i = 0; i < items.length; i++) {
-      let cat1son = items[i].getElementsByClassName('cat1')[0];
-      let cat2son = items[i].getElementsByClassName('cat2')[0];
-      let sons2 = cat2son.querySelectorAll('.graphic-tono');
+    console.log("welcome");
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let sons2 = cat2son.querySelectorAll(".graphic-tono");
       let class1 = cat1son.dataset.param1;
       let class2 = cat1son.dataset.param2;
-      cat1son.classList.remove('active');
-      cat2son.classList.add('active');
+      cat1son.classList.remove("active");
+      cat2son.classList.add("active");
       sons2[0].classList.add(class1);
       sons2[1].classList.add(class2);
     }
   } else {
-    console.log('goodbye');
-    let spanished = rangeChanger.querySelectorAll('.spanish')[0];
-    let englished = rangeChanger.querySelectorAll('.english')[0];
-    spanished.classList.add('active');
-    englished.classList.remove('active');
+    console.log("goodbye");
+    let spanished = rangeChanger.querySelectorAll(".spanish")[0];
+    let englished = rangeChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
     activeRange = true;
-    for(let i = 0; i < items.length; i++) {
-      let cat1son = items[i].getElementsByClassName('cat1')[0];
-      let cat2son = items[i].getElementsByClassName('cat2')[0];
-      let sons1 = cat1son.querySelectorAll('.margin-top-move');
-      for(let i = 0; i < sons1.length; i++) {
-        sons1[i].classList.remove('upper');
-        sons1[i].classList.remove('downer');
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let sons1 = cat1son.querySelectorAll(".margin-top-move");
+      for (let i = 0; i < sons1.length; i++) {
+        sons1[i].classList.remove("upper");
+        sons1[i].classList.remove("downer");
       }
-      let sons2 = cat2son.querySelectorAll('.graphic-tono');
+      let sons2 = cat2son.querySelectorAll(".graphic-tono");
       let class1 = cat1son.dataset.param1;
       let class2 = cat1son.dataset.param2;
-      cat1son.classList.add('active');
-      cat2son.classList.remove('active');
+      cat1son.classList.add("active");
+      cat2son.classList.remove("active");
       sons2[0].classList.remove(class1);
       sons2[1].classList.remove(class2);
     }
   }
 }
 
-
 async function changePotence() {
   let element = event.target;
   let parent = element.parentNode;
   if (element.classList.contains("cat1")) {
     let sibling = parent.getElementsByClassName("cat2")[0];
-    element.classList.remove('active');
-    sibling.classList.add('active');
+    element.classList.remove("active");
+    sibling.classList.add("active");
     let firstSon = sibling.getElementsByClassName("box-1--graphic")[0];
     let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
     await sleep(100);
     secondSon.classList.add("neon");
   } else {
     let sibling = parent.getElementsByClassName("cat1")[0];
-    element.classList.remove('active');
-    sibling.classList.add('active');
+    element.classList.remove("active");
+    sibling.classList.add("active");
     let firstSon = element.getElementsByClassName("box-1--graphic")[0];
     let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
     await sleep(100);
@@ -3794,24 +3822,23 @@ async function changeAltura() {
   let parent = element.parentNode;
   if (element.classList.contains("cat1")) {
     let sibling = parent.getElementsByClassName("cat2")[0];
-    element.classList.remove('active');
-    sibling.classList.add('active');
+    element.classList.remove("active");
+    sibling.classList.add("active");
     await sleep(100);
-    let hideson = element.querySelectorAll('.box-1--item');
-    let showson = sibling.querySelectorAll('.box-1--item');
-    for(let i = 0; i < hideson.length; i++) {
-      let sonof = hideson[i].getElementsByTagName('span')[0];
-      sonof.classList.add('hide');
+    let hideson = element.querySelectorAll(".box-1--item");
+    let showson = sibling.querySelectorAll(".box-1--item");
+    for (let i = 0; i < hideson.length; i++) {
+      let sonof = hideson[i].getElementsByTagName("span")[0];
+      sonof.classList.add("hide");
     }
-    for(let i = 0; i < showson.length; i++) {
-      let sonof = showson[i].getElementsByTagName('span')[0];
-      sonof.classList.add('show');
+    for (let i = 0; i < showson.length; i++) {
+      let sonof = showson[i].getElementsByTagName("span")[0];
+      sonof.classList.add("show");
     }
   } else {
     let sibling = parent.getElementsByClassName("cat1")[0];
-    element.classList.remove('active');
-    sibling.classList.add('active');
-    
+    element.classList.remove("active");
+    sibling.classList.add("active");
   }
 }
 
@@ -3835,7 +3862,6 @@ async function changeRange() {
     await sleep(200);
     reciver1.classList.add(param1);
     reciver2.classList.add(param2);
-    
   } else {
     let sibling = parent.getElementsByClassName("cat1")[0];
     let sons = sibling.getElementsByClassName("box-1--item");
@@ -3855,110 +3881,107 @@ async function changeRange() {
   }
 }
 
-
-
 async function changeBox() {
   let element = event.target;
   let parent = element.parentNode;
   if (element.classList.contains("cat1")) {
     let sibling = parent.getElementsByClassName("cat2")[0];
-    element.classList.remove('active');
-    sibling.classList.add('active');
+    element.classList.remove("active");
+    sibling.classList.add("active");
     let delayed = sibling.dataset.delay;
-      let show = sibling.dataset.show;
-      let hide = sibling.dataset.hide;
-      let repeat = sibling.dataset.times;
-      let son = sibling.getElementsByClassName("box-1--item")[0];
-      for (let i = 0; i < 20; i++) {
-        for (let i = 0; i < repeat; i++) {
-          son.classList.add("show");
-          await sleep(show);
-          son.classList.remove("show");
-          await sleep(hide);
-        }
-        await sleep(delayed);
+    let show = sibling.dataset.show;
+    let hide = sibling.dataset.hide;
+    let repeat = sibling.dataset.times;
+    let son = sibling.getElementsByClassName("box-1--item")[0];
+    for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < repeat; i++) {
+        son.classList.add("show");
+        await sleep(show);
+        son.classList.remove("show");
+        await sleep(hide);
       }
+      await sleep(delayed);
+    }
   } else {
     let sibling = parent.getElementsByClassName("cat1")[0];
-    element.classList.remove('active');
-    sibling.classList.add('active');
-    
+    element.classList.remove("active");
+    sibling.classList.add("active");
   }
 }
 
 function reverseFlip() {
-  console.log('flippy');
-  let parent = document.querySelector('#imagesBox');
-  let fliper = parent.querySelectorAll('.flip-container');
-  if(activeFlip) {
-    let spanished = flipChanger.querySelectorAll('.spanish')[0];
-    let englished = flipChanger.querySelectorAll('.english')[0];
-    spanished.classList.remove('active');
-    englished.classList.add('active');
-    for(let i = 0; i < fliper.length; i++) {
-      fliper[i].classList.add('hover');
+  console.log("flippy");
+  let parent = document.querySelector("#imagesBox");
+  let fliper = parent.querySelectorAll(".flip-container");
+  if (activeFlip) {
+    let spanished = flipChanger.querySelectorAll(".spanish")[0];
+    let englished = flipChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
+    for (let i = 0; i < fliper.length; i++) {
+      fliper[i].classList.add("hover");
     }
     activeFlip = false;
   } else {
-    let spanished = flipChanger.querySelectorAll('.spanish')[0];
-    let englished = flipChanger.querySelectorAll('.english')[0];
-    spanished.classList.add('active');
-    englished.classList.remove('active');
-    for(let i = 0; i < fliper.length; i++) {
-      fliper[i].classList.remove('hover');
+    let spanished = flipChanger.querySelectorAll(".spanish")[0];
+    let englished = flipChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
+    for (let i = 0; i < fliper.length; i++) {
+      fliper[i].classList.remove("hover");
     }
     activeFlip = true;
   }
 }
 
 async function reversePeriod() {
-  let parent = document.querySelector('#periodsItems');
-  let items = parent.getElementsByClassName('box-container-items');
-  if(activePeriod) {
-    let spanished = periodChanger.querySelectorAll('.spanish')[0];
-    let englished = periodChanger.querySelectorAll('.english')[0];
-    spanished.classList.remove('active');
-    englished.classList.add('active');
+  let parent = document.querySelector("#periodsItems");
+  let items = parent.getElementsByClassName("box-container-items");
+  if (activePeriod) {
+    let spanished = periodChanger.querySelectorAll(".spanish")[0];
+    let englished = periodChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
     activePeriod = false;
-    console.log('welcome');
-    for(let i = 0; i < items.length; i++) {
-      let cat1son = items[i].getElementsByClassName('cat1')[0];
-      let cat2son = items[i].getElementsByClassName('cat2')[0];
-      cat1son.classList.remove('active');
-      cat2son.classList.add('active');
-      console.log('letsons');
+    console.log("welcome");
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      cat1son.classList.remove("active");
+      cat2son.classList.add("active");
+      console.log("letsons");
       let delayed = cat2son.dataset.delay;
       let show = cat2son.dataset.show;
       let hide = cat2son.dataset.hide;
       let repeat = cat2son.dataset.times;
       let son = cat2son.getElementsByClassName("box-1--item")[0];
-      son.classList.add('show');
-      animationEnd(son,delayed,show,hide,repeat);
+      son.classList.add("show");
+      animationEnd(son, delayed, show, hide, repeat);
     }
   } else {
-    console.log('goodbye');
-    let spanished = periodChanger.querySelectorAll('.spanish')[0];
-    let englished = periodChanger.querySelectorAll('.english')[0];
-    spanished.classList.add('active');
-    englished.classList.remove('active');
+    console.log("goodbye");
+    let spanished = periodChanger.querySelectorAll(".spanish")[0];
+    let englished = periodChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
     activePeriod = true;
-    for(let i = 0; i < items.length; i++) {
-      let cat1son = items[i].getElementsByClassName('cat1')[0];
-      let cat2son = items[i].getElementsByClassName('cat2')[0];
-      cat1son.classList.add('active');
-      cat2son.classList.remove('active');
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      cat1son.classList.add("active");
+      cat2son.classList.remove("active");
     }
   }
 }
 
-async function animationEnd(son,delayed,show,hide,repeat) {
+async function animationEnd(son, delayed, show, hide, repeat) {
   for (let i = 0; i < 20; i++) {
-        for (let i = 0; i < repeat; i++) {
-          son.classList.add("show");
-          await sleep(show);
-          son.classList.remove("show");
-          await sleep(hide);
-        }
-        await sleep(delayed);
-      }
+    for (let i = 0; i < repeat; i++) {
+      son.classList.add("show");
+      await sleep(show);
+      son.classList.remove("show");
+      await sleep(hide);
+    }
+    await sleep(delayed);
+  }
 }
