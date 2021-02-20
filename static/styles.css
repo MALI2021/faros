@@ -977,7 +977,7 @@ span {
 .box-img {
   border-top: 2px solid;
   border-bottom: 2px solid;
-  padding: 20px 0; }
+  padding: 30px 0; }
   .box-img--item {
     align-items: center;
     display: flex;
@@ -1038,6 +1038,9 @@ span {
 
 .pb-30 {
   padding-bottom: 30px; }
+
+.pb-50 {
+  padding-bottom: 50px; }
 
 .pb-80 {
   padding-bottom: 80px; }
@@ -1691,10 +1694,10 @@ p.black span {
   margin-bottom: 120px; }
   @media (min-width: 768px) {
     .credit-list {
-      margin-bottom: 170px; } }
+      margin-bottom: 150px; } }
   @media (min-width: 960px) {
     .credit-list {
-      margin-top: 110px; } }
+      margin-top: 100px; } }
   .credit-list ul {
     margin: 0;
     padding: 0;
@@ -1719,7 +1722,7 @@ p.black span {
       margin-bottom: 70px; } }
   @media (min-width: 960px) {
     .agradecimientos-text {
-      margin-bottom: 100px; } }
+      margin-bottom: 85px; } }
 
 .nav-tabs .text-3 {
   padding-bottom: 0;
@@ -1915,7 +1918,7 @@ p.black span {
   padding-bottom: 122px; }
   @media (min-width: 960px) {
     .agradecimientos-text2 {
-      padding-bottom: 175px; } }
+      padding-bottom: 150px; } }
 
 .body-links {
   text-decoration: underline;
