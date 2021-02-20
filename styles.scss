@@ -2773,4 +2773,38 @@ p.black {
 
 .body-links {
   text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: #cfcfcf;
+  }
+}
+
+
+.agradecimientos-text2 {
+  p {
+    @media (min-width: 960px) {
+      font-size: 28px!important;
+
+      span {
+        font-size: 28px!important;
+      }
+    }
+  }
+}
+
+.list-item-names b {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.agradecimientos-text span{
+  @media (min-width: 768px) {
+    font-size: 28px!important;
+  }
+}
+
+.pw-20 {
+  padding-left: 15px;
+  padding-right: 15px;
 }

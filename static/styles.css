@@ -1918,6 +1918,27 @@ p.black span {
       padding-bottom: 175px; } }
 
 .body-links {
+  text-decoration: underline;
+  cursor: pointer; }
+  .body-links:hover {
+    color: #cfcfcf; }
+
+@media (min-width: 960px) {
+  .agradecimientos-text2 p {
+    font-size: 28px !important; }
+    .agradecimientos-text2 p span {
+      font-size: 28px !important; } }
+
+.list-item-names b {
+  font-weight: normal;
   text-decoration: underline; }
+
+@media (min-width: 768px) {
+  .agradecimientos-text span {
+    font-size: 28px !important; } }
+
+.pw-20 {
+  padding-left: 15px;
+  padding-right: 15px; }
 
 /*# sourceMappingURL=styles.css.map */
