@@ -722,12 +722,18 @@ span {
       height: 310px; } }
   .box-2 p {
     font-size: 14px; }
+    .box-2 p span {
+      font-size: 14px; }
     @media (min-width: 768px) {
       .box-2 p {
-        font-size: 17px; } }
+        font-size: 17px; }
+        .box-2 p span {
+          font-size: 17px; } }
     @media (min-width: 960px) {
       .box-2 p {
-        font-size: 21px; } }
+        font-size: 21px; }
+        .box-2 p span {
+          font-size: 21px; } }
 
 .d-potencia {
   display: grid;
@@ -949,8 +955,7 @@ span {
           .c-tab--items--header p span {
             font-size: 76px; } }
     .c-tab--items--content {
-      display: none;
-      pointer-events: none; }
+      display: none; }
     .c-tab--items.active .c-tab--items--header .info .arrow {
       transform: rotate(90deg); }
     .c-tab--items.active .c-tab--items--content {
@@ -1252,12 +1257,17 @@ span {
 .box-1.double {
   position: relative; }
 
-.linktopage span,
-.linktopage p {
-  pointer-events: none; }
-  .linktopage span span,
-  .linktopage p span {
-    color: initial; }
+.linktopage {
+  cursor: pointer !important; }
+  .linktopage span,
+  .linktopage p {
+    pointer-events: none; }
+    .linktopage span span,
+    .linktopage p span {
+      color: initial; }
+  .linktopage:hover span,
+  .linktopage:hover p {
+    color: #cfcfcf; }
 
 /* entire container, keeps perspective */
 .flip-container {
@@ -1922,7 +1932,8 @@ p.black span {
 
 .body-links {
   text-decoration: underline;
-  cursor: pointer; }
+  cursor: pointer;
+  font-style: oblique; }
   .body-links:hover {
     color: #cfcfcf; }
 
@@ -1933,7 +1944,6 @@ p.black span {
       font-size: 28px !important; } }
 
 .list-item-names b {
-  font-weight: normal;
   text-decoration: underline; }
 
 @media (min-width: 768px) {
@@ -1947,5 +1957,23 @@ p.black span {
 .doble-desktop--fijo a.c-gray {
   color: #000;
   font-size: 21px; }
+
+.mb-20 {
+  margin-bottom: 20px; }
+
+@media (min-width: 768px) {
+  .list-item-names b span {
+    font-size: 28px; } }
+
+.spanish,
+.english,
+.coords-launcher {
+  cursor: pointer !important; }
+
+.list-item-soundcloud span {
+  font-size: initial; }
+
+.score-area a.c-gray:hover {
+  color: #000; }
 
 /*# sourceMappingURL=styles.css.map */

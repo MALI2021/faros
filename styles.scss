@@ -1028,12 +1028,24 @@ span {
   p {
     font-size: 14px;
 
+    span {
+      font-size: 14px;
+    }
+
     @media (min-width: 768px) {
       font-size: 17px;
+
+      span {
+        font-size: 17px;
+      }
     }
 
     @media (min-width: 960px) {
       font-size: 21px;
+
+      span {
+        font-size: 21px;
+      }
     }
   }
 }
@@ -1364,7 +1376,6 @@ span {
 
     &--content {
       display: none;
-      pointer-events: none;
     }
 
     &.active {
@@ -1818,12 +1829,21 @@ span {
 }
 
 .linktopage {
+  cursor: pointer !important;
+
   span,
   p {
     pointer-events: none;
 
     span {
       color: initial;
+    }
+  }
+
+  &:hover {
+    span,
+    p {
+      color: #cfcfcf;
     }
   }
 }
@@ -2778,6 +2798,7 @@ p.black {
 .body-links {
   text-decoration: underline;
   cursor: pointer;
+  font-style: oblique;
 
   &:hover {
     color: #cfcfcf;
@@ -2797,7 +2818,6 @@ p.black {
 }
 
 .list-item-names b {
-  font-weight: normal;
   text-decoration: underline;
 }
 
@@ -2815,4 +2835,38 @@ p.black {
 .doble-desktop--fijo a.c-gray {
   color: #000;
   font-size: 21px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.list-item-names {
+  @media (min-width: 768px) {
+    b {
+      span {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.spanish,
+.english,
+.coords-launcher {
+  cursor: pointer !important;
+}
+
+.list-item-soundcloud {
+  span {
+    font-size: initial;
+  }
+}
+
+.score-area {
+  a.c-gray {
+    &:hover {
+      color: #000;
+    }
+  }
 }
