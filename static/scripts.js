@@ -3344,10 +3344,10 @@ window.onload = function () {
     <div class="box-container-items bb-dkt-3">
       <div class="box-1 box-range cat1 moving active" data-param1="${element.param1}" data-param2="${element.param2}">
         <div class="box-1--item" style="overflow: hidden;">
-          <span class="upper">Alcance nominal<br /> ${element.millas1} millas</span>
+          <span class="upper" data-translatable><span>Nominal range<br /> ${element.millas1} miles</span><span>Alcance nominal<br /> ${element.millas1} millas</span></span>
         </div>
         <div class="box-1--item" style="overflow: hidden;">
-          <span class="downer">Alcance geográfico<br /> ${element.millas2} millas</span>
+          <span class="downer" data-translatable><span>Geographic range<br /> ${element.millas2} miles</span><span>Alcance geográfico<br /> ${element.millas2} millas</span></span>
         </div>
       </div>
       <div class="box-1 box-range cat2 double">

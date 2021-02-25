@@ -813,14 +813,21 @@ span {
         font-size: 24px; } }
 
 .graphic-tono {
-  width: 30px;
+  width: auto;
   position: absolute;
   bottom: 0px;
   left: 50%;
   transform: translateX(-50%) translateY(0);
   transition: all 0.5s ease-in-out;
   transition-delay: 0.5s;
-  pointer-events: none; }
+  pointer-events: none;
+  height: 35px; }
+  @media (min-width: 768px) {
+    .graphic-tono {
+      height: 40px; } }
+  @media (min-width: 960px) {
+    .graphic-tono {
+      height: 45px; } }
   .graphic-tono.alto {
     transform: translateX(-50%) translateY(-9px);
     transition: all 0.5s ease-in-out;
@@ -955,12 +962,24 @@ span {
           .c-tab--items--header p span {
             font-size: 76px; } }
     .c-tab--items--content {
-      display: none; }
+      display: block;
+      padding-bottom: 0;
+      min-height: 0px;
+      max-height: 0px;
+      overflow: hidden;
+      transition-property: all;
+      transition-duration: 0.6s;
+      transition-timing-function: ease-in-out; }
     .c-tab--items.active .c-tab--items--header .info .arrow {
       transform: rotate(90deg); }
     .c-tab--items.active .c-tab--items--content {
       display: block;
-      padding-bottom: 30px; }
+      padding-bottom: 30px;
+      max-height: 1500px;
+      overflow: hidden;
+      transition-property: all;
+      transition-duration: 0.6s;
+      transition-timing-function: ease-in-out; }
 
 .c-btn {
   border-radius: 40px;
