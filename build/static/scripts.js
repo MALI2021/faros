@@ -13,9 +13,25 @@ var langChanger = document.getElementById("english-changer");
 var langChanger2 = document.getElementById("spanish-changer");
 var lesserlinks = document.getElementsByClassName("linktopage");
 var flippers = document.getElementsByClassName("flip-container");
-var accordions = document.getElementsByClassName('c-tab--items');
+// var accordions = document.getElementsByClassName("c-tab--items--header");
+var accordions = document.getElementsByClassName("c-tab--items");
 var closers2 = document.getElementsByClassName("arrow-back");
-
+var potenceChanger = document.getElementById("potence-reverser");
+var alturaChanger = document.getElementById("altura-changer");
+var rangeChanger = document.getElementById("range-changer");
+var flipChanger = document.getElementById("flip-changer");
+var periodChanger = document.getElementById("period-changer");
+// var mailingInput = document.getElementById("record-mail");
+var mailingLaunch = document.querySelectorAll(".launch");
+var activePotence = true;
+var activeAltura = true;
+var activeRange = true;
+var activeFlip = true;
+var activePeriod = true;
+var potenceItemsBoxes;
+var alturaItemsBoxes;
+var rangeItemsBoxes;
+var periodItemsBoxes;
 
 var db = firebase.firestore();
 
@@ -799,6 +815,17 @@ var potences = [
     clase2: "c-gray",
     line3: "2001 - 25 000 cd",
     clase3: "c-gray",
+    line4: "0 - 2000 cd",
+    clase4: "c-gray",
+  },
+  {
+    percentage: 50,
+    line1: "+ 100 001 cd",
+    clase1: "c-gray",
+    line2: "25 001 - 100 000 cd",
+    clase2: "c-gray",
+    line3: "2 100 cd",
+    clase3: "",
     line4: "0 - 2000 cd",
     clase4: "c-gray",
   },
@@ -2657,8 +2684,8 @@ var places = [
     title: "PUNTA LA NEGRA",
     subtitle: "Punta La Negra, Piura",
     year: "1981",
-    s: "07º48’52”",
-    w: "59º29’79”",
+    s: "06º03’43”",
+    w: "81º06’30”",
     coords:
       "https://www.google.com/maps/place/9%C2%B028'02.0%22S+9%C2%B023'29.0%22W/@-9.4672163,-9.482651,31882m/data=!3m1!1e3!4m5!3m4!1s0x0:0x0!8m2!3d-9.4672222!4d-9.3913889#",
   },
@@ -2687,8 +2714,8 @@ var places = [
     title: "SANTA ROSA",
     subtitle: "Caleta Santa Rosa, Lambayeque",
     year: "1998",
-    s: "06º46’09”",
-    w: "79º58’13”",
+    s: "06º53’35”",
+    w: "79º54’49”",
     coords:
       "https://www.google.com/maps/place/9%C2%B028'02.0%22S+9%C2%B023'29.0%22W/@-9.4672163,-9.482651,31882m/data=!3m1!1e3!4m5!3m4!1s0x0:0x0!8m2!3d-9.4672222!4d-9.3913889#",
   },
@@ -2736,7 +2763,7 @@ var places = [
     number: "18",
     title: "MORRO CARRETAS",
     subtitle: "Puerto Salaverry, La Libertad",
-    year: "1874",
+    year: "1974",
     s: "08º13’38”",
     w: "78º58’42”",
     coords:
@@ -2747,8 +2774,8 @@ var places = [
     title: "ISLA GUAÑAPE",
     subtitle: "Isla Guañape Sur, La Libertad",
     year: "1930",
-    s: "08º13’38”",
-    w: "78º58’42”",
+    s: "08º33’58”",
+    w: "78º58’07”",
     coords:
       "https://www.google.com/maps/place/9%C2%B028'02.0%22S+9%C2%B023'29.0%22W/@-9.4672163,-9.482651,31882m/data=!3m1!1e3!4m5!3m4!1s0x0:0x0!8m2!3d-9.4672222!4d-9.3913889#",
   },
@@ -2768,7 +2795,7 @@ var places = [
     subtitle: "Puerto Casma, Ancash",
     year: "1978",
     s: "09º28’02”",
-    w: "09º23’29”",
+    w: "78º23’29”",
     coords:
       "https://www.google.com/maps/place/9%C2%B028'02.0%22S+9%C2%B023'29.0%22W/@-9.4672163,-9.482651,31882m/data=!3m1!1e3!4m5!3m4!1s0x0:0x0!8m2!3d-9.4672222!4d-9.3913889#",
   },
@@ -2957,7 +2984,7 @@ var places = [
     title: "ISLA CHINCHA DEL CENTRO",
     subtitle: "Isla Chincha, Ica",
     year: "1928",
-    s: "13º38’26”",
+    s: "13º38’32”",
     w: "76º24’07”",
     coords:
       "https://www.google.com/maps/place/13%C2%B038'26.0%22S+76%C2%B024'07.0%22W/@-13.6405504,-76.4041331,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-13.6405556!4d-76.4019444#",
@@ -3044,11 +3071,11 @@ var places = [
   },
   {
     number: "49",
-    title: "PUNTA ÁTICO",
-    subtitle: "Caleta Ático, Arequipa",
+    title: "PUNTA ATICO",
+    subtitle: "Caleta Atico, Arequipa",
     year: "1979",
-    s: "16º24’36”",
-    w: "74º13’30”",
+    s: "16º14’13”",
+    w: "73º41’55”",
     coords:
       "https://www.google.com/maps/place/16%C2%B014'13.0%22S+73%C2%B041'55.0%22W/@-16.2369392,-73.7007998,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-16.2369444!4d-73.6986111#",
   },
@@ -3077,8 +3104,8 @@ var places = [
     title: "PUNTA ISLAY",
     subtitle: "Matarani-Islay, Arequipa",
     year: "1930",
-    s: "13º38’26”",
-    w: "72º24’07”",
+    s: "17º00’56”",
+    w: "72º06’42”",
     coords:
       "https://www.google.com/maps/place/13%C2%B038'26.0%22S+76%C2%B024'07.0%22W/@-13.6405504,-76.4041331,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-13.6405556!4d-76.4019444#",
   },
@@ -3127,6 +3154,12 @@ var places = [
 window.onload = function () {
   langChanger.addEventListener("click", toEnglishChange);
   langChanger2.addEventListener("click", toSpanishChange);
+  potenceChanger.addEventListener("click", reversePotence);
+  alturaChanger.addEventListener("click", reverseAltura);
+  rangeChanger.addEventListener("click", reverseRange);
+  flipChanger.addEventListener("click", reverseFlip);
+  periodChanger.addEventListener("click", reversePeriod);
+  console.log(mailingLaunch);
 
   docGet();
 
@@ -3156,13 +3189,26 @@ window.onload = function () {
     maptrigger[i].addEventListener("click", mapLaunch);
   }
 
+  for (let i = 0; i < mailingLaunch.length; i++) {
+    mailingLaunch[i].addEventListener("click", writeMails);
+  }
+
   periods.forEach((element) => {
     let toAdd = /*html*/ `
           <div class="box-container-items bb-dkt-3">
           <div class="box-2 cat1 active">
             <div class="grid-box-text">
-              <p class="pt-0">Periodo<br /> ${element.period} segundos</p>
-              <p>${element.destellos} destellos</p>`;
+              <p class="pt-0" data-translatable><span>Period<br /> ${element.period} seconds</span><span>Periodo<br /> ${element.period} segundos</span></p>`;
+
+    if (element.destellos < 2) {
+      toAdd =
+        toAdd +
+        `<p data-translatable><span>${element.destellos} flash</span><span>${element.destellos} destello</p>`;
+    } else {
+      toAdd =
+        toAdd +
+        `<p data-translatable><span>${element.destellos} flashes</span><span>${element.destellos} destellos</p>`;
+    }
 
     for (let i = 0; i < element.destellos; i++) {
       toAdd = toAdd + `<p class="m-0">${element.lines[i]}</p>`;
@@ -3186,7 +3232,7 @@ window.onload = function () {
   potences.forEach((element) => {
     let addPotence = /*html*/ `
       <div class="box-container-items bb-dkt-3">
-        <div class="box-1 short-ones cat1 active">
+        <div class="box-1 box-potence short-ones cat1 active">
           <div class="box-1--item">
             <span class="${element.clase1}">${element.line1}</span>
           </div>
@@ -3200,23 +3246,23 @@ window.onload = function () {
             <span class="${element.clase4}">${element.line4}</span>
           </div>
         </div>
-        <div class="box-1 short-ones cat2 percent" data-percentage="${element.percentage}">
+        <div class="box-1 box-potence short-ones cat2 percent" data-percentage="${element.percentage}">
           <div class="box-1--graphic">
             <div class="graphic-black">`;
-      
-      for(let i = 0; i < element.percentage / 25;i++) {
-        let identifier = i + 1;
-        let classToAddHere = 25 * identifier;
-        addPotence = 
-        addPotence + 
-        `
-          <p class="fat-lines line-${classToAddHere}"></p>
-        `
-      }      
 
+    for (let i = 0; i < element.percentage / 25; i++) {
+      let identifier = i + 1;
+      let classToAddHere = 25 * identifier;
       addPotence =
         addPotence +
-              /** html */ `
+        `
+          <p class="fat-lines line-${classToAddHere}"></p>
+        `;
+    }
+
+    addPotence =
+      addPotence +
+      /** html */ `
             </div>
           </div>
         </div>
@@ -3224,6 +3270,7 @@ window.onload = function () {
     `;
     let parent = document.querySelector("#potenceItems");
     parent.insertAdjacentHTML("beforeend", addPotence);
+    potenceItemsBoxes = document.getElementsByClassName("box-potence");
   });
 
   alturas.forEach((element) => {
@@ -3232,26 +3279,26 @@ window.onload = function () {
     // clase3b: "c-gray",
     // clase4b: "c-gray",
     // clase5b: "",
-    let elemental = '';
-    if(element.clase1b == ''){
-      elemental = 'xlento';
+    let elemental = "";
+    if (element.clase1b == "") {
+      elemental = "xlento";
     }
-    if(element.clase2b == ''){
-      elemental = 'lento';
+    if (element.clase2b == "") {
+      elemental = "lento";
     }
-    if(element.clase3b == ''){
-      elemental = 'moderado';
+    if (element.clase3b == "") {
+      elemental = "moderado";
     }
-    if(element.clase4b == ''){
-      elemental = 'rapido';
+    if (element.clase4b == "") {
+      elemental = "rapido";
     }
-    if(element.clase5b == ''){
-      elemental = 'xrapido';
+    if (element.clase5b == "") {
+      elemental = "xrapido";
     }
 
     let addAltura = /* html */ `
     <div class="box-container-items bb-dkt-3">
-      <div class="box-1 cat1 active">
+      <div class="box-1 altura-box cat1 active">
         <div class="box-1--item">
           <span class="${element.clase1}">${element.line1}</span>
         </div>
@@ -3268,41 +3315,42 @@ window.onload = function () {
           <span class="${element.clase5}">${element.line5}</span>
         </div>
       </div>
-      <div class="box-1 cat2">
+      <div class="box-1 altura-box cat2">
         <div class="box-1--item">
-          <span class="${element.clase1b} ${elemental}">Muy lento</span>
+          <span class="${element.clase1b} ${elemental}" data-translatable><span>Very Slow</span><span>Muy lento</span></span>
         </div>
         <div class="box-1--item">
-          <span class="${element.clase2b} ${elemental}">Lento</span>
+          <span class="${element.clase2b} ${elemental}" data-translatable><span>Slow</span><span>Lento</span></span>
         </div>
         <div class="box-1--item">
-          <span class="${element.clase3b} ${elemental}">Moderado</span>
+          <span class="${element.clase3b} ${elemental}" data-translatable><span>Moderate</span><span>Moderado</span></span>
         </div>
         <div class="box-1--item">
-          <span class="${element.clase4b} ${elemental}">Rápido</span>
+          <span class="${element.clase4b} ${elemental}" data-translatable><span>Fast</span><span>Rápido</span></span>
         </div>
         <div class="box-1--item">
-          <span class="${element.clase5b} ${elemental}">Muy rápido</span>
+          <span class="${element.clase5b} ${elemental}" data-translatable><span>Very fast</span><span>Muy rápido</span></span>
         </div>
       </div> 
     </div> 
     `;
     let parent = document.querySelector("#alturaboxes");
     parent.insertAdjacentHTML("beforeend", addAltura);
+    alturaItemsBoxes = document.getElementsByClassName("altura-box");
   });
 
   ranges.forEach((element) => {
     let addRange = /* html */ `
     <div class="box-container-items bb-dkt-3">
-      <div class="box-1 cat1 moving active" data-param1="${element.param1}" data-param2="${element.param2}">
+      <div class="box-1 box-range cat1 moving active" data-param1="${element.param1}" data-param2="${element.param2}">
         <div class="box-1--item" style="overflow: hidden;">
-          <span class="upper">Alcance nominal<br /> ${element.millas1} millas</span>
+          <span class="upper" data-translatable><span>Nominal range<br /> ${element.millas1} miles</span><span>Alcance nominal<br /> ${element.millas1} millas</span></span>
         </div>
         <div class="box-1--item" style="overflow: hidden;">
-          <span class="downer">Alcance geográfico<br /> ${element.millas2} millas</span>
+          <span class="downer" data-translatable><span>Geographic range<br /> ${element.millas2} miles</span><span>Alcance geográfico<br /> ${element.millas2} millas</span></span>
         </div>
       </div>
-      <div class="box-1 cat2 double">
+      <div class="box-1 box-range cat2 double">
         <div class="box-1--item"></div>
         <div class="box-1--item"></div>
         <div class="box-1--item"></div>
@@ -3315,6 +3363,7 @@ window.onload = function () {
     `;
     let parent = document.querySelector("#rangeBoxes");
     parent.insertAdjacentHTML("beforeend", addRange);
+    rangeItemsBoxes = document.getElementsByClassName("box-range");
   });
 
   for (let i = 0; i < 56; i++) {
@@ -3342,6 +3391,21 @@ window.onload = function () {
     // console.log(triggers[i]);
   }
 
+  for (let i = 0; i < potenceItemsBoxes.length; i++) {
+    potenceItemsBoxes[i].addEventListener("click", changePotence);
+    // console.log('this are the potences: ',potenceItemsBoxes[i]);
+  }
+
+  for (let i = 0; i < alturaItemsBoxes.length; i++) {
+    alturaItemsBoxes[i].addEventListener("click", changeAltura);
+    // console.log('this are the potences: ',potenceItemsBoxes[i]);
+  }
+
+  for (let i = 0; i < rangeItemsBoxes.length; i++) {
+    rangeItemsBoxes[i].addEventListener("click", changeRange);
+    // console.log('this are the potences: ',potenceItemsBoxes[i]);
+  }
+
   for (let i = 0; i < lesserlinks.length; i++) {
     lesserlinks[i].addEventListener("click", openPage);
     // console.log(triggers[i]);
@@ -3361,10 +3425,10 @@ window.onload = function () {
     // console.log(animatedBoxes[i]);
   }
 
-  for (let i = 0; i < animatedBoxes.length; i++) {
-    animatedBoxes[i].addEventListener("click", changeBox);
-    // console.log(animatedBoxes[i]);
-  }
+  // for (let i = 0; i < animatedBoxes.length; i++) {
+  //   animatedBoxes[i].addEventListener("click", changeBox);
+  //   // console.log(animatedBoxes[i]);
+  // }
 
   for (let i = 0; i < flippers.length; i++) {
     flippers[i].addEventListener("click", flipbox);
@@ -3372,18 +3436,47 @@ window.onload = function () {
   }
 
   for (let i = 0; i < accordions.length; i++) {
-    accordions[i].addEventListener('click', accord);
+    accordions[i].addEventListener("click", accord);
   }
 
   document.getElementById("closerSect").addEventListener("click", hideTabs);
 };
+
+function writeMails() {
+  let parent = event.target.parentNode;
+  console.log("writing");
+  let dates = new Date();
+  let emailuse = parent.querySelectorAll(".record-mail")[0].value;
+  let name = emailuse;
+  let idate = dates.getTime();
+  if (
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      emailuse
+    )
+  ) {
+    db.collection("mails")
+      .doc(name)
+      .set({
+        id: parseInt(idate),
+        mail: emailuse,
+      })
+      .then(function () {
+        alert("mail registrado satisfactoriamente");
+      })
+      .catch(function (error) {
+        console.error("Error writing doc", error);
+      });
+  } else {
+    alert("escribe un mail correcto");
+  }
+}
 
 function accord(event) {
   console.log(event.target);
   // for(let i = 0; i < accordions.length; i ++) {
   //   accordions[i].classList.remove('active');
   // }
-  event.target.classList.toggle('active');
+  event.target.classList.toggle("active");
 }
 
 function sleep(ms) {
@@ -3441,7 +3534,7 @@ async function changePosition() {
 
 async function openPage() {
   container.classList.remove("closed");
-  document.querySelector('#closerSect').classList.remove('visible');
+  document.querySelector("#closerSect").classList.remove("visible");
   textoIntro.classList.remove("inactive");
   triggerContainer.classList.remove("closed");
   for (let i = 0; i < contentItems.length; i++) {
@@ -3506,115 +3599,6 @@ function hideTabs() {
   console.log("this are the closers", closer1, closer2);
   closer1.classList.add("visible");
   closer2.classList.remove("visible");
-}
-
-async function changeBox() {
-  let element = event.target;
-  let parent = element.parentNode;
-  if (element.classList.contains("cat1")) {
-    let sibling = parent.getElementsByClassName("cat2")[0];
-    if (element.classList.contains("moving")) {
-      let sons = element.getElementsByClassName("box-1--item");
-      let param1 = element.dataset.param1;
-      let param2 = element.dataset.param2;
-      for (let i = 0; i < sons.length; i++) {
-        let eltomove = sons[i].getElementsByTagName("span")[0];
-        eltomove.classList.add("margin-top-move");
-      }
-      await sleep(500);
-      element.classList.remove("active");
-      sibling.classList.add("active");
-      let reciver1 = sibling.getElementsByClassName("graphic-tono")[0];
-      let reciver2 = sibling.getElementsByClassName("graphic-tono")[1];
-      await sleep(200);
-      reciver1.classList.add(param1);
-      reciver2.classList.add(param2);
-    } else {
-      console.log('easy way');
-      let items = element.getElementsByClassName('box-1--item');
-      for(let i = 0; i < items.length ;i++) {
-        let child = items[i].getElementsByTagName('span')[0];
-        child.classList.add('hide');
-      }
-      await sleep(500);
-      element.classList.remove("active");
-      sibling.classList.add("active");
-      await sleep(50);
-      let items2 = sibling.getElementsByClassName('box-1--item');
-      for(let i = 0; i < items2.length ;i++) {
-        let child = items2[i].getElementsByTagName('span')[0];
-        child.classList.add('show');
-      }
-    }
-    if (sibling.classList.contains("percent")) {
-      let up = sibling.dataset.percentage;
-      let firstSon = sibling.getElementsByClassName("box-1--graphic")[0];
-      let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
-      await sleep(100);
-      secondSon.classList.add("height" + up + "");
-      secondSon.classList.add("neon");
-    } else if (sibling.classList.contains("titilating")) {
-      let delayed = sibling.dataset.delay;
-      let show = sibling.dataset.show;
-      let hide = sibling.dataset.hide;
-      let repeat = sibling.dataset.times;
-      let son = sibling.getElementsByClassName("box-1--item")[0];
-      for (let i = 0; i < 20; i++) {
-        for (let i = 0; i < repeat; i++) {
-          son.classList.add("show");
-          await sleep(show);
-          son.classList.remove("show");
-          await sleep(hide);
-        }
-        await sleep(delayed);
-      }
-    }
-  } else {
-    let sibling = parent.getElementsByClassName("cat1")[0];
-    
-    if (element.classList.contains("percent")) {
-      let up = element.dataset.percentage;
-      let firstSon = element.getElementsByClassName("box-1--graphic")[0];
-      let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
-      let classToUse = "height" + up + "";
-      await sleep(100);
-      secondSon.classList.remove(classToUse);
-      secondSon.classList.remove(neon);
-    }
-    if (element.classList.contains("titilating")) {
-      let son = sibling.getElementsByClassName("box-1--item")[0];
-      son.classList.remove("show");
-    }
-
-    if (element.classList.contains("double")) {
-      let sons = sibling.getElementsByClassName("box-1--item");
-      let param1 = sibling.dataset.param1;
-      let param2 = sibling.dataset.param2;
-      for (let i = 0; i < sons.length; i++) {
-        let eltomove = sons[i].getElementsByTagName("span")[0];
-        eltomove.classList.remove("margin-top-move");
-      }
-      let reciver1 = element.getElementsByClassName("graphic-tono")[0];
-      let reciver2 = element.getElementsByClassName("graphic-tono")[1];
-      await sleep(200);
-      reciver1.classList.remove(param1);
-      reciver2.classList.remove(param2);
-    }
-
-    let items = sibling.getElementsByClassName('box-1--item');
-      for(let i = 0; i < items.length ;i++) {
-        let child = items[i].getElementsByTagName('span')[0];
-        child.classList.remove('hide');
-      }
-    let items2 = element.getElementsByClassName('box-1--item');
-      for(let i = 0; i < items2.length ;i++) {
-        let child = items2[i].getElementsByTagName('span')[0];
-        child.classList.remove('show');
-      }
-      await sleep(500);
-      sibling.classList.add("active");
-      element.classList.remove("active");
-  }
 }
 
 function flipbox() {
@@ -3686,14 +3670,339 @@ function docGet() {
         parent.insertAdjacentHTML("beforeend", elementToAdd);
         this.toSpanishChange();
 
-        var accordions = document.getElementsByClassName('c-tab--items');
+        var accordions = document.getElementsByClassName("c-tab--items");
 
         for (let i = 0; i < accordions.length; i++) {
-          accordions[i].addEventListener('click', accord);
+          accordions[i].addEventListener("click", accord);
           console.log(accordions[i]);
         }
       });
     });
+}
 
-    
+async function reversePotence() {
+  let parent = document.querySelector("#potenceItems");
+  let items = parent.getElementsByClassName("box-container-items");
+  if (activePotence) {
+    let spanished = potenceChanger.querySelectorAll(".spanish")[0];
+    let englished = potenceChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
+    activePotence = false;
+    console.log("welcome");
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let neonson = cat2son.querySelectorAll(".graphic-black")[0];
+      cat1son.classList.remove("active");
+      cat2son.classList.add("active");
+      await sleep(100);
+      neonson.classList.add("neon");
+    }
+  } else {
+    console.log("goodbye");
+    let spanished = potenceChanger.querySelectorAll(".spanish")[0];
+    let englished = potenceChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
+    activePotence = true;
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let neonson = cat2son.querySelectorAll(".graphic-black")[0];
+      cat1son.classList.add("active");
+      cat2son.classList.remove("active");
+      neonson.classList.remove("neon");
+    }
+  }
+}
+
+function reverseAltura() {
+  let parent = document.querySelector("#alturaboxes");
+  let items = parent.getElementsByClassName("box-container-items");
+  if (activeAltura) {
+    let spanished = alturaChanger.querySelectorAll(".spanish")[0];
+    let englished = alturaChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
+    activeAltura = false;
+    console.log("welcome");
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let hideson = cat1son.querySelectorAll(".box-1--item");
+      let showson = cat2son.querySelectorAll(".box-1--item");
+      cat1son.classList.remove("active");
+      cat2son.classList.add("active");
+      for (let i = 0; i < hideson.length; i++) {
+        let sonof = hideson[i].getElementsByTagName("span")[0];
+        sonof.classList.add("hide");
+      }
+      for (let i = 0; i < showson.length; i++) {
+        let sonof = showson[i].getElementsByTagName("span")[0];
+        sonof.classList.add("show");
+      }
+    }
+  } else {
+    console.log("goodbye");
+    let spanished = alturaChanger.querySelectorAll(".spanish")[0];
+    let englished = alturaChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
+    activeAltura = true;
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let hideson = cat1son.querySelectorAll(".box-1--item");
+      let showson = cat2son.querySelectorAll(".box-1--item");
+      cat1son.classList.add("active");
+      cat2son.classList.remove("active");
+      for (let i = 0; i < hideson.length; i++) {
+        let sonof = hideson[i].getElementsByTagName("span")[0];
+        sonof.classList.remove("hide");
+      }
+      for (let i = 0; i < showson.length; i++) {
+        let sonof = showson[i].getElementsByTagName("span")[0];
+        sonof.classList.remove("show");
+      }
+    }
+  }
+}
+
+function reverseRange() {
+  let parent = document.querySelector("#rangeBoxes");
+  let items = parent.getElementsByClassName("box-container-items");
+  if (activeRange) {
+    let spanished = rangeChanger.querySelectorAll(".spanish")[0];
+    let englished = rangeChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
+    activeRange = false;
+    console.log("welcome");
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let sons2 = cat2son.querySelectorAll(".graphic-tono");
+      let class1 = cat1son.dataset.param1;
+      let class2 = cat1son.dataset.param2;
+      cat1son.classList.remove("active");
+      cat2son.classList.add("active");
+      sons2[0].classList.add(class1);
+      sons2[1].classList.add(class2);
+    }
+  } else {
+    console.log("goodbye");
+    let spanished = rangeChanger.querySelectorAll(".spanish")[0];
+    let englished = rangeChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
+    activeRange = true;
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      let sons1 = cat1son.querySelectorAll(".margin-top-move");
+      for (let i = 0; i < sons1.length; i++) {
+        sons1[i].classList.remove("upper");
+        sons1[i].classList.remove("downer");
+      }
+      let sons2 = cat2son.querySelectorAll(".graphic-tono");
+      let class1 = cat1son.dataset.param1;
+      let class2 = cat1son.dataset.param2;
+      cat1son.classList.add("active");
+      cat2son.classList.remove("active");
+      sons2[0].classList.remove(class1);
+      sons2[1].classList.remove(class2);
+    }
+  }
+}
+
+async function changePotence() {
+  let element = event.target;
+  let parent = element.parentNode;
+  if (element.classList.contains("cat1")) {
+    let sibling = parent.getElementsByClassName("cat2")[0];
+    element.classList.remove("active");
+    sibling.classList.add("active");
+    let firstSon = sibling.getElementsByClassName("box-1--graphic")[0];
+    let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
+    await sleep(100);
+    secondSon.classList.add("neon");
+  } else {
+    let sibling = parent.getElementsByClassName("cat1")[0];
+    element.classList.remove("active");
+    sibling.classList.add("active");
+    let firstSon = element.getElementsByClassName("box-1--graphic")[0];
+    let secondSon = firstSon.getElementsByClassName("graphic-black")[0];
+    await sleep(100);
+    secondSon.classList.remove("neon");
+  }
+}
+
+async function changeAltura() {
+  let element = event.target;
+  let parent = element.parentNode;
+  if (element.classList.contains("cat1")) {
+    let sibling = parent.getElementsByClassName("cat2")[0];
+    element.classList.remove("active");
+    sibling.classList.add("active");
+    await sleep(100);
+    let hideson = element.querySelectorAll(".box-1--item");
+    let showson = sibling.querySelectorAll(".box-1--item");
+    for (let i = 0; i < hideson.length; i++) {
+      let sonof = hideson[i].getElementsByTagName("span")[0];
+      sonof.classList.add("hide");
+    }
+    for (let i = 0; i < showson.length; i++) {
+      let sonof = showson[i].getElementsByTagName("span")[0];
+      sonof.classList.add("show");
+    }
+  } else {
+    let sibling = parent.getElementsByClassName("cat1")[0];
+    element.classList.remove("active");
+    sibling.classList.add("active");
+  }
+}
+
+async function changeRange() {
+  let element = event.target;
+  let parent = element.parentNode;
+  if (element.classList.contains("cat1")) {
+    let sibling = parent.getElementsByClassName("cat2")[0];
+    let sons = element.getElementsByClassName("box-1--item");
+    let param1 = element.dataset.param1;
+    let param2 = element.dataset.param2;
+    for (let i = 0; i < sons.length; i++) {
+      let eltomove = sons[i].getElementsByTagName("span")[0];
+      eltomove.classList.add("margin-top-move");
+    }
+    await sleep(500);
+    element.classList.remove("active");
+    sibling.classList.add("active");
+    let reciver1 = sibling.getElementsByClassName("graphic-tono")[0];
+    let reciver2 = sibling.getElementsByClassName("graphic-tono")[1];
+    await sleep(200);
+    reciver1.classList.add(param1);
+    reciver2.classList.add(param2);
+  } else {
+    let sibling = parent.getElementsByClassName("cat1")[0];
+    let sons = sibling.getElementsByClassName("box-1--item");
+    let param1 = sibling.dataset.param1;
+    let param2 = sibling.dataset.param2;
+    for (let i = 0; i < sons.length; i++) {
+      let eltomove = sons[i].getElementsByTagName("span")[0];
+      eltomove.classList.remove("margin-top-move");
+    }
+    let reciver1 = element.getElementsByClassName("graphic-tono")[0];
+    let reciver2 = element.getElementsByClassName("graphic-tono")[1];
+    await sleep(200);
+    reciver1.classList.remove(param1);
+    reciver2.classList.remove(param2);
+    element.classList.remove("active");
+    sibling.classList.add("active");
+  }
+}
+
+async function changeBox() {
+  let element = event.target;
+  let parent = element.parentNode;
+  if (element.classList.contains("cat1")) {
+    let sibling = parent.getElementsByClassName("cat2")[0];
+    element.classList.remove("active");
+    sibling.classList.add("active");
+    let delayed = sibling.dataset.delay;
+    let show = sibling.dataset.show;
+    let hide = sibling.dataset.hide;
+    let repeat = sibling.dataset.times;
+    let son = sibling.getElementsByClassName("box-1--item")[0];
+    for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < repeat; i++) {
+        son.classList.add("show");
+        await sleep(show);
+        son.classList.remove("show");
+        await sleep(hide);
+      }
+      await sleep(delayed);
+    }
+  } else {
+    let sibling = parent.getElementsByClassName("cat1")[0];
+    element.classList.remove("active");
+    sibling.classList.add("active");
+  }
+}
+
+function reverseFlip() {
+  console.log("flippy");
+  let parent = document.querySelector("#imagesBox");
+  let fliper = parent.querySelectorAll(".flip-container");
+  if (activeFlip) {
+    let spanished = flipChanger.querySelectorAll(".spanish")[0];
+    let englished = flipChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
+    for (let i = 0; i < fliper.length; i++) {
+      fliper[i].classList.add("hover");
+    }
+    activeFlip = false;
+  } else {
+    let spanished = flipChanger.querySelectorAll(".spanish")[0];
+    let englished = flipChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
+    for (let i = 0; i < fliper.length; i++) {
+      fliper[i].classList.remove("hover");
+    }
+    activeFlip = true;
+  }
+}
+
+async function reversePeriod() {
+  let parent = document.querySelector("#periodsItems");
+  let items = parent.getElementsByClassName("box-container-items");
+  if (activePeriod) {
+    let spanished = periodChanger.querySelectorAll(".spanish")[0];
+    let englished = periodChanger.querySelectorAll(".english")[0];
+    spanished.classList.remove("active");
+    englished.classList.add("active");
+    activePeriod = false;
+    console.log("welcome");
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      cat1son.classList.remove("active");
+      cat2son.classList.add("active");
+      console.log("letsons");
+      let delayed = cat2son.dataset.delay;
+      let show = cat2son.dataset.show;
+      let hide = cat2son.dataset.hide;
+      let repeat = cat2son.dataset.times;
+      let son = cat2son.getElementsByClassName("box-1--item")[0];
+      son.classList.add("show");
+      animationEnd(son, delayed, show, hide, repeat);
+    }
+  } else {
+    console.log("goodbye");
+    let spanished = periodChanger.querySelectorAll(".spanish")[0];
+    let englished = periodChanger.querySelectorAll(".english")[0];
+    spanished.classList.add("active");
+    englished.classList.remove("active");
+    activePeriod = true;
+    for (let i = 0; i < items.length; i++) {
+      let cat1son = items[i].getElementsByClassName("cat1")[0];
+      let cat2son = items[i].getElementsByClassName("cat2")[0];
+      cat1son.classList.add("active");
+      cat2son.classList.remove("active");
+    }
+  }
+}
+
+async function animationEnd(son, delayed, show, hide, repeat) {
+  for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < repeat; i++) {
+      son.classList.add("show");
+      await sleep(show);
+      son.classList.remove("show");
+      await sleep(hide);
+    }
+    await sleep(delayed);
+  }
 }
