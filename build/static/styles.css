@@ -301,7 +301,7 @@ body {
     .language .english span {
       font-size: 28px;
       font-weight: 400;
-      padding: 0 15px; }
+      padding: 0 5px; }
       @media (min-width: 768px) {
         .language .spanish span,
         .language .english span {
@@ -363,7 +363,7 @@ body {
   width: 40px;
   z-index: 9;
   display: none;
-  transform: translate(-45px, 20px);
+  transform: translate(-45px, -87px);
   margin-left: 100%; }
   .arrow-back.visible {
     display: block; }
@@ -373,7 +373,10 @@ body {
     pointer-events: none; }
   @media (min-width: 768px) {
     .arrow-back {
-      transform: translate(-50px, 50px); } }
+      transform: translate(-50px, -70px); } }
+  @media (min-width: 960px) {
+    .arrow-back {
+      transform: translate(-50px, -97px); } }
 
 .box-shadow {
   box-shadow: 0px -10px 11px 0px rgba(0, 0, 0, 0.1); }
@@ -829,95 +832,95 @@ span {
     .graphic-tono {
       height: 45px; } }
   .graphic-tono.alto {
-    transform: translateX(-50%) translateY(-9px);
+    transform: translateX(-50%) translateY(-6px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
+      .graphic-tono.alto {
+        transform: translateX(-50%) translateY(-8px); } }
+    @media (min-width: 960px) {
       .graphic-tono.alto {
         transform: translateX(-50%) translateY(-12px); } }
-    @media (min-width: 960px) {
-      .graphic-tono.alto {
-        transform: translateX(-50%) translateY(-18px); } }
   .graphic-tono.alto-medio {
-    transform: translateX(-50%) translateY(-32px);
+    transform: translateX(-50%) translateY(-29px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.alto-medio {
-        transform: translateX(-50%) translateY(-39px); } }
+        transform: translateX(-50%) translateY(-35px); } }
     @media (min-width: 960px) {
       .graphic-tono.alto-medio {
-        transform: translateX(-50%) translateY(-54px); } }
+        transform: translateX(-50%) translateY(-47px); } }
   .graphic-tono.semi-alto {
-    transform: translateX(-50%) translateY(-49px);
+    transform: translateX(-50%) translateY(-46px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.semi-alto {
-        transform: translateX(-50%) translateY(-61px); } }
+        transform: translateX(-50%) translateY(-57px); } }
     @media (min-width: 960px) {
       .graphic-tono.semi-alto {
-        transform: translateX(-50%) translateY(-82px); } }
+        transform: translateX(-50%) translateY(-75px); } }
   .graphic-tono.semi-alto-medio {
-    transform: translateX(-50%) translateY(-73px);
+    transform: translateX(-50%) translateY(-70px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.semi-alto-medio {
-        transform: translateX(-50%) translateY(-88px); } }
+        transform: translateX(-50%) translateY(-84px); } }
     @media (min-width: 960px) {
       .graphic-tono.semi-alto-medio {
-        transform: translateX(-50%) translateY(-117px); } }
-  .graphic-tono.medio {
-    transform: translateX(-50%) translateY(-89px);
-    transition: all 0.5s ease-in-out;
-    transition-delay: 0.5s; }
-    @media (min-width: 768px) {
-      .graphic-tono.medio {
         transform: translateX(-50%) translateY(-110px); } }
+  .graphic-tono.medio {
+    transform: translateX(-50%) translateY(-86px);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s; }
+    @media (min-width: 768px) {
+      .graphic-tono.medio {
+        transform: translateX(-50%) translateY(-106px); } }
     @media (min-width: 960px) {
       .graphic-tono.medio {
-        transform: translateX(-50%) translateY(-143px); } }
+        transform: translateX(-50%) translateY(-136px); } }
   .graphic-tono.medio-medio {
-    transform: translateX(-50%) translateY(-113px);
+    transform: translateX(-50%) translateY(-110px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.medio-medio {
-        transform: translateX(-50%) translateY(-137px); } }
+        transform: translateX(-50%) translateY(-133px); } }
     @media (min-width: 960px) {
       .graphic-tono.medio-medio {
-        transform: translateX(-50%) translateY(-179px); } }
+        transform: translateX(-50%) translateY(-172px); } }
   .graphic-tono.semi-bajo {
-    transform: translateX(-50%) translateY(-130px);
+    transform: translateX(-50%) translateY(-127px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.semi-bajo {
-        transform: translateX(-50%) translateY(-160px); } }
+        transform: translateX(-50%) translateY(-156px); } }
     @media (min-width: 960px) {
       .graphic-tono.semi-bajo {
-        transform: translateX(-50%) translateY(-208px); } }
+        transform: translateX(-50%) translateY(-201px); } }
   .graphic-tono.semi-bajo-medio {
-    transform: translateX(-50%) translateY(-154px);
+    transform: translateX(-50%) translateY(-151px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.semi-bajo-medio {
-        transform: translateX(-50%) translateY(-186px); } }
+        transform: translateX(-50%) translateY(-182px); } }
     @media (min-width: 960px) {
       .graphic-tono.semi-bajo-medio {
-        transform: translateX(-50%) translateY(-242px); } }
+        transform: translateX(-50%) translateY(-235px); } }
   .graphic-tono.bajo {
-    transform: translateX(-50%) translateY(-172px);
+    transform: translateX(-50%) translateY(-169px);
     transition: all 0.5s ease-in-out;
     transition-delay: 0.5s; }
     @media (min-width: 768px) {
       .graphic-tono.bajo {
-        transform: translateX(-50%) translateY(-207px); } }
+        transform: translateX(-50%) translateY(-203px); } }
     @media (min-width: 960px) {
       .graphic-tono.bajo {
-        transform: translateX(-50%) translateY(-272px); } }
+        transform: translateX(-50%) translateY(-265px); } }
 
 .c-tab {
   border-bottom: 3px solid;
@@ -1286,7 +1289,7 @@ span {
       color: initial; }
   .linktopage:hover span,
   .linktopage:hover p {
-    color: #cfcfcf; }
+    color: #979696; }
 
 /* entire container, keeps perspective */
 .flip-container {
@@ -1954,7 +1957,7 @@ p.black span {
   cursor: pointer;
   font-style: oblique; }
   .body-links:hover {
-    color: #cfcfcf; }
+    color: #979696; }
 
 @media (min-width: 960px) {
   .agradecimientos-text2 p {
@@ -1994,5 +1997,39 @@ p.black span {
 
 .score-area a.c-gray:hover {
   color: #000; }
+@media (min-width: 768px) {
+  .score-area a.c-gray span {
+    font-size: 21px; } }
+
+.record-mail,
+.launch {
+  font-size: 15px; }
+  @media (min-width: 28px) {
+    .record-mail,
+    .launch {
+      font-size: 28px; } }
+
+@media (min-width: 768px) {
+  .title-instruct span {
+    font-size: 21px; } }
+
+.inline-image {
+  display: inline-block;
+  position: relative;
+  height: 15px;
+  top: 3px; }
+  @media (min-width: 768px) {
+    .inline-image {
+      height: 25px;
+      top: 5px; } }
+  @media (min-width: 960px) {
+    .inline-image {
+      height: 30px;
+      top: 5px; } }
+
+.subtext {
+  font-size: 15px !important; }
+  .subtext span {
+    font-size: 15px; }
 
 /*# sourceMappingURL=styles.css.map */

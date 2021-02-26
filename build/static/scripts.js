@@ -3858,6 +3858,17 @@ async function changeAltura() {
     }
   } else {
     let sibling = parent.getElementsByClassName("cat1")[0];
+    let element = parent.getElementsByClassName("cat2")[0];
+    let hideson = sibling.querySelectorAll(".box-1--item");
+    let showson = element.querySelectorAll(".box-1--item");
+    for (let i = 0; i < hideson.length; i++) {
+      let sonof = hideson[i].getElementsByTagName("span")[0];
+      sonof.classList.remove("hide");
+    }
+    for (let i = 0; i < showson.length; i++) {
+      let sonof = showson[i].getElementsByTagName("span")[0];
+      sonof.classList.remove("show");
+    }
     element.classList.remove("active");
     sibling.classList.add("active");
   }
