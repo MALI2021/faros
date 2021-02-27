@@ -3649,14 +3649,13 @@ function docGet() {
                           <p class="m-0">${element.composicion}</p>
                         </li>
                       </ul>
-                      <div class="reproductor text-3 desktop">${element.link}</div>
                     </div>
                     <div class="doble-desktop--item paragraphs">
                       <p class="text-3" data-translatable>
                         <span>${element.p1eng}</span>
                         <span>${element.p1esp}</span>
                       </p>
-                      <div class="reproductor text-3 mobile">${element.link}</div>
+                      <div class="reproductor text-3">${element.link}</div>
                       <p class="text-3" data-translatable>
                         <span>${element.p2eng}</span>
                         <span>${element.p2esp}</span>
