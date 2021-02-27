@@ -419,7 +419,7 @@ body {
     span {
       font-size: 28px;
       font-weight: 400;
-      padding: 0 5px;
+      padding: 0 10px;
 
       @media (min-width: 768px) {
         font-size: 37px;
@@ -433,7 +433,7 @@ body {
     img {
       width: 35px;
       height: 35px;
-      padding: 0 5px;
+      padding: 0 10px;
 
       @media (min-width: 768px) {
         width: 48px;
@@ -716,6 +716,7 @@ span {
     .triangulo {
       position: relative;
       height: 30px;
+      display: none !important;
 
       @media (min-width: 660px) {
         height: 40px;
@@ -750,7 +751,7 @@ span {
       align-items: center;
       display: flex;
       flex-direction: column;
-      padding: 0px 0 20px 0;
+      padding: 20px 0 20px 0;
 
       @media (min-width: 768px) {
         flex-direction: row;
@@ -758,7 +759,7 @@ span {
       }
 
       @media (min-width: 960px) {
-        padding: 0 0 40px 0;
+        padding: 40px 0 40px 0;
         height: 96px;
       }
 
@@ -784,7 +785,7 @@ span {
       }
 
       @media (min-width: 660px) {
-        padding: 0 0 20px 0;
+        padding: 20px 0 20px 0;
       }
 
       span {
@@ -2944,4 +2945,14 @@ p.black {
 
     // }
   }
+}
+
+.tabs-item--text {
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.box-container-items {
+  cursor: pointer;
 }

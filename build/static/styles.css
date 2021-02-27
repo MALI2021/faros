@@ -301,7 +301,7 @@ body {
     .language .english span {
       font-size: 28px;
       font-weight: 400;
-      padding: 0 5px; }
+      padding: 0 10px; }
       @media (min-width: 768px) {
         .language .spanish span,
         .language .english span {
@@ -314,7 +314,7 @@ body {
     .language .english img {
       width: 35px;
       height: 35px;
-      padding: 0 5px; }
+      padding: 0 10px; }
       @media (min-width: 768px) {
         .language .spanish img,
         .language .english img {
@@ -522,7 +522,8 @@ span {
     cursor: pointer; }
     .tabs-item .triangulo {
       position: relative;
-      height: 30px; }
+      height: 30px;
+      display: none !important; }
       @media (min-width: 660px) {
         .tabs-item .triangulo {
           height: 40px; } }
@@ -549,14 +550,14 @@ span {
       align-items: center;
       display: flex;
       flex-direction: column;
-      padding: 0px 0 20px 0; }
+      padding: 20px 0 20px 0; }
       @media (min-width: 768px) {
         .tabs-item--text {
           flex-direction: row;
           justify-content: center; } }
       @media (min-width: 960px) {
         .tabs-item--text {
-          padding: 0 0 40px 0;
+          padding: 40px 0 40px 0;
           height: 96px; } }
       .tabs-item--text img {
         height: 20px;
@@ -575,7 +576,7 @@ span {
         pointer-events: none; }
       @media (min-width: 660px) {
         .tabs-item--text {
-          padding: 0 0 20px 0; } }
+          padding: 20px 0 20px 0; } }
       .tabs-item--text span {
         text-align: center;
         display: block;
@@ -2031,5 +2032,11 @@ p.black span {
   font-size: 15px !important; }
   .subtext span {
     font-size: 15px; }
+
+.tabs-item--text:hover {
+  opacity: 0.5; }
+
+.box-container-items {
+  cursor: pointer; }
 
 /*# sourceMappingURL=styles.css.map */
