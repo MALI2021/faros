@@ -13,8 +13,8 @@ var langChanger = document.getElementById("english-changer");
 var langChanger2 = document.getElementById("spanish-changer");
 var lesserlinks = document.getElementsByClassName("linktopage");
 var flippers = document.getElementsByClassName("flip-container");
-// var accordions = document.getElementsByClassName("c-tab--items--header");
-var accordions = document.getElementsByClassName("c-tab--items");
+var accordions = document.getElementsByClassName("c-tab--items--header");
+// var accordions = document.getElementsByClassName("c-tab--items");
 var closers2 = document.getElementsByClassName("arrow-back");
 var potenceChanger = document.getElementById("potence-reverser");
 var alturaChanger = document.getElementById("altura-changer");
@@ -3165,7 +3165,7 @@ window.onload = function () {
 
   places.forEach((element) => {
     let addPlace = /*html */ `
-        <li class="list-faros--item">
+        <li class="list-faros--item coords-launcher" data-coords="${element.coords}">
           <div class="list-faros--item--title">
             <div>
               <p class="m-0"><span class="c-gray font-pitch">${element.number}</span> ${element.title}</p>
@@ -3175,7 +3175,7 @@ window.onload = function () {
           </div>
           <div class="list-faros--item--info">
             <span class="c-gray font-pitch">${element.s} S - ${element.w} W</span>
-            <img src="./static/assets/img/point.svg" class="coords-launcher" data-coords="${element.coords}" alt="" />
+            <img src="./static/assets/img/point.svg" class=""  alt="" />
           </div>
         </li>
     `;
@@ -3446,6 +3446,7 @@ function writeMails() {
   let parent = event.target.parentNode;
   console.log("writing");
   let dates = new Date();
+  let emailuser = parent.querySelectorAll(".record-mail")[0];
   let emailuse = parent.querySelectorAll(".record-mail")[0].value;
   let name = emailuse;
   let idate = dates.getTime();
@@ -3461,22 +3462,29 @@ function writeMails() {
         mail: emailuse,
       })
       .then(function () {
-        alert("mail registrado satisfactoriamente");
+        // alert("mail registrado satisfactoriamente");
+        emailuser.value = "Mail registrado satisfactoriamente";
+        emailuser.classList.add("error-sucess");
+        parent.getElementsByTagName("a")[0].style.display = "none";
       })
       .catch(function (error) {
         console.error("Error writing doc", error);
       });
   } else {
-    alert("escribe un mail correcto");
+    emailuser.value = "Porfavor escriba un mail correcto";
+    emailuser.classList.add("error-mail");
   }
 }
 
 function accord(event) {
-  console.log(event.target);
+  event.stopImmediatePropagation();
+  let elementer = event.target.parentNode;
+  console.log(elementer);
+  console.log(elementer.classList);
   // for(let i = 0; i < accordions.length; i ++) {
   //   accordions[i].classList.remove('active');
   // }
-  event.target.classList.toggle("active");
+  elementer.classList.toggle("active");
 }
 
 function sleep(ms) {
