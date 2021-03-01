@@ -3495,12 +3495,22 @@ function toEnglishChange() {
   langChanger.classList.remove("active");
   langChanger2.classList.add("active");
   i18n.changeLanguage("es");
+
+  for (let i = 0; i < lesserlinks.length; i++) {
+    lesserlinks[i].addEventListener("click", openPage);
+    // console.log(triggers[i]);
+  }
 }
 
 function toSpanishChange() {
   langChanger2.classList.remove("active");
   langChanger.classList.add("active");
   i18n.changeLanguage("en");
+
+  for (let i = 0; i < lesserlinks.length; i++) {
+    lesserlinks[i].addEventListener("click", openPage);
+    // console.log(triggers[i]);
+  }
 }
 
 async function closePage() {
