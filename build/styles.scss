@@ -384,6 +384,10 @@ body {
 .language {
   padding: 15px;
 
+  &:hover {
+    opacity: 0.6 !important;
+  }
+
   @media (min-width: 768px) {
     padding: 10px;
     max-width: 358px;
@@ -767,6 +771,7 @@ span {
         height: 20px;
         transform: rotate(90deg);
         margin: 6px;
+        pointer-events: none;
 
         @media (min-width: 768px) {
           height: 40px;
@@ -1335,17 +1340,22 @@ span {
 
   &--items {
     border-top: 3px solid;
-    cursor: pointer;
 
     &--header {
       padding: 10px 0;
-      pointer-events: none;
+      // pointer-events: none;
+      cursor: pointer;
+
+      p {
+        pointer-events: none;
+      }
 
       .info {
         display: flex;
         align-items: center;
         font-family: "Conv_Relative Mono 10 Pitch";
         letter-spacing: 2px;
+        pointer-events: none;
 
         .arrow {
           width: 15px;
@@ -1397,6 +1407,11 @@ span {
       transition-property: all;
       transition-duration: 0.6s;
       transition-timing-function: ease-in-out;
+
+      a {
+        pointer-events: all;
+        cursor: pointer;
+      }
     }
 
     &.active {
@@ -2824,7 +2839,7 @@ p.black {
 .body-links {
   text-decoration: underline;
   cursor: pointer;
-  font-style: oblique;
+  // font-style: oblique;
 
   &:hover {
     color: #979696;
@@ -2881,6 +2896,7 @@ p.black {
 .english,
 .coords-launcher {
   cursor: pointer !important;
+  pointer-events: initial !important;
 }
 
 .list-item-soundcloud {
@@ -2955,4 +2971,30 @@ p.black {
 
 .box-container-items {
   cursor: pointer;
+}
+
+.indexado.language .spanish span,
+.indexado.language .english span {
+  padding: 0 15px;
+}
+
+.error-mail {
+  color: #eb1519 !important;
+}
+
+.error-sucess {
+  text-align: center;
+  color: #087252 !important;
+}
+
+.list-faros--item {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.list-faros--item div {
+  pointer-events: none;
 }

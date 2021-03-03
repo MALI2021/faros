@@ -35,12 +35,6 @@ var periodItemsBoxes;
 
 var db = firebase.firestore();
 
-var i18n = window.domI18n({
-  languages: ["es", "en"],
-  selector: "[data-translatable]",
-  defaultLanguage: "es",
-});
-
 var periods = [
   {
     period: "15",
@@ -3491,7 +3485,14 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+var i18n = window.domI18n({
+  languages: ["es", "en"],
+  selector: "[data-translatable]",
+  defaultLanguage: "es",
+});
+
 function toEnglishChange() {
+  console.log("the change you need");
   langChanger.classList.remove("active");
   langChanger2.classList.add("active");
   i18n.changeLanguage("es");
@@ -3503,6 +3504,7 @@ function toEnglishChange() {
 }
 
 function toSpanishChange() {
+  console.log("the change i need");
   langChanger2.classList.remove("active");
   langChanger.classList.add("active");
   i18n.changeLanguage("en");
