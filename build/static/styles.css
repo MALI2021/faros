@@ -269,7 +269,8 @@ body {
 
 .language {
   padding: 15px; }
-  .language:hover {
+  .language:hover div span,
+  .language:hover div img {
     opacity: 0.6 !important; }
   @media (min-width: 768px) {
     .language {
@@ -2060,7 +2061,7 @@ p.black span {
 
 .list-faros--item {
   cursor: pointer; }
-  .list-faros--item:hover {
+  .list-faros--item:hover div {
     opacity: 0.5; }
 
 .list-faros--item div {

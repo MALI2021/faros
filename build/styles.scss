@@ -385,7 +385,12 @@ body {
   padding: 15px;
 
   &:hover {
-    opacity: 0.6 !important;
+    div {
+      span,
+      img {
+        opacity: 0.6 !important;
+      }
+    }
   }
 
   @media (min-width: 768px) {
@@ -2991,7 +2996,9 @@ p.black {
   cursor: pointer;
 
   &:hover {
-    opacity: 0.5;
+    div {
+      opacity: 0.5;
+    }
   }
 }
 
