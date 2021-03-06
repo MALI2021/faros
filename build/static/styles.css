@@ -1637,6 +1637,16 @@ p.black span {
     margin-bottom: 35px; }
     .podcast-item p,
     .podcast-item span {
+      font-size: 21px !important; }
+    .podcast-item a span {
+      font-size: 21px !important; } }
+
+.doble-desktop--fijo a.c-gray span {
+  display: inline-block;
+  margin-bottom: 35px;
+  text-decoration: underline; }
+  @media (min-width: 768px) {
+    .doble-desktop--fijo a.c-gray span {
       font-size: 21px !important; } }
 
 .podcast-items {
@@ -2066,5 +2076,8 @@ p.black span {
 
 .list-faros--item div {
   pointer-events: none; }
+
+.doble-desktop--fijo a.c-gray:hover {
+  opacity: 0.5; }
 
 /*# sourceMappingURL=styles.css.map */

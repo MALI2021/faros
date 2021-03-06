@@ -3156,6 +3156,7 @@ window.onload = function () {
   console.log(mailingLaunch);
 
   docGet();
+  docPod();
 
   places.forEach((element) => {
     let addPlace = /*html */ `
@@ -4035,4 +4036,75 @@ async function animationEnd(son, delayed, show, hide, repeat) {
     }
     await sleep(delayed);
   }
+}
+
+function docPod() {
+  db.collection("podcasts")
+    .get()
+    .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        element = doc.data();
+        let elementToAdd = /*html */ `
+              <div class="c-tab--items">
+                <div class="c-tab--items--header">
+                  <p class="autor-text" data-translatable><span>${element.tituloEng}</span><span>${element.titulo}</span></p>
+                  <div class="info">
+                    <img class="arrow" src="./static/assets/img/arrow.svg" alt="" />
+                    <span class="c-gray ml-5">${element.date}</span>
+                  </div>
+                </div>
+                <div class="c-tab--items--content">
+                  <div class="doble-desktop">
+                    <div class="doble-desktop--fijo list-podcast">
+                      <ul class="podcast-items">
+                        <li class="podcast-item">
+                          <p class="m-0" data-translatable><span><u>Text</u></span><span><u>Texto</u></span></p>
+                          <p class="m-0">${element.texto}</p>
+                        </li>
+                        <li class="podcast-item">
+                          <p class="m-0" data-translatable><span><u>Binaural recording and mixing</u></span><span><u>Paisaje sonoro</u></span></p>
+                          <p class="m-0">${element.paisaje}</p>
+                        </li>
+                      </ul>
+                      <a
+                        class="c-gray"
+                        href="./static/assets/pdf/${element.pdf}"
+                        download
+                        data-translatable
+                        ><span>Download PDF</span><span>Descargar PDF</span></a
+                      >
+                    </div>
+                    <div class="doble-desktop--item paragraphs">
+                      <p class="text-3" data-translatable>
+                        <span>${element.p1eng}</span>
+                        <span>${element.p1esp}</span>
+                      </p>
+                      <div class="reproductor text-3">${element.link}</div>
+                      <p class="text-3" data-translatable>
+                        <span>${element.p2eng}</span>
+                        <span>${element.p2esp}</span>
+                      </p>
+                      <p class="text-3" data-translatable>
+                        <span>${element.p3eng}</span>
+                        <span>${element.p3esp}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          `;
+        let parent = document.querySelector("#accordion2");
+        parent.insertAdjacentHTML("beforeend", elementToAdd);
+        this.toSpanishChange();
+
+        var accordions = document.getElementsByClassName("c-tab--items");
+
+        for (let i = 0; i < accordions.length; i++) {
+          accordions[i].addEventListener("click", accord);
+          console.log(accordions[i]);
+        }
+      });
+    });
 }

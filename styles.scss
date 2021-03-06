@@ -2371,6 +2371,22 @@ p.black {
     span {
       font-size: 21px !important;
     }
+
+    a {
+      span {
+        font-size: 21px !important;
+      }
+    }
+  }
+}
+
+.doble-desktop--fijo a.c-gray span {
+  display: inline-block;
+  margin-bottom: 35px;
+  text-decoration: underline;
+
+  @media (min-width: 768px) {
+    font-size: 21px !important;
   }
 }
 
@@ -3004,4 +3020,8 @@ p.black {
 
 .list-faros--item div {
   pointer-events: none;
+}
+
+.doble-desktop--fijo a.c-gray:hover {
+  opacity: 0.5;
 }
