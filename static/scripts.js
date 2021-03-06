@@ -3450,20 +3450,31 @@ function writeMails() {
       emailuse
     )
   ) {
-    db.collection("mails")
-      .doc(name)
-      .set({
-        id: parseInt(idate),
-        mail: emailuse,
+    firebase
+      .auth()
+      .signInAnonymously()
+      .then(() => {
+        console.log("gonna write on emails");
+        db.collection("mails")
+          .doc(name)
+          .set({
+            id: parseInt(idate),
+            mail: emailuse,
+          })
+          .then(function () {
+            // alert("mail registrado satisfactoriamente");
+            emailuser.value = "Mail registrado satisfactoriamente";
+            emailuser.classList.add("error-sucess");
+            parent.getElementsByTagName("a")[0].style.display = "none";
+          })
+          .catch(function (error) {
+            console.error("Error writing doc", error);
+          });
       })
-      .then(function () {
-        // alert("mail registrado satisfactoriamente");
-        emailuser.value = "Mail registrado satisfactoriamente";
-        emailuser.classList.add("error-sucess");
-        parent.getElementsByTagName("a")[0].style.display = "none";
-      })
-      .catch(function (error) {
-        console.error("Error writing doc", error);
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode, errorMessage);
       });
   } else {
     emailuser.value = "Porfavor escriba un mail correcto";
@@ -3635,14 +3646,18 @@ function mapLaunch() {
 }
 
 function docGet() {
-  db.collection("interpretations")
-    .get()
-    .then(function (querySnapshot) {
-      querySnapshot.forEach(function (doc) {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-        element = doc.data();
-        let elementToAdd = /*html */ `
+  firebase
+    .auth()
+    .signInAnonymously()
+    .then(() => {
+      db.collection("interpretations")
+        .get()
+        .then(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            element = doc.data();
+            let elementToAdd = /*html */ `
               <div class="c-tab--items">
                 <div class="c-tab--items--header">
                   <p class="autor-text">${element.autor}</p>
@@ -3686,17 +3701,23 @@ function docGet() {
                 </div>
               </div>
           `;
-        let parent = document.querySelector("#accordion1");
-        parent.insertAdjacentHTML("beforeend", elementToAdd);
-        this.toSpanishChange();
+            let parent = document.querySelector("#accordion1");
+            parent.insertAdjacentHTML("beforeend", elementToAdd);
+            this.toSpanishChange();
 
-        var accordions = document.getElementsByClassName("c-tab--items");
+            var accordions = document.getElementsByClassName("c-tab--items");
 
-        for (let i = 0; i < accordions.length; i++) {
-          accordions[i].addEventListener("click", accord);
-          console.log(accordions[i]);
-        }
-      });
+            for (let i = 0; i < accordions.length; i++) {
+              accordions[i].addEventListener("click", accord);
+              console.log(accordions[i]);
+            }
+          });
+        });
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode, errorMessage);
     });
 }
 
@@ -4039,14 +4060,19 @@ async function animationEnd(son, delayed, show, hide, repeat) {
 }
 
 function docPod() {
-  db.collection("podcasts")
-    .get()
-    .then(function (querySnapshot) {
-      querySnapshot.forEach(function (doc) {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-        element = doc.data();
-        let elementToAdd = /*html */ `
+  firebase
+    .auth()
+    .signInAnonymously()
+    .then(() => {
+      console.log("signed in");
+      db.collection("podcasts")
+        .get()
+        .then(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            element = doc.data();
+            let elementToAdd = /*html */ `
               <div class="c-tab--items">
                 <div class="c-tab--items--header">
                   <p class="autor-text" data-translatable><span>${element.tituloEng}</span><span>${element.titulo}</span></p>
@@ -4095,16 +4121,22 @@ function docPod() {
                 </div>
               </div>
           `;
-        let parent = document.querySelector("#accordion2");
-        parent.insertAdjacentHTML("beforeend", elementToAdd);
-        this.toSpanishChange();
+            let parent = document.querySelector("#accordion2");
+            parent.insertAdjacentHTML("beforeend", elementToAdd);
+            this.toSpanishChange();
 
-        var accordions = document.getElementsByClassName("c-tab--items");
+            var accordions = document.getElementsByClassName("c-tab--items");
 
-        for (let i = 0; i < accordions.length; i++) {
-          accordions[i].addEventListener("click", accord);
-          console.log(accordions[i]);
-        }
-      });
+            for (let i = 0; i < accordions.length; i++) {
+              accordions[i].addEventListener("click", accord);
+              console.log(accordions[i]);
+            }
+          });
+        });
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode, errorMessage);
     });
 }
