@@ -3477,7 +3477,7 @@ function writeMails() {
         console.log(errorCode, errorMessage);
       });
   } else {
-    emailuser.value = "Porfavor escriba un mail correcto";
+    emailuser.value = "Por favor escriba un mail correcto";
     emailuser.classList.add("error-mail");
   }
 }
