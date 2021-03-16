@@ -13,6 +13,20 @@
     <link rel="manifest" href="/static/manifest.json" />
     <link type="text/plain" rel="author" href="/humans.txt" />
     <meta name="generator" content="Clay (https://github.com/lucuma/clay)" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-175899017-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-175899017-1");
+    </script>
     {% block head %}{% endblock %}
   </head>
 
