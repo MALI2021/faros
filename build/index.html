@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Todos los Faros de la costa peruana</title>
+    <title>Todos los faros de la costa peruana</title>
     <link rel="stylesheet" href="static/normalize.css" />
     <link rel="stylesheet" href="static/styles.css" />
     <meta name="theme-color" content="#f6f2ef" />
-    <link rel="icon" href="static/favicon.svg" />
-    <link rel="mask-icon" href="static/mask-icon.svg" color="#000000" />
-    <link rel="apple-touch-icon" href="static/apple-touch-icon.png" />
+    <link rel="icon" href="static/favicon.ico" />
+    <link rel="mask-icon" href="static/favicon.ico" />
+    <link rel="apple-touch-icon" href="static/favicon.ico" />
     <link rel="manifest" href="static/manifest.json" />
     <link type="text/plain" rel="author" href="humans.txt" />
     <meta name="generator" content="Clay (https://github.com/lucuma/clay)" />
@@ -74,7 +74,7 @@
     <p class="m-0 text-2">Luz María Bedoya</p>
     <ul class="list-nav">
       <li>
-        <a class="linktopage" rel="#p2">
+        <a class="linktopage" rel="#p2" data-url="#presentacion">
           <span class="number">1</span>
           <p data-translatable>
             <span>PRESENTATION</span><span>PRESENTACIÓN</span>
@@ -82,7 +82,7 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p6">
+        <a class="linktopage" rel="#p6" data-url="#piezassonoras">
           <span class="number">2</span>
           <p data-translatable>
             <span>SOUND PIECES</span><span>PIEZAS SONORAS</span>
@@ -90,19 +90,19 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p7">
+        <a class="linktopage" rel="#p7" data-url="#podcasts">
           <span class="number">3</span>
           <p>PODCASTS</p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p5">
+        <a class="linktopage" rel="#p5" data-url="#partitura">
           <span class="number">4</span>
           <p data-translatable><span>SCORE</span><span>PARTITURA</span></p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p3">
+        <a class="linktopage" rel="#p3" data-url="#listafaros">
           <span class="number">5</span>
           <p data-translatable>
             <span>LIGHTHOUSES LIST</span><span>LISTA DE FAROS</span>
@@ -110,14 +110,14 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p4">
+        <a class="linktopage" rel="#p4" data-url="#proceso">
           <span class="number">6</span>
           <p data-translatable><span>PROCESS</span><span>PROCESO</span></p>
         </a>
       </li>
 
       <li>
-        <a class="linktopage" rel="#p8">
+        <a class="linktopage" rel="#p8" data-url="#creditos">
           <span class="number">7</span>
           <p data-translatable><span>CREDITS</span><span>CRÉDITOS</span></p>
         </a>
@@ -157,7 +157,12 @@
 </div>
 <div id="p2" class="page header">
   <div class="perspected">
-    <div class="overlayer triggerFunction showing" rel="#p2"></div>
+    <div
+      class="overlayer triggerFunction showing"
+      id="trigger1"
+      rel="#p2"
+      data-url="#presentacion"
+    ></div>
     <h1 class="title-normal" rel="#p2">
       <img class="header--img" src="./static/assets/img/header-1.svg" alt="" />
       <div class="title center">
@@ -231,7 +236,7 @@
             </span>
             <span
               >Esta página web es un repositorio del
-              <a class="body-links linktopage" rel="#p4">proceso </a> creación
+              <a class="body-links linktopage" rel="#p4">proceso</a> de creación
               de la partitura gráfica. También alberga las
               <a class="body-links linktopage" rel="#p6">piezas sonoras</a>
               interpretadas por los músicos y los textos grabados por sus
@@ -327,7 +332,7 @@
     <p class="m-0 text-2">Luz María Bedoya</p>
     <ul class="list-nav">
       <li>
-        <a class="linktopage" rel="#p2">
+        <a class="linktopage" rel="#p2" data-url="#presentacion">
           <span class="number">1</span>
           <p data-translatable>
             <span>PRESENTATION</span><span>PRESENTACIÓN</span>
@@ -335,7 +340,7 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p6">
+        <a class="linktopage" rel="#p6" data-url="#piezassonoras">
           <span class="number">2</span>
           <p data-translatable>
             <span>SOUND PIECES</span><span>PIEZAS SONORAS</span>
@@ -343,19 +348,19 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p7">
+        <a class="linktopage" rel="#p7" data-url="#podcasts">
           <span class="number">3</span>
           <p>PODCASTS</p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p5">
+        <a class="linktopage" rel="#p5" data-url="#partitura">
           <span class="number">4</span>
           <p data-translatable><span>SCORE</span><span>PARTITURA</span></p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p3">
+        <a class="linktopage" rel="#p3" data-url="#listafaros">
           <span class="number">5</span>
           <p data-translatable>
             <span>LIGHTHOUSES LIST</span><span>LISTA DE FAROS</span>
@@ -363,14 +368,14 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p4">
+        <a class="linktopage" rel="#p4" data-url="#proceso">
           <span class="number">6</span>
           <p data-translatable><span>PROCESS</span><span>PROCESO</span></p>
         </a>
       </li>
 
       <li>
-        <a class="linktopage" rel="#p8">
+        <a class="linktopage" rel="#p8" data-url="#creditos">
           <span class="number">7</span>
           <p data-translatable><span>CREDITS</span><span>CRÉDITOS</span></p>
         </a>
@@ -410,7 +415,12 @@
 </div>
 <div id="p6" class="page header">
   <div class="perspected">
-    <div class="overlayer triggerFunction showing" rel="#p6"></div>
+    <div
+      class="overlayer triggerFunction showing"
+      id="trigger5"
+      rel="#p6"
+      data-url="#piezassonoras"
+    ></div>
     <h1 class="title-normal" rel="#p6">
       <img class="header--img" src="./static/assets/img/header-3.svg" alt="" />
       <div class="title center">
@@ -1034,7 +1044,7 @@
     <p class="m-0 text-2">Luz María Bedoya</p>
     <ul class="list-nav">
       <li>
-        <a class="linktopage" rel="#p2">
+        <a class="linktopage" rel="#p2" data-url="#presentacion">
           <span class="number">1</span>
           <p data-translatable>
             <span>PRESENTATION</span><span>PRESENTACIÓN</span>
@@ -1042,7 +1052,7 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p6">
+        <a class="linktopage" rel="#p6" data-url="#piezassonoras">
           <span class="number">2</span>
           <p data-translatable>
             <span>SOUND PIECES</span><span>PIEZAS SONORAS</span>
@@ -1050,19 +1060,19 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p7">
+        <a class="linktopage" rel="#p7" data-url="#podcasts">
           <span class="number">3</span>
           <p>PODCASTS</p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p5">
+        <a class="linktopage" rel="#p5" data-url="#partitura">
           <span class="number">4</span>
           <p data-translatable><span>SCORE</span><span>PARTITURA</span></p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p3">
+        <a class="linktopage" rel="#p3" data-url="#listafaros">
           <span class="number">5</span>
           <p data-translatable>
             <span>LIGHTHOUSES LIST</span><span>LISTA DE FAROS</span>
@@ -1070,14 +1080,14 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p4">
+        <a class="linktopage" rel="#p4" data-url="#proceso">
           <span class="number">6</span>
           <p data-translatable><span>PROCESS</span><span>PROCESO</span></p>
         </a>
       </li>
 
       <li>
-        <a class="linktopage" rel="#p8">
+        <a class="linktopage" rel="#p8" data-url="#creditos">
           <span class="number">7</span>
           <p data-translatable><span>CREDITS</span><span>CRÉDITOS</span></p>
         </a>
@@ -1117,7 +1127,12 @@
 </div>
 <div id="p7" class="page header">
   <div class="perspected">
-    <div class="overlayer triggerFunction showing" rel="#p7"></div>
+    <div
+      class="overlayer triggerFunction showing"
+      id="trigger6"
+      rel="#p7"
+      data-url="#podcasts"
+    ></div>
     <h1 class="title-normal" rel="#p7">
       <img class="header--img" src="./static/assets/img/header-3.svg" alt="" />
       <div class="title center">
@@ -1401,7 +1416,7 @@
     <p class="m-0 text-2">Luz María Bedoya</p>
     <ul class="list-nav">
       <li>
-        <a class="linktopage" rel="#p2">
+        <a class="linktopage" rel="#p2" data-url="#presentacion">
           <span class="number">1</span>
           <p data-translatable>
             <span>PRESENTATION</span><span>PRESENTACIÓN</span>
@@ -1409,7 +1424,7 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p6">
+        <a class="linktopage" rel="#p6" data-url="#piezassonoras">
           <span class="number">2</span>
           <p data-translatable>
             <span>SOUND PIECES</span><span>PIEZAS SONORAS</span>
@@ -1417,19 +1432,19 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p7">
+        <a class="linktopage" rel="#p7" data-url="#podcasts">
           <span class="number">3</span>
           <p>PODCASTS</p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p5">
+        <a class="linktopage" rel="#p5" data-url="#partitura">
           <span class="number">4</span>
           <p data-translatable><span>SCORE</span><span>PARTITURA</span></p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p3">
+        <a class="linktopage" rel="#p3" data-url="#listafaros">
           <span class="number">5</span>
           <p data-translatable>
             <span>LIGHTHOUSES LIST</span><span>LISTA DE FAROS</span>
@@ -1437,14 +1452,14 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p4">
+        <a class="linktopage" rel="#p4" data-url="#proceso">
           <span class="number">6</span>
           <p data-translatable><span>PROCESS</span><span>PROCESO</span></p>
         </a>
       </li>
 
       <li>
-        <a class="linktopage" rel="#p8">
+        <a class="linktopage" rel="#p8" data-url="#creditos">
           <span class="number">7</span>
           <p data-translatable><span>CREDITS</span><span>CRÉDITOS</span></p>
         </a>
@@ -1484,7 +1499,7 @@
 </div>
 <div id="p5" class="page header">
   <div class="perspected">
-    <div class="overlayer triggerFunction showing" rel="#p5"></div>
+    <div class="overlayer triggerFunction showing" id="trigger4" rel="#p5" data-url="#partitura"></div>
     <h1 class="title-normal" rel="#p5">
       <img class="header--img" src="./static/assets/img/header-3.svg" alt="" />
       <div class="title center">
@@ -1685,7 +1700,7 @@
     <p class="m-0 text-2">Luz María Bedoya</p>
     <ul class="list-nav">
       <li>
-        <a class="linktopage" rel="#p2">
+        <a class="linktopage" rel="#p2" data-url="#presentacion">
           <span class="number">1</span>
           <p data-translatable>
             <span>PRESENTATION</span><span>PRESENTACIÓN</span>
@@ -1693,7 +1708,7 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p6">
+        <a class="linktopage" rel="#p6" data-url="#piezassonoras">
           <span class="number">2</span>
           <p data-translatable>
             <span>SOUND PIECES</span><span>PIEZAS SONORAS</span>
@@ -1701,19 +1716,19 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p7">
+        <a class="linktopage" rel="#p7" data-url="#podcasts">
           <span class="number">3</span>
           <p>PODCASTS</p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p5">
+        <a class="linktopage" rel="#p5" data-url="#partitura">
           <span class="number">4</span>
           <p data-translatable><span>SCORE</span><span>PARTITURA</span></p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p3">
+        <a class="linktopage" rel="#p3" data-url="#listafaros">
           <span class="number">5</span>
           <p data-translatable>
             <span>LIGHTHOUSES LIST</span><span>LISTA DE FAROS</span>
@@ -1721,14 +1736,14 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p4">
+        <a class="linktopage" rel="#p4" data-url="#proceso">
           <span class="number">6</span>
           <p data-translatable><span>PROCESS</span><span>PROCESO</span></p>
         </a>
       </li>
 
       <li>
-        <a class="linktopage" rel="#p8">
+        <a class="linktopage" rel="#p8" data-url="#creditos">
           <span class="number">7</span>
           <p data-translatable><span>CREDITS</span><span>CRÉDITOS</span></p>
         </a>
@@ -1767,7 +1782,12 @@
   </div>
 </div><div id="p3" class="page header">
   <div class="perspected">
-    <div class="overlayer triggerFunction showing" rel="#p3"></div>
+    <div
+      class="overlayer triggerFunction showing"
+      id="trigger2"
+      rel="#p3"
+      data-url="#listafaros"
+    ></div>
     <h1 class="title-normal" rel="#p3">
       <img class="header--img" src="./static/assets/img/header-2.svg" alt="" />
       <div class="title center">
@@ -1847,7 +1867,7 @@
     <p class="m-0 text-2">Luz María Bedoya</p>
     <ul class="list-nav">
       <li>
-        <a class="linktopage" rel="#p2">
+        <a class="linktopage" rel="#p2" data-url="#presentacion">
           <span class="number">1</span>
           <p data-translatable>
             <span>PRESENTATION</span><span>PRESENTACIÓN</span>
@@ -1855,7 +1875,7 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p6">
+        <a class="linktopage" rel="#p6" data-url="#piezassonoras">
           <span class="number">2</span>
           <p data-translatable>
             <span>SOUND PIECES</span><span>PIEZAS SONORAS</span>
@@ -1863,19 +1883,19 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p7">
+        <a class="linktopage" rel="#p7" data-url="#podcasts">
           <span class="number">3</span>
           <p>PODCASTS</p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p5">
+        <a class="linktopage" rel="#p5" data-url="#partitura">
           <span class="number">4</span>
           <p data-translatable><span>SCORE</span><span>PARTITURA</span></p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p3">
+        <a class="linktopage" rel="#p3" data-url="#listafaros">
           <span class="number">5</span>
           <p data-translatable>
             <span>LIGHTHOUSES LIST</span><span>LISTA DE FAROS</span>
@@ -1883,14 +1903,14 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p4">
+        <a class="linktopage" rel="#p4" data-url="#proceso">
           <span class="number">6</span>
           <p data-translatable><span>PROCESS</span><span>PROCESO</span></p>
         </a>
       </li>
 
       <li>
-        <a class="linktopage" rel="#p8">
+        <a class="linktopage" rel="#p8" data-url="#creditos">
           <span class="number">7</span>
           <p data-translatable><span>CREDITS</span><span>CRÉDITOS</span></p>
         </a>
@@ -1930,7 +1950,12 @@
 </div>
 <div id="p4" class="page header">
   <div class="perspected">
-    <div class="overlayer triggerFunction showing" rel="#p4"></div>
+    <div
+      class="overlayer triggerFunction showing"
+      id="trigger3"
+      rel="#p4"
+      data-url="#proceso"
+    ></div>
     <h1 class="title-normal" rel="#p4">
       <img class="header--img" src="./static/assets/img/header-2.svg" alt="" />
       <div class="title center">
@@ -2611,7 +2636,7 @@
     <p class="m-0 text-2">Luz María Bedoya</p>
     <ul class="list-nav">
       <li>
-        <a class="linktopage" rel="#p2">
+        <a class="linktopage" rel="#p2" data-url="#presentacion">
           <span class="number">1</span>
           <p data-translatable>
             <span>PRESENTATION</span><span>PRESENTACIÓN</span>
@@ -2619,7 +2644,7 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p6">
+        <a class="linktopage" rel="#p6" data-url="#piezassonoras">
           <span class="number">2</span>
           <p data-translatable>
             <span>SOUND PIECES</span><span>PIEZAS SONORAS</span>
@@ -2627,19 +2652,19 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p7">
+        <a class="linktopage" rel="#p7" data-url="#podcasts">
           <span class="number">3</span>
           <p>PODCASTS</p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p5">
+        <a class="linktopage" rel="#p5" data-url="#partitura">
           <span class="number">4</span>
           <p data-translatable><span>SCORE</span><span>PARTITURA</span></p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p3">
+        <a class="linktopage" rel="#p3" data-url="#listafaros">
           <span class="number">5</span>
           <p data-translatable>
             <span>LIGHTHOUSES LIST</span><span>LISTA DE FAROS</span>
@@ -2647,14 +2672,14 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p4">
+        <a class="linktopage" rel="#p4" data-url="#proceso">
           <span class="number">6</span>
           <p data-translatable><span>PROCESS</span><span>PROCESO</span></p>
         </a>
       </li>
 
       <li>
-        <a class="linktopage" rel="#p8">
+        <a class="linktopage" rel="#p8" data-url="#creditos">
           <span class="number">7</span>
           <p data-translatable><span>CREDITS</span><span>CRÉDITOS</span></p>
         </a>
@@ -2694,7 +2719,12 @@
 </div>
 <div id="p8" class="page header">
   <div class="perspected">
-    <div class="overlayer triggerFunction showing" rel="#p8"></div>
+    <div
+      class="overlayer triggerFunction showing"
+      id="trigger7"
+      rel="#p8"
+      data-url="#creditos"
+    ></div>
     <h1 class="title-normal" rel="#p8">
       <img class="header--img" src="./static/assets/img/header-4.svg" alt="" />
       <div class="title center">
@@ -2929,7 +2959,7 @@
     <p class="m-0 text-2">Luz María Bedoya</p>
     <ul class="list-nav">
       <li>
-        <a class="linktopage" rel="#p2">
+        <a class="linktopage" rel="#p2" data-url="#presentacion">
           <span class="number">1</span>
           <p data-translatable>
             <span>PRESENTATION</span><span>PRESENTACIÓN</span>
@@ -2937,7 +2967,7 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p6">
+        <a class="linktopage" rel="#p6" data-url="#piezassonoras">
           <span class="number">2</span>
           <p data-translatable>
             <span>SOUND PIECES</span><span>PIEZAS SONORAS</span>
@@ -2945,19 +2975,19 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p7">
+        <a class="linktopage" rel="#p7" data-url="#podcasts">
           <span class="number">3</span>
           <p>PODCASTS</p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p5">
+        <a class="linktopage" rel="#p5" data-url="#partitura">
           <span class="number">4</span>
           <p data-translatable><span>SCORE</span><span>PARTITURA</span></p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p3">
+        <a class="linktopage" rel="#p3" data-url="#listafaros">
           <span class="number">5</span>
           <p data-translatable>
             <span>LIGHTHOUSES LIST</span><span>LISTA DE FAROS</span>
@@ -2965,14 +2995,14 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p4">
+        <a class="linktopage" rel="#p4" data-url="#proceso">
           <span class="number">6</span>
           <p data-translatable><span>PROCESS</span><span>PROCESO</span></p>
         </a>
       </li>
 
       <li>
-        <a class="linktopage" rel="#p8">
+        <a class="linktopage" rel="#p8" data-url="#creditos">
           <span class="number">7</span>
           <p data-translatable><span>CREDITS</span><span>CRÉDITOS</span></p>
         </a>
@@ -3108,7 +3138,7 @@
     <p class="m-0 text-2">Luz María Bedoya</p>
     <ul class="list-nav">
       <li>
-        <a class="linktopage" rel="#p2">
+        <a class="linktopage" rel="#p2" data-url="#presentacion">
           <span class="number">1</span>
           <p data-translatable>
             <span>PRESENTATION</span><span>PRESENTACIÓN</span>
@@ -3116,7 +3146,7 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p6">
+        <a class="linktopage" rel="#p6" data-url="#piezassonoras">
           <span class="number">2</span>
           <p data-translatable>
             <span>SOUND PIECES</span><span>PIEZAS SONORAS</span>
@@ -3124,19 +3154,19 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p7">
+        <a class="linktopage" rel="#p7" data-url="#podcasts">
           <span class="number">3</span>
           <p>PODCASTS</p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p5">
+        <a class="linktopage" rel="#p5" data-url="#partitura">
           <span class="number">4</span>
           <p data-translatable><span>SCORE</span><span>PARTITURA</span></p>
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p3">
+        <a class="linktopage" rel="#p3" data-url="#listafaros">
           <span class="number">5</span>
           <p data-translatable>
             <span>LIGHTHOUSES LIST</span><span>LISTA DE FAROS</span>
@@ -3144,14 +3174,14 @@
         </a>
       </li>
       <li>
-        <a class="linktopage" rel="#p4">
+        <a class="linktopage" rel="#p4" data-url="#proceso">
           <span class="number">6</span>
           <p data-translatable><span>PROCESS</span><span>PROCESO</span></p>
         </a>
       </li>
 
       <li>
-        <a class="linktopage" rel="#p8">
+        <a class="linktopage" rel="#p8" data-url="#creditos">
           <span class="number">7</span>
           <p data-translatable><span>CREDITS</span><span>CRÉDITOS</span></p>
         </a>

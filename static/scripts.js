@@ -32,6 +32,8 @@ var potenceItemsBoxes;
 var alturaItemsBoxes;
 var rangeItemsBoxes;
 var periodItemsBoxes;
+var getUrlHere = window.location.hash;
+var globalIdiom = "spanish";
 
 var db = firebase.firestore();
 
@@ -3098,6 +3100,52 @@ window.onload = function () {
   flipChanger.addEventListener("click", reverseFlip);
   periodChanger.addEventListener("click", reversePeriod);
   console.log(mailingLaunch);
+  if (getUrlHere !== "") {
+    switch (getUrlHere) {
+      case "#presentation":
+        openPageFromElsewhere("english", getUrlHere, "#p2");
+        break;
+      case "#presentacion":
+        openPageFromElsewhere("spanish", getUrlHere, "#p2");
+        break;
+      case "#soundpieces":
+        openPageFromElsewhere("english", getUrlHere, "#p6");
+        break;
+      case "#piezassonoras":
+        openPageFromElsewhere("spanish", getUrlHere, "#p6");
+        break;
+      case "#podcast":
+        openPageFromElsewhere("english", getUrlHere, "#p7");
+        break;
+      case "#podcasts":
+        openPageFromElsewhere("spanish", getUrlHere, "#p7");
+        break;
+      case "#score":
+        openPageFromElsewhere("english", getUrlHere, "#p5");
+        break;
+      case "#partitura":
+        openPageFromElsewhere("spanish", getUrlHere, "#p5");
+        break;
+      case "#listafaros":
+        openPageFromElsewhere("spanish", getUrlHere, "#p3");
+        break;
+      case "#lighthouseslist":
+        openPageFromElsewhere("english", getUrlHere, "#p3");
+        break;
+      case "#process":
+        openPageFromElsewhere("english", getUrlHere, "#p4");
+        break;
+      case "#proceso":
+        openPageFromElsewhere("spanish", getUrlHere, "#p4");
+        break;
+      case "#credits":
+        openPageFromElsewhere("english", getUrlHere, "#p8");
+        break;
+      case "#creditos":
+        openPageFromElsewhere("spanish", getUrlHere, "#p8");
+        break;
+    }
+  }
 
   docGet();
   docPod();
@@ -3452,6 +3500,7 @@ function toEnglishChange() {
   langChanger.classList.remove("active");
   langChanger2.classList.add("active");
   i18n.changeLanguage("es");
+  globalIdiom = "english";
 
   for (let i = 0; i < lesserlinks.length; i++) {
     lesserlinks[i].addEventListener("click", openPage);
@@ -3464,6 +3513,7 @@ function toSpanishChange() {
   langChanger2.classList.remove("active");
   langChanger.classList.add("active");
   i18n.changeLanguage("en");
+  globalIdiom = "spanish";
 
   for (let i = 0; i < lesserlinks.length; i++) {
     lesserlinks[i].addEventListener("click", openPage);
@@ -3485,6 +3535,12 @@ async function closePage() {
   for (let i = 0; i < triggers.length; i++) {
     triggers[i].classList.add("showing");
   }
+  console.log("getting there");
+  window.history.pushState(
+    "page 2",
+    "Todos los faros de la costa peruana",
+    "/"
+  );
 }
 
 async function changePosition() {
@@ -3494,6 +3550,7 @@ async function changePosition() {
   }
   let element = event.target;
   let modifier = element.getAttribute("rel");
+  let newState = element.dataset.url;
   let elementToChange = document.querySelector(modifier);
   elementToChange.style.zIndex = "1000";
   elementToChange.classList.add("normal");
@@ -3506,9 +3563,44 @@ async function changePosition() {
   for (let i = 0; i < triggers.length; i++) {
     triggers[i].classList.remove("showing");
   }
+
+  if (newState === "#presentacion" && globalIdiom === "english") {
+    newState = "#presentation";
+  }
+
+  if (newState === "#listafaros" && globalIdiom === "english") {
+    newState = "#lighthouseslist";
+  }
+
+  if (newState === "#proceso" && globalIdiom === "english") {
+    newState = "#process";
+  }
+
+  if (newState === "#partitura" && globalIdiom === "english") {
+    newState = "#score";
+  }
+
+  if (newState === "#piezassonoras" && globalIdiom === "english") {
+    newState = "#soundpieces";
+  }
+
+  if (newState === "#podcasts" && globalIdiom === "english") {
+    newState = "#podcast";
+  }
+
+  if (newState === "#creditos" && globalIdiom === "english") {
+    newState = "#credits";
+  }
+
+  window.history.pushState(
+    "page 2",
+    "Todos los faros de la costa peruana",
+    newState
+  );
 }
 
 async function openPage() {
+  console.log("uarai kanai");
   container.classList.remove("closed");
   document.querySelector("#closerSect").classList.remove("visible");
   textoIntro.classList.remove("inactive");
@@ -3523,6 +3615,7 @@ async function openPage() {
   }
   let element = event.target;
   let modifier = element.getAttribute("rel");
+  let newState = element.dataset.url;
   let elementToChange = document.querySelector(modifier);
   let visibles = document.getElementsByClassName("no-visible");
   container.classList.remove("closed");
@@ -3549,6 +3642,40 @@ async function openPage() {
   for (let i = 0; i < triggers.length; i++) {
     triggers[i].classList.remove("showing");
   }
+
+  if (newState === "#presentacion" && globalIdiom === "english") {
+    newState = "#presentation";
+  }
+
+  if (newState === "#listafaros" && globalIdiom === "english") {
+    newState = "#lighthouseslist";
+  }
+
+  if (newState === "#proceso" && globalIdiom === "english") {
+    newState = "#process";
+  }
+
+  if (newState === "#partitura" && globalIdiom === "english") {
+    newState = "#score";
+  }
+
+  if (newState === "#piezassonoras" && globalIdiom === "english") {
+    newState = "#soundpieces";
+  }
+
+  if (newState === "#podcasts" && globalIdiom === "english") {
+    newState = "#podcast";
+  }
+
+  if (newState === "#creditos" && globalIdiom === "english") {
+    newState = "#credits";
+  }
+
+  window.history.pushState(
+    "page 2",
+    "Todos los faros de la costa peruana",
+    newState
+  );
 }
 
 function showTabs() {
@@ -3647,7 +3774,11 @@ function docGet() {
           `;
             let parent = document.querySelector("#accordion1");
             parent.insertAdjacentHTML("beforeend", elementToAdd);
-            this.toSpanishChange();
+            if (globalIdiom === "spanish") {
+              this.toSpanishChange();
+            } else {
+              this.toEnglishChange();
+            }
 
             var accordions = document.getElementsByClassName("c-tab--items");
 
@@ -4067,7 +4198,11 @@ function docPod() {
           `;
             let parent = document.querySelector("#accordion2");
             parent.insertAdjacentHTML("beforeend", elementToAdd);
-            this.toSpanishChange();
+            if (globalIdiom === "english") {
+              this.toEnglishChange();
+            } else {
+              this.toSpanishChange();
+            }
 
             var accordions = document.getElementsByClassName("c-tab--items");
 
@@ -4083,4 +4218,55 @@ function docPod() {
       var errorMessage = error.message;
       console.log(errorCode, errorMessage);
     });
+}
+
+async function openPageFromElsewhere(idiom, toState, reference) {
+  if (idiom === "english") {
+    toEnglishChange();
+  } else {
+    toSpanishChange();
+  }
+  globalIdiom = idiom;
+  container.classList.remove("closed");
+  document.querySelector("#closerSect").classList.remove("visible");
+  textoIntro.classList.remove("inactive");
+  triggerContainer.classList.remove("closed");
+  for (let i = 0; i < contentItems.length; i++) {
+    contentItems[i].classList.remove("showing");
+  }
+  console.log("this is the container", container);
+  container.scrollTo(0, 0);
+  for (let i = 0; i < skews.length; i++) {
+    skews[i].scrollTo(0, 0);
+  }
+  let elementToChange = document.querySelector(reference);
+  let visibles = document.getElementsByClassName("no-visible");
+  container.classList.remove("closed");
+  for (let i = 0; i < visibles.length; i++) {
+    console.log(visibles[0]);
+    visibles[i].classList.remove("visible");
+  }
+  for (let i = 0; i < closers.length; i++) {
+    console.log(closers[0]);
+    closers[i].classList.remove("visible");
+  }
+  for (let i = 0; i < skews.length; i++) {
+    skews[i].classList.remove("normal");
+    skews[i].style.zIndex = "0";
+  }
+  elementToChange.classList.add("normal");
+  elementToChange.style.zIndex = "1000";
+  let child = elementToChange.getElementsByClassName("no-visible")[0];
+  let child2 = elementToChange.getElementsByClassName("closer")[0];
+  child.classList.add("visible");
+  child2.classList.add("visible");
+  container.classList.add("closed");
+  for (let i = 0; i < triggers.length; i++) {
+    triggers[i].classList.remove("showing");
+  }
+  window.history.pushState(
+    "page 2",
+    "Todos los faros de la costa peruana",
+    toState
+  );
 }
