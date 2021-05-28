@@ -1449,7 +1449,7 @@ span {
         &--content {
           display: block;
           padding-bottom: 30px;
-          max-height: 1500px;
+          max-height: 2500px;
           overflow: hidden;
           transition-property: all;
           transition-duration: 0.6s;
@@ -3041,4 +3041,22 @@ p.black {
 
 .doble-desktop--fijo a.c-gray:hover {
   opacity: 0.5;
+}
+
+
+.responsiveIframe {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.responsiveIframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%!important;
+  height: 100%!important;
 }

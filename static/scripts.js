@@ -3767,11 +3767,27 @@ function docGet() {
                         <span>${element.p2eng}</span>
                         <span>${element.p2esp}</span>
                       </p>
+          `;
+          if (element.video !== "") {
+            elementToAdd =
+              elementToAdd +
+              `
+                <div class="reproductor responsiveIframe text-3">${element.video}</div>
+                    </div>
                     </div>
                   </div>
                 </div>
-              </div>
-          `;
+              `;
+          } else {
+            elementToAdd =
+              elementToAdd +
+              `
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              `;
+          }
             let parent = document.querySelector("#accordion1");
             parent.insertAdjacentHTML("beforeend", elementToAdd);
             if (globalIdiom === "spanish") {
@@ -4181,8 +4197,27 @@ function docPod() {
                       <p class="text-3" data-translatable>
                         <span>${element.p1eng}</span>
                         <span>${element.p1esp}</span>
-                      </p>
-                      <div class="reproductor text-3">${element.link}</div>
+                      </p>`
+
+                      if(element.poptionaleng !== "" && element.poptionaleng) {
+                        elementToAdd = elementToAdd + `
+                        <p class="text-3" data-translatable>
+                          <span>${element.poptionaleng}</span>
+                          <span>${element.poptionalesp}</span>
+                        </p>
+                        `
+                      }
+
+                      elementToAdd = elementToAdd + `
+                      <div class="reproductor text-3">${element.link}</div>`
+
+                      if(element.videoptional !== "" && element.videoptional) {
+                        elementToAdd = elementToAdd + `
+                        <div class="reproductor text-3 responsiveIframe">${element.videoptional}</div>
+                        `
+                      }
+
+                      elementToAdd = elementToAdd + `
                       <p class="text-3" data-translatable>
                         <span>${element.p2eng}</span>
                         <span>${element.p2esp}</span>
