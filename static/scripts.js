@@ -3742,18 +3742,8 @@ function docGet() {
                     <div class="doble-desktop--fijo list-podcast">
                       <ul class="podcast-items">
                         <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><u>Vocal interpretation</u></span><span><u>Interpretación
-                              vocal</u></span></p>
-                          <p class="m-0">${element.autor}</p>
-                        </li>
-                        <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><u>Binaural recording and mixing</u></span><span><u>Grabación y
-                              mezcla binaural</u></span></p>
-                          <p class="m-0">${element.mezcla}</p>
-                        </li>
-                        <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><u>Direction</u></span><span><u>Dirección</u></span></p>
-                          <p class="m-0">${element.composicion}</p>
+                          <p class="m-0" data-translatable><span><u>Instruments</u></span><span><u>Instrumentos</u></span></p>
+                          <p class="m-0" data-translatable><span>${element.instruments}</span><span>${element.instrumentos}</span></p>
                         </li>
                       </ul>
                     </div>
@@ -4181,13 +4171,13 @@ function docPod() {
                           <p class="m-0">${element.texto}</p>
                         </li>
                         <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><u>Binaural recording and mixing</u></span><span><u>Paisaje sonoro</u></span></p>
+                          <p class="m-0" data-translatable><span><u>Sound landscape</u></span><span><u>Paisaje sonoro</u></span></p>
                           <p class="m-0">${element.paisaje}</p>
                         </li>
                       </ul>
                       <a
                         class="c-gray"
-                        href="./static/assets/pdf/${element.pdf}"
+                        href="${element.pdf}"
                         download
                         data-translatable
                         ><span>Download PDF</span><span>Descargar PDF</span></a

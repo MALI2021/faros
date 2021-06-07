@@ -3742,18 +3742,8 @@ function docGet() {
                     <div class="doble-desktop--fijo list-podcast">
                       <ul class="podcast-items">
                         <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><u>Vocal interpretation</u></span><span><u>Interpretación
-                              vocal</u></span></p>
-                          <p class="m-0">${element.autor}</p>
-                        </li>
-                        <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><u>Binaural recording and mixing</u></span><span><u>Grabación y
-                              mezcla binaural</u></span></p>
-                          <p class="m-0">${element.mezcla}</p>
-                        </li>
-                        <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><u>Direction</u></span><span><u>Dirección</u></span></p>
-                          <p class="m-0">${element.composicion}</p>
+                          <p class="m-0" data-translatable><span><u>Instruments</u></span><span><u>Instrumentos</u></span></p>
+                          <p class="m-0" data-translatable><span>${element.instruments}</span><span>${element.instrumentos}</span></p>
                         </li>
                       </ul>
                     </div>
@@ -3767,11 +3757,27 @@ function docGet() {
                         <span>${element.p2eng}</span>
                         <span>${element.p2esp}</span>
                       </p>
+          `;
+          if (element.video !== "") {
+            elementToAdd =
+              elementToAdd +
+              `
+                <div class="reproductor responsiveIframe text-3">${element.video}</div>
+                    </div>
                     </div>
                   </div>
                 </div>
-              </div>
-          `;
+              `;
+          } else {
+            elementToAdd =
+              elementToAdd +
+              `
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              `;
+          }
             let parent = document.querySelector("#accordion1");
             parent.insertAdjacentHTML("beforeend", elementToAdd);
             if (globalIdiom === "spanish") {
@@ -4165,13 +4171,13 @@ function docPod() {
                           <p class="m-0">${element.texto}</p>
                         </li>
                         <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><u>Binaural recording and mixing</u></span><span><u>Paisaje sonoro</u></span></p>
+                          <p class="m-0" data-translatable><span><u>Sound landscape</u></span><span><u>Paisaje sonoro</u></span></p>
                           <p class="m-0">${element.paisaje}</p>
                         </li>
                       </ul>
                       <a
                         class="c-gray"
-                        href="./static/assets/pdf/${element.pdf}"
+                        href="${element.pdf}"
                         download
                         data-translatable
                         ><span>Download PDF</span><span>Descargar PDF</span></a
@@ -4181,8 +4187,27 @@ function docPod() {
                       <p class="text-3" data-translatable>
                         <span>${element.p1eng}</span>
                         <span>${element.p1esp}</span>
-                      </p>
-                      <div class="reproductor text-3">${element.link}</div>
+                      </p>`
+
+                      if(element.poptionaleng !== "" && element.poptionaleng) {
+                        elementToAdd = elementToAdd + `
+                        <p class="text-3" data-translatable>
+                          <span>${element.poptionaleng}</span>
+                          <span>${element.poptionalesp}</span>
+                        </p>
+                        `
+                      }
+
+                      elementToAdd = elementToAdd + `
+                      <div class="reproductor text-3">${element.link}</div>`
+
+                      if(element.videoptional !== "" && element.videoptional) {
+                        elementToAdd = elementToAdd + `
+                        <div class="reproductor text-3 responsiveIframe">${element.videoptional}</div>
+                        `
+                      }
+
+                      elementToAdd = elementToAdd + `
                       <p class="text-3" data-translatable>
                         <span>${element.p2eng}</span>
                         <span>${element.p2esp}</span>
