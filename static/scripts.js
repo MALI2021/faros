@@ -3740,11 +3740,50 @@ function docGet() {
                 <div class="c-tab--items--content">
                   <div class="doble-desktop">
                     <div class="doble-desktop--fijo list-podcast">
-                      <ul class="podcast-items">
-                        <li class="podcast-item">
-                          <p class="m-0" data-translatable><span><u>Instruments</u></span><span><u>Instrumentos</u></span></p>
-                          <p class="m-0" data-translatable><span>${element.instruments}</span><span>${element.instrumentos}</span></p>
-                        </li>
+                      <ul class="podcast-items">`;
+
+                        if( element.instruments) {
+                          elementToAdd = elementToAdd + `
+                          <li class="podcast-item">
+                            <p class="m-0" data-translatable><span><u>Instruments</u></span><span><u>Instrumentos</u></span></p>
+                            <p class="m-0" data-translatable><span>${element.instruments}</span><span>${element.instruments}</span></p>
+                          </li>
+                          `;
+                        }
+              
+                        // if( element.autor) {
+                        //   elementToAdd = elementToAdd + `
+                        //   <li class="podcast-item">
+                        //     <p class="m-0" data-translatable><span><u>Vocal interpretation</u></span><span><u>Interpretación vocal</u></span></p>
+                        //     <p class="m-0" data-translatable><span>${element.autor}</span><span>${element.autor}</span></p>
+                        //   </li>
+                        //   `;
+                        // }
+
+                        if( element.mezcla) {
+                          elementToAdd = elementToAdd + `
+                          <li class="podcast-item">
+                            <p class="m-0" data-translatable><span><u>Vocal interpretation</u></span><span><u>Interpretación vocal</u></span></p>
+                            <p class="m-0" data-translatable><span>${element.autor}</span><span>${element.autor}</span></p>
+                          </li>
+                          <li class="podcast-item">
+                            <p class="m-0" data-translatable><span><u>Binaural recording and mixing</u></span><span><u>Grabación y mezcla binaural</u></span></p>
+                            <p class="m-0" data-translatable><span>${element.mezcla}</span><span>${element.mezcla}</span></p>
+                          </li>
+                          `;
+                        }
+
+                        if( element.composicion) {
+                          elementToAdd = elementToAdd + `
+                          <li class="podcast-item">
+                            <p class="m-0" data-translatable><span><u>Direction</u></span><span><u>Dirección</u></span></p>
+                            <p class="m-0" data-translatable><span>${element.composicion}</span><span>${element.composicion}</span></p>
+                          </li>
+                          `;
+                        }
+
+            
+              elementToAdd = elementToAdd+`
                       </ul>
                     </div>
                     <div class="doble-desktop--item paragraphs">
