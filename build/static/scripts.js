@@ -3746,7 +3746,7 @@ function docGet() {
                           elementToAdd = elementToAdd + `
                           <li class="podcast-item">
                             <p class="m-0" data-translatable><span><u>Instruments</u></span><span><u>Instrumentos</u></span></p>
-                            <p class="m-0" data-translatable><span>${element.instruments}</span><span>${element.instruments}</span></p>
+                            <p class="m-0" data-translatable><span>${element.instruments}</span><span>${element.instrumentos}</span></p>
                           </li>
                           `;
                         }
