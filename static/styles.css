@@ -2744,6 +2744,7 @@ p.black span {
 .body-links {
   text-decoration: underline;
   cursor: pointer;
+  color: #000;
 }
 .body-links:hover {
   color: #979696;
